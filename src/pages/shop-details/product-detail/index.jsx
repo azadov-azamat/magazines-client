@@ -39,14 +39,14 @@ export default function ProductDetailPage({}) {
               <i className="icon icon-arrow-right" />
 
               <span className="text">
-                {product?.productName ? product?.productName : "Cotton jersey top"}
+                {product?.data.productName || "Cotton jersey top"}
               </span>
             </div>
-            <ProductSinglePrevNext currentId={product?.id} />
+            <ProductSinglePrevNext currentId={product?.data?.id} />
           </div>
         </div>
       </div>
-      <DetailsOuterZoom product={product} />
+      <DetailsOuterZoom product={product?.data} />
       {/* <ShopDetailsTab /> */}
       <Products />
       <RecentProducts />
