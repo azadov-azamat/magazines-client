@@ -3,7 +3,12 @@ import { collections } from "@/data/categories";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useCategories } from "@/data/hook";
+import defaultImage from "../../../../public/images/default.jpg";
+
 export default function Categories() {
+  const { data: categories } = useCategories();
+  
   return (
     <section className="flat-spacing-4 flat-categorie">
       <div className="container-full">
@@ -48,7 +53,7 @@ export default function Categories() {
                 },
               }}
             >
-              {collections.map((item, index) => (
+              {categories?.data.map((item, index) => (
                 <SwiperSlide className="swiper-slide" key={index}>
                   <div className="collection-item style-left hover-img">
                     <div className="collection-inner">
@@ -58,9 +63,9 @@ export default function Categories() {
                       >
                         <img
                           className="lazyload"
-                          data-src={item.imgSrc}
-                          alt={item.altText}
-                          src={item.imgSrc}
+                          data-src={item.categoryImgUrl || defaultImage}
+                          alt={item.categoryName}
+                          src={item.categoryImgUrl || defaultImage}
                           width="600"
                           height="721"
                         />
@@ -70,7 +75,7 @@ export default function Categories() {
                           to={`/shop-default`}
                           className="tf-btn collection-title hover-icon fs-15"
                         >
-                          <span>{item.title}</span>
+                          <span>{item.categoryName}</span>
                           <i className="icon icon-arrow1-top-left" />
                         </Link>
                       </div>

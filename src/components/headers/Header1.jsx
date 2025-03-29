@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import CartLength from "../common/CartLength";
 import WishlistLength from "../common/WishlistLength";
+
 export default function Header1() {
   return (
     <header id="header" className="header-default header-absolute">

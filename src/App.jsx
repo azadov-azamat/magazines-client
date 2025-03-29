@@ -31,51 +31,6 @@ import RtlToggle from "@/components/common/RtlToggle";
 import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage1 from "./pages/page";
 import WOW from "@/utlis/wow";
-import HomeMultiBrandPage from "./pages/homes/home-multi-brand";
-import Homepage2 from "./pages/homes/home-02";
-import Homepage3 from "./pages/homes/home-03";
-import Homepage4 from "./pages/homes/home-04";
-import Homepage5 from "./pages/homes/home-05";
-import Homepage6 from "./pages/homes/home-06";
-import HomePersonalizedPodPage from "./pages/homes/home-personalized-pod";
-import HomePickleBallPage from "./pages/homes/home-pickleball";
-import HomeCeramicPage from "./pages/homes/home-ceramic";
-import HomeFoodPage from "./pages/homes/home-food";
-import HomeCampAndHikePage from "./pages/homes/home-camp-and-hike";
-import Homepage7 from "./pages/homes/home-07";
-import Homepage8 from "./pages/homes/home-08";
-import HomeSkincarePage from "./pages/homes/home-skincare";
-import HomeHeadphonePage from "./pages/homes/home-headphone";
-import HomeGiftcardPage from "./pages/homes/home-giftcard";
-import HomeFurniturePage from "./pages/homes/home-furniture";
-import HomeFurniturePage2 from "./pages/homes/home-furniture-02";
-import HomeSkateboardPage from "./pages/homes/home-skateboard";
-import HomeStrollerPage from "./pages/homes/home-stroller";
-import HomeDecorPage from "./pages/homes/home-decor";
-import HomeElectricPage from "./pages/homes/home-electronic";
-import HomeSetupGearPage from "./pages/homes/home-setup-gear";
-import HomeDogAccessoriesPage from "./pages/homes/home-dog-accessories";
-import HomeKitchenWearPage from "./pages/homes/home-kitchen-wear";
-import HomePhonecasePage from "./pages/homes/home-phonecase";
-import HomePaddleBoardsPage from "./pages/homes/home-paddle-boards";
-import HomeGlassesPage from "./pages/homes/home-glasses";
-import HomePodStorePage from "./pages/homes/home-pod-store";
-import HomeActivewearPage from "./pages/homes/home-activewear";
-import HomeHandbagPage from "./pages/homes/home-handbag";
-import HomeTeePage from "./pages/homes/home-tee";
-import HomeSockPage from "./pages/homes/home-sock";
-import HomeJewelryPage from "./pages/homes/home-jewerly";
-import HomeSneakerPage from "./pages/homes/home-sneaker";
-import HomeAccessoriesPage from "./pages/homes/home-accessories";
-import HomeGroceryPage from "./pages/homes/home-grocery";
-import HomeBabyPage from "./pages/homes/home-baby";
-import HomeCosmeticPage from "./pages/homes/home-cosmetic";
-import HomePlantPage from "./pages/homes/home-plant";
-import HomeSwimwearPage from "./pages/homes/home-swimwear";
-import HomeElectricBikePage from "./pages/homes/home-electric-bike";
-import HomeFoodwearPage from "./pages/homes/home-footwear";
-import HomeBookstorePage from "./pages/homes/home-bookstore";
-import HomeGamingAccessoriesPage from "./pages/homes/home-gaming-accessories";
 import ShopDefaultPage from "./pages/shop/shop-default";
 import ShopLestSidebarPage from "./pages/shop/shop-left-sidebar";
 import ShopRightSidebarPage from "./pages/shop/shop-right-sidebar";
@@ -147,11 +102,6 @@ import MyAccountPage from "./pages/dashboard/my-account";
 import WishlistPage from "./pages/otherPages/wishlist";
 import TermsConditionsPage from "./pages/otherPages/terms-conditions";
 import PageNotFoundPage from "./pages/otherPages/page-not-found";
-import BlogGridPage from "./pages/blogs/blog-grid";
-import BlogSidebarLeftPage from "./pages/blogs/blog-sidebar-left";
-import BlogSidebarRightPage from "./pages/blogs/blog-sidebar-right";
-import BlogListPage from "./pages/blogs/blog-list";
-import BlogDetailsPage from "./pages/blogs/blog-detail";
 import StoreLocationPage from "./pages/otherPages/store-locations";
 import ScrollTopBehaviour from "./components/common/ScrollToTopBehaviour";
 import CheckoutPage from "./pages/otherPages/checkout";
@@ -163,10 +113,7 @@ import MyAccountEditPage from "./pages/dashboard/my-account-edit";
 import MyAccountWishlistPage from "./pages/dashboard/my-account-wishlist";
 import MyAccountOrderDetailsPage from "./pages/dashboard/my-account-orders-details";
 import InvoicePage from "./pages/otherPages/invoice";
-import HomeKidsPage from "./pages/homes/home-kids";
-import HomeMenPage from "./pages/homes/home-men";
 import ComparePage from "./pages/otherPages/compare";
-import HomeParallaxPage from "./pages/homes/home-parallax";
 
 function App() {
   const { pathname } = useLocation();
@@ -308,82 +255,6 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage1 />} />
-              <Route path="home-multi-brand" element={<HomeMultiBrandPage />} />
-              <Route path="home-02" element={<Homepage2 />} />
-              <Route path="home-03" element={<Homepage3 />} />
-              <Route path="home-04" element={<Homepage4 />} />
-              <Route path="home-05" element={<Homepage5 />} />
-              <Route path="home-06" element={<Homepage6 />} />
-              <Route
-                path="home-personalized-pod"
-                element={<HomePersonalizedPodPage />}
-              />
-              <Route path="home-pickleball" element={<HomePickleBallPage />} />
-              <Route path="home-ceramic" element={<HomeCeramicPage />} />
-              <Route path="home-food" element={<HomeFoodPage />} />
-              <Route
-                path="home-camp-and-hike"
-                element={<HomeCampAndHikePage />}
-              />
-              <Route path="home-07" element={<Homepage7 />} />
-              <Route path="home-08" element={<Homepage8 />} />
-              <Route path="home-skincare" element={<HomeSkincarePage />} />
-              <Route path="home-headphone" element={<HomeHeadphonePage />} />
-              <Route path="home-giftcard" element={<HomeGiftcardPage />} />
-              <Route path="home-furniture" element={<HomeFurniturePage />} />
-              <Route
-                path="home-furniture-02"
-                element={<HomeFurniturePage2 />}
-              />
-              <Route path="home-skateboard" element={<HomeSkateboardPage />} />
-              <Route path="home-stroller" element={<HomeStrollerPage />} />
-              <Route path="home-decor" element={<HomeDecorPage />} />
-              <Route path="home-electronic" element={<HomeElectricPage />} />
-              <Route path="home-setup-gear" element={<HomeSetupGearPage />} />
-              <Route
-                path="home-dog-accessories"
-                element={<HomeDogAccessoriesPage />}
-              />
-              <Route
-                path="home-kitchen-wear"
-                element={<HomeKitchenWearPage />}
-              />
-              <Route path="home-phonecase" element={<HomePhonecasePage />} />
-              <Route
-                path="home-paddle-boards"
-                element={<HomePaddleBoardsPage />}
-              />
-              <Route path="home-glasses" element={<HomeGlassesPage />} />
-              <Route path="home-pod-store" element={<HomePodStorePage />} />
-              <Route path="home-activewear" element={<HomeActivewearPage />} />
-              <Route path="home-handbag" element={<HomeHandbagPage />} />
-              <Route path="home-tee" element={<HomeTeePage />} />
-              <Route path="home-sock" element={<HomeSockPage />} />
-              <Route path="home-jewerly" element={<HomeJewelryPage />} />
-              <Route path="home-sneaker" element={<HomeSneakerPage />} />
-              <Route path="home-kids" element={<HomeKidsPage />} />
-              <Route path="home-men" element={<HomeMenPage />} />
-              <Route path="home-parallax" element={<HomeParallaxPage />} />
-              <Route
-                path="home-accessories"
-                element={<HomeAccessoriesPage />}
-              />
-              <Route path="home-grocery" element={<HomeGroceryPage />} />
-              <Route path="home-baby" element={<HomeBabyPage />} />
-              <Route path="home-cosmetic" element={<HomeCosmeticPage />} />
-              <Route path="home-plant" element={<HomePlantPage />} />
-              <Route path="home-swimwear" element={<HomeSwimwearPage />} />
-              <Route
-                path="home-electric-bike"
-                element={<HomeElectricBikePage />}
-              />
-              <Route path="home-footwear" element={<HomeFoodwearPage />} />
-              <Route path="home-bookstore" element={<HomeBookstorePage />} />
-              <Route
-                path="home-gaming-accessories"
-                element={<HomeGamingAccessoriesPage />}
-              />
-
               <Route path="shop-default" element={<ShopDefaultPage />} />
               <Route
                 path="shop-left-sidebar"
@@ -616,17 +487,6 @@ function App() {
               />
               <Route path="page-not-found" element={<PageNotFoundPage />} />
 
-              <Route path="blog-grid" element={<BlogGridPage />} />
-              <Route
-                path="blog-sidebar-left"
-                element={<BlogSidebarLeftPage />}
-              />
-              <Route
-                path="blog-sidebar-right"
-                element={<BlogSidebarRightPage />}
-              />
-              <Route path="blog-list" element={<BlogListPage />} />
-              <Route path="blog-detail/:id" element={<BlogDetailsPage />} />
               <Route path="*" element={<PageNotFoundPage />} />
             </Route>
           </Routes>

@@ -1,18 +1,21 @@
 import { products1 } from "@/data/products";
 import React, { useState } from "react";
 import { ProductCard } from "../../shopCards/ProductCard";
+import { useProducts } from "@/data/hook";
 
 export default function Products() {
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const [allproducts, setAllproducts] = useState([...products1]);
+  const [page, setPage] = useState(1);
+  const { data: products } = useProducts(page);
+  
   const handleLoad = () => {
     setLoading(true);
 
     setTimeout(() => {
-      setAllproducts((pre) => [...pre, ...products1.slice(0, 12)]);
       setLoading(false);
       setLoaded(true);
+      setPage((prevPage) => prevPage + 1);
     }, 1000);
   };
 
@@ -21,7 +24,7 @@ export default function Products() {
       <div className="container">
         <div className="flat-title">
           <span className="title wow fadeInUp" data-wow-delay="0s">
-            Best Seller
+            Best Sellersafd
           </span>
           <p className="sub-title wow fadeInUp" data-wow-delay="0s">
             Shop the Latest Styles: Stay ahead of the curve with our newest
@@ -33,7 +36,7 @@ export default function Products() {
           data-wow-delay="0s"
           data-grid="grid-4"
         >
-          {allproducts.map((product, i) => (
+          {products?.data.map((product, i) => (
             <ProductCard product={product} key={i} />
           ))}
         </div>

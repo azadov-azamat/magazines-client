@@ -1,6 +1,4 @@
 import Features from "@/components/common/Features";
-import ShopGram from "@/components/common/ShopGram";
-import Testimonials from "@/components/common/Testimonials";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import Topbar1 from "@/components/headers/Topbar1";
@@ -29,9 +27,7 @@ export default function HomePage1() {
       <Categories />
       <Products />
       <Lookbook />
-      <Testimonials />
       <Brands />
-      <ShopGram />
       <Features />
       <Footer1 />
     </>

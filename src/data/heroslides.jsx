@@ -1,24 +1,3 @@
-export const slides = [
-  {
-    imgSrc: "/images/slider/fashion-slideshow-01.jpg",
-    title: "Glamorous\nGlam",
-    text: "From casual to formal, we've got you covered",
-    btnText: "Shop collection",
-  },
-  {
-    imgSrc: "/images/slider/fashion-slideshow-02.jpg",
-    title: "Simple\nStyle",
-    text: "From casual to formal, we've got you covered",
-    btnText: "Shop collection",
-  },
-  {
-    imgSrc: "/images/slider/fashion-slideshow-03.jpg",
-    title: "Glamorous\nGlam",
-    text: "From casual to formal, we've got you covered",
-    btnText: "Shop collection",
-  },
-];
-
 export const slidesData = [
   {
     src: "/images/slider/fashion-slideshow-04.jpg",

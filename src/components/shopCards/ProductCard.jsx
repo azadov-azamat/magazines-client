@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { useContextElement } from "@/context/Context";
-import CountdownComponent from "../common/Countdown";
+import defaultImage from "../../../public/images/default.jpg";
+
 export const ProductCard = ({ product }) => {
-  const [currentImage, setCurrentImage] = useState(product.imgSrc);
+  const [currentImage, setCurrentImage] = useState(product.productImgUrl);
   const { setQuickViewItem } = useContextElement();
   const {
     setQuickAddItem,
@@ -13,8 +14,9 @@ export const ProductCard = ({ product }) => {
     addToCompareItem,
     isAddedtoCompareItem,
   } = useContextElement();
+
   useEffect(() => {
-    setCurrentImage(product.imgSrc);
+    setCurrentImage(product.productImgUrl);
   }, [product]);
 
   return (
@@ -23,8 +25,8 @@ export const ProductCard = ({ product }) => {
         <Link to={`/product-detail/${product.id}`} className="product-img">
           <img
             className="lazyload img-product"
-            data-src={product.imgSrc}
-            src={currentImage}
+            data-src={product.productImgUrl ? product.productImgUrl : defaultImage}
+            src={currentImage || defaultImage}
             alt="image-product"
             width={720}
             height={1005}
@@ -32,9 +34,9 @@ export const ProductCard = ({ product }) => {
           <img
             className="lazyload img-hover"
             data-src={
-              product.imgHoverSrc ? product.imgHoverSrc : product.imgSrc
+              product.productImgUrl ? product.productImgUrl : product.productImgUrl
             }
-            src={product.imgHoverSrc ? product.imgHoverSrc : product.imgSrc}
+            src={product.productImgUrl || defaultImage}
             alt="image-product"
             width={720}
             height={1005}
@@ -102,7 +104,7 @@ export const ProductCard = ({ product }) => {
                 <span className="tooltip">Quick View</span>
               </a>
             </div>
-            {product.countdown && (
+            {/* {product.countdown && (
               <div className="countdown-box">
                 <div className="js-countdown">
                   <CountdownComponent />
@@ -115,16 +117,16 @@ export const ProductCard = ({ product }) => {
                   <span key={size}>{size}</span>
                 ))}
               </div>
-            )}
+            )} */}
           </>
         )}
       </div>
       <div className="card-product-info">
         <Link to={`/product-detail/${product.id}`} className="title link">
-          {product.title}
+          {product.productName}
         </Link>
-        <span className="price">${product.price.toFixed(2)}</span>
-        {product.colors && (
+        <span className="price">${product.productMainPrice}</span>
+        {/* {product.colors && (
           <ul className="list-color-product">
             {product.colors.map((color, i) => (
               <li
@@ -147,7 +149,7 @@ export const ProductCard = ({ product }) => {
               </li>
             ))}
           </ul>
-        )}
+        )} */}
       </div>
     </div>
   );

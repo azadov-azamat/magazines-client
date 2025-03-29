@@ -7,7 +7,6 @@ import { ProductCard } from "../shopCards/ProductCard";
 import { Navigation } from "swiper/modules";
 import {
   allHomepages,
-  blogLinks,
   demoItems,
   pages,
   productDetailPages,
@@ -349,33 +348,6 @@ export default function Nav({ isArrow = true, textColor = "", Linkfs = "" }) {
                     </ul>
                   </div>
                 )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </li>
-      <li className="menu-item position-relative">
-        <a
-          href="#"
-          className={`item-link ${Linkfs} ${textColor}  ${
-            isMenuActive(blogLinks) ? "activeMenu" : ""
-          }`}
-        >
-          Blog
-          {isArrow ? <i className="icon icon-arrow-down" /> : ""}
-        </a>
-        <div className="sub-menu links-default">
-          <ul className="menu-list">
-            {blogLinks.map((linkItem, index) => (
-              <li key={index}>
-                <Link
-                  to={linkItem.href}
-                  className={`menu-link-text link text_black-2  ${
-                    isMenuActive(linkItem) ? "activeMenu" : ""
-                  }`}
-                >
-                  {linkItem.text}
-                </Link>
               </li>
             ))}
           </ul>

@@ -1,4 +1,3 @@
-import Testimonials from "@/components/common/Testimonials";
 import Footer1 from "@/components/footers/Footer1";
 import Header2 from "@/components/headers/Header2";
 import Cart from "@/components/othersPages/Cart";
@@ -22,7 +21,6 @@ export default function ViewCartPage() {
       </div>
 
       <Cart />
-      <Testimonials />
       <RecentProducts />
       <Footer1 />
     </>

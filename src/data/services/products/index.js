@@ -1,0 +1,14 @@
+import axios from "@/data/api/axios";
+
+export const getProducts = async (page = 1, limit = 10, sort = 'createdAt', filter, search = '') => {
+    const { data } = await axios.get('/products', {
+        params: {
+            page,
+            limit,
+            sort,
+            filter,
+            search
+        }
+    });
+    return data;
+};
