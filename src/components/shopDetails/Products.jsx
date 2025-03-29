@@ -1,9 +1,10 @@
-import { products1 } from "@/data/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductCard } from "../shopCards/ProductCard";
 import { Navigation, Pagination } from "swiper/modules";
+import { useProducts } from "@/data/hook";
 
 export default function Products() {
+  const { data: products } = useProducts();
   return (
     <section className="flat-spacing-1 pt_0">
       <div className="container">
@@ -35,7 +36,7 @@ export default function Products() {
             }}
             pagination={{ clickable: true, el: ".spd307" }}
           >
-            {products1.slice(0, 8).map((product, i) => (
+            {products?.data?.slice(0, 8).map((product, i) => (
               <SwiperSlide key={i} className="swiper-slide">
                 <ProductCard product={product} />
               </SwiperSlide>

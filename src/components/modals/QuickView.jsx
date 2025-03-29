@@ -20,6 +20,7 @@ export default function QuickView() {
   } = useContextElement();
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [currentSize, setCurrentSize] = useState(sizeOptions[0]);
+  const [quantity, setQuantity] = useState(1);
 
   const openModalSizeChoice = () => {
     import("bootstrap")
@@ -48,6 +49,7 @@ export default function QuickView() {
         console.error("Error loading Bootstrap:", error);
       });
   };
+  console.log(quickViewItem);
 
   return (
     <div className="modal fade modalDemo" id="quick_view">
@@ -74,12 +76,12 @@ export default function QuickView() {
                   {[
                     quickViewItem.isLookBookProduct
                       ? "/images/products/orange-1.jpg"
-                      : quickViewItem.imgSrc,
+                      : quickViewItem.productImgUrl,
                     quickViewItem.isLookBookProduct
                       ? "/images/products/pink-1.jpg"
-                      : quickViewItem.imgHoverSrc
-                      ? quickViewItem.imgHoverSrc
-                      : quickViewItem.imgSrc,
+                      : quickViewItem.productImgUrl
+                      ? quickViewItem.productImgUrl
+                      : quickViewItem.productImgUrl,
                   ].map((product, index) => (
                     <SwiperSlide className="swiper-slide" key={index}>
                       <div className="item">
@@ -105,9 +107,9 @@ export default function QuickView() {
                   <h5>
                     <Link
                       className="link"
-                      to={`/product-detail/${quickViewItem.id}`}
+                      to={`/product-detail/${quickViewItem?.id}`}
                     >
-                      {quickViewItem.title}
+                      {quickViewItem?.productName}
                     </Link>
                   </h5>
                 </div>
@@ -121,17 +123,15 @@ export default function QuickView() {
                   </div>
                 </div>
                 <div className="tf-product-info-price">
-                  <div className="price">${quickViewItem.price.toFixed(2)}</div>
+                  <div className="price">{quickViewItem?.productCurrency === 'dollar' && '$'}{quickViewItem?.productMainPrice}</div>
                 </div>
                 <div className="tf-product-description">
                   <p>
-                    Nunc arcu faucibus a et lorem eu a mauris adipiscing conubia
-                    ac aptent ligula facilisis a auctor habitant parturient a
-                    a.Interdum fermentum.
+                    {quickViewItem?.productModel}
                   </p>
                 </div>
                 <div className="tf-product-info-variant-picker">
-                  <div className="variant-picker-item">
+                  {/* <div className="variant-picker-item">
                     <div className="variant-picker-label">
                       Color:
                       <span className="fw-6 variant-picker-label-value">
@@ -162,8 +162,8 @@ export default function QuickView() {
                         </React.Fragment>
                       ))}
                     </form>
-                  </div>
-                  <div className="variant-picker-item">
+                  </div> */}
+                  {/* <div className="variant-picker-item">
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="variant-picker-label">
                         Size:
@@ -199,39 +199,39 @@ export default function QuickView() {
                         </React.Fragment>
                       ))}
                     </form>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="tf-product-info-quantity">
                   <div className="quantity-title fw-6">Quantity</div>
-                  <Quantity />
+                  <Quantity setQuantity={setQuantity} />
                 </div>
                 <div className="tf-product-info-buy-button">
                   <form onSubmit={(e) => e.preventDefault()} className="">
                     <a
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
-                      onClick={() => addProductToCart(quickViewItem.id)}
+                      onClick={() => addProductToCart(quickViewItem?.id)}
                     >
                       <span>
-                        {isAddedToCartProducts(quickViewItem.id)
+                        {isAddedToCartProducts(quickViewItem?.id)
                           ? "Already Added - "
                           : "Add to cart - "}
                       </span>
                       <span className="tf-qty-price">
-                        ${quickViewItem.price.toFixed(2)}
+                        {quickViewItem?.productCurrency === 'dollar' && '$'}{quantity * Number(quickViewItem?.productMainPrice)}
                       </span>
                     </a>
                     <a
-                      onClick={() => addToWishlist(quickViewItem.id)}
+                      onClick={() => addToWishlist(quickViewItem?.id)}
                       className="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action"
                     >
                       <span
                         className={`icon icon-heart ${
-                          isAddedtoWishlist(quickViewItem.id) ? "added" : ""
+                          isAddedtoWishlist(quickViewItem?.id) ? "added" : ""
                         }`}
                       />
                       <span className="tooltip">
-                        {isAddedtoWishlist(quickViewItem.id)
+                        {isAddedtoWishlist(quickViewItem?.id)
                           ? "Already Wishlisted"
                           : "Add to Wishlist"}
                       </span>
@@ -241,17 +241,17 @@ export default function QuickView() {
                       href="#compare"
                       data-bs-toggle="offcanvas"
                       aria-controls="offcanvasLeft"
-                      onClick={() => addToCompareItem(quickViewItem.id)}
+                      onClick={() => addToCompareItem(quickViewItem?.id)}
                       className="tf-product-btn-wishlist hover-tooltip box-icon bg_white compare btn-icon-action"
                     >
                       <span
                         className={`icon icon-compare ${
-                          isAddedtoCompareItem(quickViewItem.id) ? "added" : ""
+                          isAddedtoCompareItem(quickViewItem?.id) ? "added" : ""
                         }`}
                       />
                       <span className="tooltip">
                         {" "}
-                        {isAddedtoCompareItem(quickViewItem.id)
+                        {isAddedtoCompareItem(quickViewItem?.id)
                           ? "Already Compared"
                           : "Add to Compare"}
                       </span>
@@ -275,7 +275,7 @@ export default function QuickView() {
                 </div>
                 <div>
                   <Link
-                    to={`/product-detail/${quickViewItem.id}`}
+                    to={`/product-detail/${quickViewItem?.id}`}
                     className="tf-btn fw-6 btn-line"
                   >
                     View full details

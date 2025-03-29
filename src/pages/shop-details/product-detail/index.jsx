@@ -15,11 +15,16 @@ const metadata = {
 };
 import { allProducts } from "@/data/products";
 import ProductSinglePrevNext from "@/components/common/ProductSinglePrevNext";
+import { useProductById } from "@/data/hook";
+
 export default function ProductDetailPage({}) {
   let params = useParams();
   const { id } = params;
-  const product =
-    allProducts.filter((elm) => elm.id == id)[0] || allProducts[0];
+  const { data: product } = useProductById(id);
+  console.log(product);
+  if (product && product.status === 404) {
+    return <div>Product not found</div>;
+  }
   return (
     <>
       <MetaComponent meta={metadata} />
@@ -34,15 +39,15 @@ export default function ProductDetailPage({}) {
               <i className="icon icon-arrow-right" />
 
               <span className="text">
-                {product.title ? product.title : "Cotton jersey top"}
+                {product?.productName ? product?.productName : "Cotton jersey top"}
               </span>
             </div>
-            <ProductSinglePrevNext currentId={product.id} />
+            <ProductSinglePrevNext currentId={product?.id} />
           </div>
         </div>
       </div>
       <DetailsOuterZoom product={product} />
-      <ShopDetailsTab />
+      {/* <ShopDetailsTab /> */}
       <Products />
       <RecentProducts />
       <Footer1 />

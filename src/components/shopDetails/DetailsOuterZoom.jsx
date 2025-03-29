@@ -14,7 +14,7 @@ import { allProducts } from "@/data/products";
 import { useContextElement } from "@/context/Context";
 import { openCartModal } from "@/utlis/openCartModal";
 
-export default function DetailsOuterZoom({ product = allProducts[0] }) {
+export default function DetailsOuterZoom({ product }) {
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [currentSize, setCurrentSize] = useState(sizeOptions[1]);
   const [quantity, setQuantity] = useState(1);
@@ -53,7 +53,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                   <Slider1ZoomOuter
                     handleColor={handleColor}
                     currentColor={currentColor.value}
-                    firstImage={product.imgSrc}
+                    firstImage={product?.productImgUrl}
                   />
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                 <div className="tf-product-info-list other-image-zoom">
                   <div className="tf-product-info-title">
                     <h5>
-                      {product.title ? product.title : "Cotton jersey top"}
+                      {product?.productName || "Cotton jersey top"}
                     </h5>
                   </div>
                   <div className="tf-product-info-badges">
@@ -78,12 +78,12 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                   </div>
                   <div className="tf-product-info-price">
                     <div className="price-on-sale">
-                      ${product.price.toFixed(2)}
+                      {product?.productCurrency === 'dollar' && '$'}{product?.productMainPrice}
                     </div>
 
-                    <div className="compare-at-price">
-                      ${currentColor.oldPrice.toFixed(2)}
-                    </div>
+                    {/* <div className="compare-at-price">
+                      ${product?.productOldPrice}
+                    </div> */}
 
                     <div className="badges-on-sale">
                       <span>20</span>% OFF
@@ -107,8 +107,8 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                     </div>
                   </div>
                   <div className="tf-product-info-variant-picker">
-                    <div className="variant-picker-item">
-                      <div className="variant-picker-label">
+                    {/* <div className="variant-picker-item"> */}
+                      {/* <div className="variant-picker-label">
                         Color:
                         <span className="fw-6 variant-picker-label-value">
                           {currentColor.value}
@@ -137,9 +137,9 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                             </label>
                           </React.Fragment>
                         ))}
-                      </form>
-                    </div>
-                    <div className="variant-picker-item">
+                      </form> */}
+                    {/* </div> */}
+                    {/* <div className="variant-picker-item">
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="variant-picker-label">
                           Size:
@@ -176,7 +176,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                           </React.Fragment>
                         ))}
                       </form>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="tf-product-info-quantity">
                     <div className="quantity-title fw-6">Quantity</div>
@@ -192,27 +192,27 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                         className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                       >
                         <span>
-                          {isAddedToCartProducts(product.id)
+                          {isAddedToCartProducts(product?.id)
                             ? "Already Added"
                             : "Add to cart"}{" "}
                           -{" "}
                         </span>
                         <span className="tf-qty-price">
-                          ${(product.price * quantity).toFixed(2)}
+                          {product?.productCurrency === 'dollar' && '$'}{quantity * Number(product?.productMainPrice)}
                         </span>
                       </a>
                       <a
-                        onClick={() => addToWishlist(product.id)}
+                        onClick={() => addToWishlist(product?.id)}
                         className="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action"
                       >
                         <span
                           className={`icon icon-heart ${
-                            isAddedtoWishlist(product.id) ? "added" : ""
+                            isAddedtoWishlist(product?.id) ? "added" : ""
                           }`}
                         />
                         <span className="tooltip">
                           {" "}
-                          {isAddedtoWishlist(product.id)
+                          {isAddedtoWishlist(product?.id)
                             ? "Already Wishlisted"
                             : "Add to Wishlist"}
                         </span>
@@ -221,17 +221,17 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                       <a
                         href="#compare"
                         data-bs-toggle="offcanvas"
-                        onClick={() => addToCompareItem(product.id)}
+                        onClick={() => addToCompareItem(product?.id)}
                         aria-controls="offcanvasLeft"
                         className="tf-product-btn-wishlist hover-tooltip box-icon bg_white compare btn-icon-action"
                       >
                         <span
                           className={`icon icon-compare ${
-                            isAddedtoCompareItem(product.id) ? "added" : ""
+                            isAddedtoCompareItem(product?.id) ? "added" : ""
                           }`}
                         />
                         <span className="tooltip">
-                          {isAddedtoCompareItem(product.id)
+                          {isAddedtoCompareItem(product?.id)
                             ? "Already Compared"
                             : "Add to Compare"}
                         </span>
@@ -253,7 +253,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                       </div>
                     </form>
                   </div>
-                  <div className="tf-product-info-extra-link">
+                  {/* <div className="tf-product-info-extra-link">
                     <a
                       href="#compare_color"
                       data-bs-toggle="modal"
@@ -308,7 +308,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
                       </div>
                       <div className="text fw-6">Share</div>
                     </a>
-                  </div>
+                  </div> */}
                   <div className="tf-product-info-delivery-return">
                     <div className="row">
                       <div className="col-xl-6 col-12">
@@ -364,7 +364,7 @@ export default function DetailsOuterZoom({ product = allProducts[0] }) {
           </div>
         </div>
       </div>{" "}
-      <StickyItem />
+      {/* <StickyItem /> */}
     </section>
   );
 }
