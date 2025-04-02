@@ -42,7 +42,7 @@ export const ProductCard = ({ product }) => {
             height={1005}
           />
         </Link>
-        {product.soldOut ? (
+        {Number(product?.productQuantity) === 0 ? (
           <div className="sold-out">
             <span>Sold out</span>
           </div>
@@ -58,7 +58,7 @@ export const ProductCard = ({ product }) => {
                 <span className="icon icon-bag" />
                 <span className="tooltip">Quick Add</span>
               </a>
-              <a
+              {/* <a
                 onClick={() => addToWishlist(product.id)}
                 className="box-icon bg_white wishlist btn-icon-action"
               >
@@ -93,7 +93,7 @@ export const ProductCard = ({ product }) => {
                     : "Add to Compare"}
                 </span>
                 <span className="icon icon-check" />
-              </a>
+              </a> */}
               <a
                 href="#quick_view"
                 onClick={() => setQuickViewItem(product)}

@@ -5,7 +5,7 @@ import { products1 } from "@/data/products";
 import Productcard4 from "../shopCards/Productcart4";
 import ShopFilter from "./ShopFilter";
 import Sorting from "./Sorting";
-import Productcard23 from "../shopCards/Productcard23";
+// import Productcard23 from "../shopCards/Productcard23";
 
 export default function ProductStyle4() {
   const [gridItems, setGridItems] = useState(4);
@@ -62,9 +62,10 @@ export default function ProductStyle4() {
             {gridItems == 1 ? (
               <div className="grid-layout" data-grid="grid-list">
                 {/* card product 1 */}
-                {finalSorted.map((elm, i) => (
+                finalSorted.map
+                {/* {finalSorted.map((elm, i) => (
                   <Productcard23 product={elm} key={i} />
-                ))}
+                ))} */}
                 {/* card product 2 */}
               </div>
             ) : (

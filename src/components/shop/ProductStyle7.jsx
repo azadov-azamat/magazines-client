@@ -2,10 +2,10 @@ import { layouts, sortingOptions } from "@/data/shop";
 import { useState } from "react";
 import Pagination from "../common/Pagination";
 import { products1 } from "@/data/products";
-import { ProductCard26 } from "../shopCards/ProductCard26";
+// import { ProductCard26 } from "../shopCards/ProductCard26";
 import ShopFilter from "./ShopFilter";
 import Sorting from "./Sorting";
-import Productcard23 from "../shopCards/Productcard23";
+// import Productcard23 from "../shopCards/Productcard23";
 
 export default function ProductStyle7() {
   const [gridItems, setGridItems] = useState(4);
@@ -62,9 +62,10 @@ export default function ProductStyle7() {
             {gridItems == 1 ? (
               <div className="grid-layout" data-grid="grid-list">
                 {/* card product 1 */}
-                {finalSorted.map((elm, i) => (
+                finalSorted.map
+                {/* {finalSorted.map((elm, i) => (
                   <Productcard23 product={elm} key={i} />
-                ))}
+                ))} */}
                 {/* card product 2 */}
               </div>
             ) : (
@@ -73,9 +74,10 @@ export default function ProductStyle7() {
                 data-grid={`grid-${gridItems}`}
               >
                 {/* card product 1 */}
-                {finalSorted.map((elm, i) => (
+                finalSorted.map
+                {/* {finalSorted.map((elm, i) => (
                   <ProductCard26 product={elm} key={i} />
-                ))}
+                ))} */}
               </div>
             )}
             {/* pagination */}{" "}

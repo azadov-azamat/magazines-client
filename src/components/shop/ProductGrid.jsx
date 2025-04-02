@@ -1,7 +1,7 @@
 import { products1 } from "@/data/products";
 import React from "react";
 import { ProductCard } from "../shopCards/ProductCard";
-import Productcard23 from "../shopCards/Productcard23";
+// import Productcard23 from "../shopCards/Productcard23";
 
 export default function ProductGrid({
   gridItems = 4,
@@ -22,9 +22,10 @@ export default function ProductGrid({
       {gridItems == 1 ? (
         <div className="grid-layout" data-grid="grid-list">
           {/* card product 1 */}
-          {allproducts.map((elm, i) => (
+          allproducts.map
+          {/* {allproducts.map((elm, i) => (
             <Productcard23 product={elm} key={i} />
-          ))}
+          ))} */}
           {/* card product 2 */}
         </div>
       ) : (
