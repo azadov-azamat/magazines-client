@@ -21,9 +21,9 @@ export default function ProductDetailPage({}) {
   let params = useParams();
   const { id } = params;
   const { data: product } = useProductById(id);
-  console.log(product);
-  if (product && product.status === 404) {
-    return <div>Product not found</div>;
+  
+  if (!product?.data || product.status === 404) {
+    return <div className="text-center d-flex justify-content-center align-items-center h-100">Product not found</div>;
   }
   return (
     <>
@@ -39,7 +39,7 @@ export default function ProductDetailPage({}) {
               <i className="icon icon-arrow-right" />
 
               <span className="text">
-                {product?.data.productName || "Cotton jersey top"}
+                {product?.data?.productName || "Nom kiritilmagan"}
               </span>
             </div>
             <ProductSinglePrevNext currentId={product?.data?.id} />

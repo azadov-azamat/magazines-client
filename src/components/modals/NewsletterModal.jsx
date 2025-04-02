@@ -64,8 +64,9 @@ export default function NewsletterModal() {
       }
     };
 
-    showModal();
+    // showModal();
   }, [pathname]);
+  
   return (
     <div
       ref={modalElement}

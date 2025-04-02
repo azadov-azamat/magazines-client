@@ -113,7 +113,7 @@ export default function QuickView() {
                     </Link>
                   </h5>
                 </div>
-                <div className="tf-product-info-badges">
+                {/* <div className="tf-product-info-badges">
                   <div className="badges text-uppercase">Best seller</div>
                   <div className="product-status-content">
                     <i className="icon-lightning" />
@@ -121,11 +121,11 @@ export default function QuickView() {
                       Selling fast! 48 people have this in their carts.
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="tf-product-info-price">
                   <div className="price">{quickViewItem?.productCurrency === 'dollar' && '$'}{quickViewItem?.productMainPrice}</div>
                 </div>
-                <div className="tf-product-description">
+                <div className="tf-product-description mb-0">
                   <p>
                     {quickViewItem?.productModel}
                   </p>
@@ -257,7 +257,7 @@ export default function QuickView() {
                       </span>
                       <span className="icon icon-check" />
                     </a>
-                    <div className="w-100">
+                    {/* <div className="w-100">
                       <a href="#" className="btns-full">
                         Buy with
                         <img
@@ -270,10 +270,10 @@ export default function QuickView() {
                       <a href="#" className="payment-more-option">
                         More payment options
                       </a>
-                    </div>
+                    </div> */}
                   </form>
                 </div>
-                <div>
+                <div className="text-center">
                   <Link
                     to={`/product-detail/${quickViewItem?.id}`}
                     className="tf-btn fw-6 btn-line"
