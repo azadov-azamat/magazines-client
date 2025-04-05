@@ -1,3 +1,4 @@
+import { useProducts } from "@/data/hook";
 import { allProducts } from "@/data/products";
 import { openCartModal } from "@/utlis/openCartModal";
 // import { openCart } from "@/utlis/toggleCart";
@@ -15,6 +16,8 @@ export default function Context({ children }) {
   const [quickViewItem, setQuickViewItem] = useState();
   const [quickAddItem, setQuickAddItem] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
+  const {data: products} = useProducts();
+
   useEffect(() => {
     const subtotal = cartProducts.reduce((accumulator, product) => {
       return accumulator + product.quantity * product.price;
@@ -23,15 +26,16 @@ export default function Context({ children }) {
   }, [cartProducts]);
 
   const addProductToCart = (id, qty) => {
-    if (!cartProducts.filter((elm) => elm.id == id)[0]) {
+    if (!cartProducts?.filter((elm) => elm.id == id)[0]) {
+      
       const item = {
-        ...allProducts.filter((elm) => elm.id == id)[0],
+        ...products.data.filter((elm) => elm.id == id)[0],
         quantity: qty ? qty : 1,
       };
       setCartProducts((pre) => [...pre, item]);
-      openCartModal();
-
       // openCart();
+    } else {
+      openCartModal();
     }
   };
   const isAddedToCartProducts = (id) => {

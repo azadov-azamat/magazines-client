@@ -49,7 +49,6 @@ export default function QuickView() {
         console.error("Error loading Bootstrap:", error);
       });
   };
-  console.log(quickViewItem);
 
   return (
     <div className="modal fade modalDemo" id="quick_view">
@@ -221,6 +220,7 @@ export default function QuickView() {
                         {quickViewItem?.productCurrency === 'dollar' && '$'}{quantity * Number(quickViewItem?.productMainPrice)}
                       </span>
                     </a>
+
                     <a
                       onClick={() => addToWishlist(quickViewItem?.id)}
                       className="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action"
@@ -237,7 +237,7 @@ export default function QuickView() {
                       </span>
                       <span className="icon icon-delete" />
                     </a>
-                    <a
+                    {/* <a
                       href="#compare"
                       data-bs-toggle="offcanvas"
                       aria-controls="offcanvasLeft"
@@ -256,7 +256,7 @@ export default function QuickView() {
                           : "Add to Compare"}
                       </span>
                       <span className="icon icon-check" />
-                    </a>
+                    </a> */}
                     {/* <div className="w-100">
                       <a href="#" className="btns-full">
                         Buy with

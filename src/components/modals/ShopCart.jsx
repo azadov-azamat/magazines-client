@@ -21,6 +21,7 @@ export default function ShopCart() {
   const removeItem = (id) => {
     setCartProducts((pre) => [...pre.filter((elm) => elm.id != id)]);
   };
+console.log("cartProducts", cartProducts);
 
   const addNoteRef = useRef();
   const addGiftRef = useRef();
