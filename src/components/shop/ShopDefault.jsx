@@ -4,11 +4,14 @@ import { useState } from "react";
 import Pagination from "../common/Pagination";
 import ShopFilter from "./ShopFilter";
 import Sorting from "./Sorting";
+import {useProducts} from "@/data/hook/index.js";
 
 export default function ShopDefault() {
   const [gridItems, setGridItems] = useState(4);
-  const [products, setProducts] = useState([]);
+  const [pr, setProducts] = useState([]);
   const [finalSorted, setFinalSorted] = useState([]);
+  const {data: products} = useProducts();
+
   return (
     <>
       <section className="flat-spacing-2">
@@ -42,12 +45,12 @@ export default function ShopDefault() {
             </ul>
             <div className="tf-control-sorting d-flex justify-content-end">
               <div className="tf-dropdown-sort" data-bs-toggle="dropdown">
-                <Sorting setFinalSorted={setFinalSorted} products={products} />
+                <Sorting setFinalSorted={setFinalSorted} products={products?.data || []} />
               </div>
             </div>
           </div>
           <div className="wrapper-control-shop">
-            <ProductGrid allproducts={finalSorted} gridItems={gridItems} />
+            <ProductGrid allproducts={products?.data || []} gridItems={gridItems} />
             {/* pagination */}
             {finalSorted.length ? (
               <ul className="tf-pagination-wrap tf-pagination-list tf-pagination-btn">

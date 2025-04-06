@@ -119,62 +119,62 @@ export default function MobileMenu() {
                 </div>
               </li>
             ))}
-            <li className="nav-mb-item">
-              <a
-                href="https://themeforest.net/item/ecomus-ultimate-html5-template/53417990?s_rank=3"
-                className="mb-menu-link"
-              >
-                Buy now
-              </a>
-            </li>
+            {/*<li className="nav-mb-item">*/}
+            {/*  <a*/}
+            {/*    href="https://themeforest.net/item/ecomus-ultimate-html5-template/53417990?s_rank=3"*/}
+            {/*    className="mb-menu-link"*/}
+            {/*  >*/}
+            {/*    Buy now*/}
+            {/*  </a>*/}
+            {/*</li>*/}
           </ul>
           <div className="mb-other-content">
-            <div className="d-flex group-icon">
-              <Link to={`/wishlist`} className="site-nav-icon">
-                <i className="icon icon-heart" />
-                Wishlist
-              </Link>
-              <Link to={`/home-search`} className="site-nav-icon">
-                <i className="icon icon-search" />
-                Search
-              </Link>
-            </div>
-            <div className="mb-notice">
-              <Link to={`/contact-1`} className="text-need">
-                Need help ?
-              </Link>
-            </div>
-            <ul className="mb-info">
-              <li>
-                Address: 1234 Fashion Street, Suite 567, <br />
-                New York, NY 10001
-              </li>
-              <li>
-                Email: <b>info@fashionshop.com</b>
-              </li>
-              <li>
-                Phone: <b>(212) 555-1234</b>
-              </li>
-            </ul>
+            {/*<div className="d-flex group-icon">*/}
+            {/*  <Link to={`/wishlist`} className="site-nav-icon">*/}
+            {/*    <i className="icon icon-heart" />*/}
+            {/*    Wishlist*/}
+            {/*  </Link>*/}
+            {/*  <Link to={`/home-search`} className="site-nav-icon">*/}
+            {/*    <i className="icon icon-search" />*/}
+            {/*    Search*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
           </div>
         </div>
-        <div className="mb-bottom">
-          <Link to={`/login`} className="site-nav-icon">
-            <i className="icon icon-account" />
-            Login
-          </Link>
-          <div className="bottom-bar-language">
-            <div className="tf-currencies">
-              <CurrencySelect />
-            </div>
-            <div className="tf-languages">
-              <LanguageSelect
-                parentClassName={
-                  "image-select center style-default type-languages"
-                }
-              />
-            </div>
+        <div className="mb-bottom mb-3">
+          <div className="mb-notice">
+            <Link to={`/contact-1`} className="text-need">
+              Need help ?
+            </Link>
           </div>
+          <ul className="mb-info">
+            <li>
+              Address: 1234 Fashion Street, Suite 567, <br/>
+              New York, NY 10001
+            </li>
+            <li>
+              Email: <b>info@fashionshop.com</b>
+            </li>
+            <li>
+              Phone: <a href="tel:+998975077061"><b>(97) 507-70-61</b></a>
+            </li>
+          </ul>
+          {/*<Link to={`/login`} className="site-nav-icon">*/}
+          {/*  <i className="icon icon-account" />*/}
+          {/*  Login*/}
+          {/*</Link>*/}
+          {/*<div className="bottom-bar-language">*/}
+          {/*  <div className="tf-currencies">*/}
+          {/*    <CurrencySelect />*/}
+          {/*  </div>*/}
+          {/*  <div className="tf-languages">*/}
+          {/*    <LanguageSelect*/}
+          {/*      parentClassName={*/}
+          {/*        "image-select center style-default type-languages"*/}
+          {/*      }*/}
+          {/*    />*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
       </div>
     </div>

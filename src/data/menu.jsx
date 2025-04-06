@@ -224,11 +224,11 @@ export const pages = [
         text: "Contact 1",
         className: "menu-link-text link text_black-2",
       },
-      {
-        href: "/contact-2",
-        text: "Contact 2",
-        className: "menu-link-text link text_black-2",
-      },
+      // {
+      //   href: "/contact-2",
+      //   text: "Contact 2",
+      //   className: "menu-link-text link text_black-2",
+      // },
     ],
   },
   {
@@ -560,7 +560,7 @@ export const navItems = [
       { href: "/brands", label: "Brands", demoLabel: true },
       { href: "/brands-v2", label: "Brands V2" },
       { href: "/contact-1", label: "Contact 1" },
-      { href: "/contact-2", label: "Contact 2" },
+      // { href: "/contact-2", label: "Contact 2" },
       { href: "/faq-1", label: "FAQ 01" },
       { href: "/faq-2", label: "FAQ 02" },
       { href: "/our-store", label: "Our store" },

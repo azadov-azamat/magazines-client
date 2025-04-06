@@ -49,10 +49,10 @@ export default function FaqPage1() {
                   >
                     Contact us
                   </Link>
-                  <Link to={`/contact-2`} className="tf-btn btn-line">
-                    Live chat
-                    <i className="icon icon-arrow1-top-left" />
-                  </Link>
+                  {/*<Link to={`/contact-2`} className="tf-btn btn-line">*/}
+                  {/*  Live chat*/}
+                  {/*  <i className="icon icon-arrow1-top-left" />*/}
+                  {/*</Link>*/}
                 </div>
               </div>
             </div>

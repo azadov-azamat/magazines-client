@@ -88,15 +88,15 @@ export default function OurStore() {
                   </li>
                 </ul>
               </div>
-              <div>
-                <Link
-                  to={`/contact-2`}
-                  className="tf-btn btn-outline-dark radius-3"
-                >
-                  <span>Get Directions</span>
-                  <i className="icon icon-arrow-right" />
-                </Link>
-              </div>
+              {/*<div>*/}
+              {/*  <Link*/}
+              {/*    to={`/contact-2`}*/}
+              {/*    className="tf-btn btn-outline-dark radius-3"*/}
+              {/*  >*/}
+              {/*    <span>Get Directions</span>*/}
+              {/*    <i className="icon icon-arrow-right" />*/}
+              {/*  </Link>*/}
+              {/*</div>*/}
             </div>
           </div>
         </div>
@@ -282,15 +282,15 @@ export default function OurStore() {
                   </li>
                 </ul>
               </div>
-              <div>
-                <Link
-                  to={`/contact-2`}
-                  className="tf-btn btn-outline-dark radius-3"
-                >
-                  <span>Get Directions</span>
-                  <i className="icon icon-arrow-right" />
-                </Link>
-              </div>
+              {/*<div>*/}
+              {/*  <Link*/}
+              {/*    to={`/contact-2`}*/}
+              {/*    className="tf-btn btn-outline-dark radius-3"*/}
+              {/*  >*/}
+              {/*    <span>Get Directions</span>*/}
+              {/*    <i className="icon icon-arrow-right" />*/}
+              {/*  </Link>*/}
+              {/*</div>*/}
             </div>
           </div>
         </div>

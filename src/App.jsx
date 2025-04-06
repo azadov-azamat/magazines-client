@@ -92,7 +92,7 @@ import AboutUsPage from "./pages/otherPages/about-us";
 import BrandsPage from "./pages/otherPages/brands";
 import BrandsPage2 from "./pages/otherPages/brands-v2";
 import ContactPage1 from "./pages/otherPages/contact-1";
-import ContactPage2 from "./pages/otherPages/contact-2";
+// import ContactPage2 from "./pages/otherPages/contact-2";
 import FaqPage1 from "./pages/otherPages/faq-1";
 import FaqPage2 from "./pages/otherPages/faq-2";
 import OurStorePage from "./pages/otherPages/our-store";
@@ -472,7 +472,7 @@ function App() {
               <Route path="brands" element={<BrandsPage />} />
               <Route path="brands-v2" element={<BrandsPage2 />} />
               <Route path="contact-1" element={<ContactPage1 />} />
-              <Route path="contact-2" element={<ContactPage2 />} />
+              {/*<Route path="contact-2" element={<ContactPage2 />} />*/}
               <Route path="faq-1" element={<FaqPage1 />} />
               <Route path="faq-2" element={<FaqPage2 />} />
               <Route path="our-store" element={<OurStorePage />} />

@@ -3,9 +3,9 @@ import React from "react";
 import { useContextElement } from "@/context/Context";
 
 import { Link } from "react-router-dom";
-import CountdownComponent from "../common/Countdown";
+// import CountdownComponent from "../common/Countdown";
 export default function Productcart2({ product }) {
-  const [currentImage, setCurrentImage] = useState(product.imgSrc);
+  const [currentImage, setCurrentImage] = useState(product?.productImgUrl);
   const { setQuickViewItem } = useContextElement();
   const {
     setQuickAddItem,
@@ -15,12 +15,12 @@ export default function Productcart2({ product }) {
     isAddedtoCompareItem,
   } = useContextElement();
   return (
-    <div className="card-product style-2" key={product.id}>
+    <div className="card-product style-2" key={product?.id}>
       <div className="card-product-wrapper">
-        <Link to={`/product-detail/${product.id}`} className="product-img">
+        <Link to={`/product-detail/${product?.id}`} className="product-img">
           <img
             className="lazyload img-product"
-            data-src={product.imgSrc}
+            data-src={product?.productImgUrl}
             src={currentImage}
             alt="image-product"
             width="720"
@@ -28,8 +28,8 @@ export default function Productcart2({ product }) {
           />
           <img
             className="lazyload img-hover"
-            data-src={product.imgHoverSrc}
-            src={product.imgHoverSrc}
+            data-src={product?.productImgUrl}
+            src={product?.productImgUrl}
             alt="image-product"
             width="720"
             height="1005"
@@ -37,16 +37,16 @@ export default function Productcart2({ product }) {
         </Link>
         <div className="list-product-btn column-left">
           <a
-            onClick={() => addToWishlist(product.id)}
+            onClick={() => addToWishlist(product?.id)}
             className="box-icon wishlist bg_white btn-icon-action"
           >
             <span
               className={`icon icon-heart ${
-                isAddedtoWishlist(product.id) ? "added" : ""
+                isAddedtoWishlist(product?.id) ? "added" : ""
               }`}
             ></span>
             <span className="tooltip">
-              {isAddedtoWishlist(product.id)
+              {isAddedtoWishlist(product?.id)
                 ? "Already Wishlisted"
                 : "Add to Wishlist"}
             </span>
@@ -56,17 +56,17 @@ export default function Productcart2({ product }) {
             href="#compare"
             data-bs-toggle="offcanvas"
             aria-controls="offcanvasLeft"
-            onClick={() => addToCompareItem(product.id)}
+            onClick={() => addToCompareItem(product?.id)}
             className="box-icon bg_white compare btn-icon-action"
           >
             <span
               className={`icon icon-compare ${
-                isAddedtoCompareItem(product.id) ? "added" : ""
+                isAddedtoCompareItem(product?.id) ? "added" : ""
               }`}
             ></span>
             <span className="tooltip">
               {" "}
-              {isAddedtoCompareItem(product.id)
+              {isAddedtoCompareItem(product?.id)
                 ? "Already Compared"
                 : "Add to Compare"}
             </span>
@@ -76,7 +76,7 @@ export default function Productcart2({ product }) {
         <div className="list-product-btn absolute-3">
           <a
             href="#quick_add"
-            onClick={() => setQuickAddItem(product.id)}
+            onClick={() => setQuickAddItem(product?.id)}
             data-bs-toggle="modal"
             className="box-icon quick-add style-2"
           >
@@ -93,55 +93,55 @@ export default function Productcart2({ product }) {
             <span className="text">QUICK VIEW</span>
           </a>
         </div>
-        {product.sizes && (
-          <div className="size-list style-2">
-            {product.sizes.map((size) => (
-              <span key={size}>{size}</span>
-            ))}
-          </div>
-        )}
-        {product.discount && (
+        {/*{product?.sizes && (*/}
+        {/*  <div className="size-list style-2">*/}
+        {/*    {product?.sizes.map((size) => (*/}
+        {/*      <span key={size}>{size}</span>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*)}*/}
+        {Number(product?.productDiscPrice) && (
           <div className="on-sale-wrap text-end">
-            <div className="on-sale-item">{product.discount}</div>
+            <div className="on-sale-item">{product?.productDiscPrice}</div>
           </div>
         )}
-        {product.countdown && (
-          <div className="countdown-box">
-            <div className="js-countdown">
-              <CountdownComponent labels={product.countdown.labels} />
-            </div>
-          </div>
-        )}
+        {/*{product?.countdown && (*/}
+        {/*  <div className="countdown-box">*/}
+        {/*    <div className="js-countdown">*/}
+        {/*      <CountdownComponent labels={product?.countdown.labels} />*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*)}*/}
       </div>
       <div className="card-product-info">
-        <Link to={`/product-detail/${product.id}`} className="title link">
-          {product.title}
+        <Link to={`/product-detail/${product?.id}`} className="title link">
+          {product?.productName}
         </Link>
-        <span className="price">${product.price.toFixed(2)}</span>
-        {product.colors && (
-          <ul className="list-color-product">
-            {product.colors.map((color) => (
-              <li
-                className={`list-color-item color-swatch ${
-                  currentImage == color.imgSrc ? "active" : ""
-                }  `}
-                onMouseOver={() => setCurrentImage(color.imgSrc)}
-                key={color.name}
-              >
-                <span className="tooltip">{color.name}</span>
-                <span className={`swatch-value ${color.colorClass}`} />
-                <img
-                  className="lazyload"
-                  data-src={color.imgSrc}
-                  src={color.imgSrc}
-                  alt="image-product"
-                  width={720}
-                  height={1005}
-                />
-              </li>
-            ))}
-          </ul>
-        )}
+        <span className="price">${product?.productPrice}</span>
+        {/*{product?.colors && (*/}
+        {/*  <ul className="list-color-product">*/}
+        {/*    {product?.colors.map((color) => (*/}
+        {/*      <li*/}
+        {/*        className={`list-color-item color-swatch ${*/}
+        {/*          currentImage == color.imgSrc ? "active" : ""*/}
+        {/*        }  `}*/}
+        {/*        onMouseOver={() => setCurrentImage(color.imgSrc)}*/}
+        {/*        key={color.name}*/}
+        {/*      >*/}
+        {/*        <span className="tooltip">{color.name}</span>*/}
+        {/*        <span className={`swatch-value ${color.colorClass}`} />*/}
+        {/*        <img*/}
+        {/*          className="lazyload"*/}
+        {/*          data-src={color.imgSrc}*/}
+        {/*          src={color.imgSrc}*/}
+        {/*          alt="image-product"*/}
+        {/*          width={720}*/}
+        {/*          height={1005}*/}
+        {/*        />*/}
+        {/*      </li>*/}
+        {/*    ))}*/}
+        {/*  </ul>*/}
+        {/*)}*/}
       </div>
     </div>
   );
