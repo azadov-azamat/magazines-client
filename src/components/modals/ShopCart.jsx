@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {useProducts} from "@/data/hook/index.js";
 export default function ShopCart() {
   const { cartProducts, totalPrice, setCartProducts, setQuickViewItem } =
     useContextElement();
+  const {data: products} = useProducts();
+
   const setQuantity = (id, quantity) => {
     if (quantity >= 1) {
       const item = cartProducts.filter((elm) => elm.id == id)[0];
@@ -74,7 +77,7 @@ console.log("cartProducts", cartProducts);
                           <Link to={`/product-detail/${elm.id}`}>
                             <img
                               alt="image"
-                              src={elm.imgSrc}
+                              src={elm.productImgUrl}
                               width={668}
                               height={932}
                               style={{ objectFit: "cover" }}
@@ -86,11 +89,11 @@ console.log("cartProducts", cartProducts);
                             className="title link"
                             to={`/product-detail/${elm.id}`}
                           >
-                            {elm.title}
+                            {elm.productName}
                           </Link>
-                          <div className="meta-variant">Light gray</div>
+                          <div className="meta-variant">{elm.productModel}</div>
                           <div className="price fw-6">
-                            ${elm.price?.toFixed(2)}
+                            ${elm.productPrice}
                           </div>
                           <div className="tf-mini-cart-btns">
                             <div className="wg-quantity small">
@@ -168,14 +171,14 @@ console.log("cartProducts", cartProducts);
                       }}
                       className="swiper tf-cart-slide"
                     >
-                      {products1.slice(0, 2).map((elm, i) => (
+                      {products?.data?.slice(0, 2).map((elm, i) => (
                         <SwiperSlide key={i} className="swiper-slide">
                           <div className="tf-minicart-recommendations-item">
                             <div className="tf-minicart-recommendations-item-image">
                               <Link to={`/product-detail/${elm.id}`}>
                                 <img
                                   alt="image"
-                                  src={elm.imgSrc}
+                                  src={elm.productImgUrl}
                                   width={720}
                                   height={1005}
                                 />
@@ -186,10 +189,10 @@ console.log("cartProducts", cartProducts);
                                 className="title"
                                 to={`/product-detail/${1}`}
                               >
-                                {elm.title}
+                                {elm.productName}
                               </Link>
                               <div className="price">
-                                ${elm.price.toFixed(2)}
+                                ${elm.productPrice}
                               </div>
                             </div>
                             <div className="tf-minicart-recommendations-item-quickview">

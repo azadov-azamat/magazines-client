@@ -78,7 +78,7 @@ export default function DetailsOuterZoom({ product }) {
                   </div>
                   <div className="tf-product-info-price">
                     <div className="price-on-sale">
-                      {product?.productCurrency === 'dollar' && '$'}{product?.productMainPrice}
+                      {product?.productCurrency === 'dollar' && '$'}{product?.productPrice}
                     </div>
 
                     {/* <div className="compare-at-price">
@@ -198,7 +198,7 @@ export default function DetailsOuterZoom({ product }) {
                           -{" "}
                         </span>
                         <span className="tf-qty-price">
-                          {product?.productCurrency === 'dollar' && '$'}{quantity * Number(product?.productMainPrice)}
+                          {product?.productCurrency === 'dollar' && '$'}{quantity * Number(product?.productPrice)}
                         </span>
                       </a>
                       <a

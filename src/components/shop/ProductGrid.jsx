@@ -6,7 +6,7 @@ import Productcard2 from "../shopCards/Productcart2.jsx";
 
 export default function ProductGrid({
   gridItems = 4,
-  allproducts = products1,
+  allproducts,
 }) {
 
   return (
@@ -21,15 +21,15 @@ export default function ProductGrid({
       >
         {allproducts.length} product(s) found
       </div>
-      {gridItems == 1 ? (
-        <div className="grid-layout" data-grid="grid-list">
-          {/* card product 1 */}
-         {allproducts.map((elm, i) => (
-            <Productcard2 product={elm} key={i} />
-          ))}
-          {/* card product 2 */}
-        </div>
-      ) : (
+      {/*{gridItems == 1 ? (*/}
+      {/*  <div className="grid-layout" data-grid="grid-list">*/}
+      {/*    /!* card product 1 *!/*/}
+      {/*   {allproducts.map((elm, i) => (*/}
+      {/*      <Productcard2 product={elm} key={i} />*/}
+      {/*    ))}*/}
+      {/*    /!* card product 2 *!/*/}
+      {/*  </div>*/}
+      {/*) : (*/}
         <div
           className="grid-layout wrapper-shop"
           data-grid={`grid-${gridItems}`}
@@ -39,7 +39,7 @@ export default function ProductGrid({
             <ProductCard product={elm} key={i} />
           ))}
         </div>
-      )}
+      {/*)}*/}
     </>
   );
 }

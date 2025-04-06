@@ -6,6 +6,8 @@ import { useContextElement } from "@/context/Context";
 
 import { allProducts } from "@/data/products";
 import { colors, sizeOptions } from "@/data/singleProductOptions";
+import {useProductById} from "@/data/hook/index.js";
+
 export default function QuickAdd() {
   const {
     quickAddItem,
@@ -14,15 +16,16 @@ export default function QuickAdd() {
     addToCompareItem,
     isAddedtoCompareItem,
   } = useContextElement();
-  const [item, setItem] = useState(allProducts[0]);
+  const {data: currentProduct} = useProductById(quickAddItem);
+  const [item, setItem] = useState();
+  const [quantity, setQuantity] = useState(1);
+
   useEffect(() => {
-    const filtered = allProducts.filter((el) => el.id == quickAddItem);
-    if (filtered) {
-      setItem(filtered[0]);
+    // const filtered = allProducts.filter((el) => el.id == quickAddItem);
+    if (currentProduct && currentProduct?.data) {
+      setItem(currentProduct?.data);
     }
-  }, [quickAddItem]);
-  const [currentColor, setCurrentColor] = useState(colors[0]);
-  const [currentSize, setCurrentSize] = useState(sizeOptions[0]);
+  }, [currentProduct]);
 
   return (
     <div className="modal fade modalDemo" id="quick_add">
@@ -40,121 +43,123 @@ export default function QuickAdd() {
                 <img
                   alt="image"
                   style={{ objectFit: "contain" }}
-                  src={item.imgSrc}
+                  src={item?.productImgUrl}
                   width={720}
                   height={1005}
                 />
               </div>
               <div className="content">
-                <Link to={`/product-detail/${item.id}`}>{item.title}</Link>
+                <Link to={`/product-detail/${item?.id}`}>{item?.title}</Link>
                 <div className="tf-product-info-price">
-                  <div className="price">${item.price.toFixed(2)}</div>
+                  <div className="price">${item?.productPrice}</div>
                 </div>
               </div>
             </div>
             <div className="tf-product-info-variant-picker mb_15">
               <div className="variant-picker-item">
                 <div className="variant-picker-label">
-                  Color:
+                  Description:
                   <span className="fw-6 variant-picker-label-value">
-                    {currentColor.value}
+                    {item?.productModel}
                   </span>
                 </div>
-                <form className="variant-picker-values">
-                  {colors.map((color) => (
-                    <React.Fragment key={color.id}>
-                      <input
-                        type="radio"
-                        name="color1"
-                        readOnly
-                        checked={currentColor == color}
-                      />
-                      <label
-                        onClick={() => setCurrentColor(color)}
-                        className="hover-tooltip radius-60"
-                        data-value={color.value}
-                      >
-                        <span className={`btn-checkbox ${color.className}`} />
-                        <span className="tooltip">{color.value}</span>
-                      </label>
-                    </React.Fragment>
-                  ))}
-                </form>
+                {/*<form className="variant-picker-values">*/}
+                {/*  {colors.map((color) => (*/}
+                {/*    <React.Fragment key={color.id}>*/}
+                {/*      <input*/}
+                {/*        type="radio"*/}
+                {/*        name="color1"*/}
+                {/*        readOnly*/}
+                {/*        checked={currentColor == color}*/}
+                {/*      />*/}
+                {/*      <label*/}
+                {/*        onClick={() => setCurrentColor(color)}*/}
+                {/*        className="hover-tooltip radius-60"*/}
+                {/*        data-value={color.value}*/}
+                {/*      >*/}
+                {/*        <span className={`btn-checkbox ${color.className}`} />*/}
+                {/*        <span className="tooltip">{color.value}</span>*/}
+                {/*      </label>*/}
+                {/*    </React.Fragment>*/}
+                {/*  ))}*/}
+                {/*</form>*/}
               </div>
-              <div className="variant-picker-item">
-                <div className="variant-picker-label">
-                  Size:{" "}
-                  <span className="fw-6 variant-picker-label-value">
-                    {" "}
-                    {currentSize.value}
-                  </span>
-                </div>
-                <form className="variant-picker-values">
-                  {sizeOptions.map((size) => (
-                    <React.Fragment key={size.id}>
-                      <input
-                        type="radio"
-                        name="size1"
-                        readOnly
-                        checked={currentSize == size}
-                      />
-                      <label
-                        onClick={() => setCurrentSize(size)}
-                        className="style-text"
-                        data-value={size.value}
-                      >
-                        <p>{size.value}</p>
-                      </label>
-                    </React.Fragment>
-                  ))}
-                </form>
-              </div>
+              {/*<div className="variant-picker-item">*/}
+              {/*  <div className="variant-picker-label">*/}
+              {/*    Size:{" "}*/}
+              {/*    <span className="fw-6 variant-picker-label-value">*/}
+              {/*      {" "}*/}
+              {/*      {currentSize.value}*/}
+              {/*    </span>*/}
+              {/*  </div>*/}
+              {/*  <form className="variant-picker-values">*/}
+              {/*    {sizeOptions.map((size) => (*/}
+              {/*      <React.Fragment key={size.id}>*/}
+              {/*        <input*/}
+              {/*          type="radio"*/}
+              {/*          name="size1"*/}
+              {/*          readOnly*/}
+              {/*          checked={currentSize == size}*/}
+              {/*        />*/}
+              {/*        <label*/}
+              {/*          onClick={() => setCurrentSize(size)}*/}
+              {/*          className="style-text"*/}
+              {/*          data-value={size.value}*/}
+              {/*        >*/}
+              {/*          <p>{size.value}</p>*/}
+              {/*        </label>*/}
+              {/*      </React.Fragment>*/}
+              {/*    ))}*/}
+              {/*  </form>*/}
+              {/*</div>*/}
             </div>
             <div className="tf-product-info-quantity mb_15">
               <div className="quantity-title fw-6">Quantity</div>
-              <Quantity />
+              <Quantity setQuantity={setQuantity}/>
             </div>
             <div className="tf-product-info-buy-button">
               <form onSubmit={(e) => e.preventDefault()} className="">
                 <a
                   className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
-                  onClick={() => addProductToCart(item.id)}
+                  onClick={() => addProductToCart(item?.id)}
                 >
                   <span>
-                    {isAddedToCartProducts(item.id)
+                    {isAddedToCartProducts(item?.id)
                       ? "Already Added - "
                       : "Add to cart - "}
                   </span>
-                  <span className="tf-qty-price">${item.price.toFixed(2)}</span>
+                  <span className="tf-qty-price">
+                   {item?.productCurrency === 'dollar' && '$'}{quantity * Number(item?.productPrice)}
+                  </span>
                 </a>
-                <div className="tf-product-btn-wishlist btn-icon-action">
-                  <i className="icon-heart" />
-                  <i className="icon-delete" />
-                </div>
-                <a
-                  href="#compare"
-                  data-bs-toggle="offcanvas"
-                  aria-controls="offcanvasLeft"
-                  onClick={() => addToCompareItem(item.id)}
-                  className="tf-product-btn-wishlist box-icon bg_white compare btn-icon-action"
-                >
-                  <span className="icon icon-compare" />
-                  <span className="icon icon-check" />
-                </a>
-                <div className="w-100">
-                  <a href="#" className="btns-full">
-                    Buy with
-                    <img
-                      alt="image"
-                      src="/images/payments/paypal.png"
-                      width={64}
-                      height={18}
-                    />
-                  </a>
-                  <a href="#" className="payment-more-option">
-                    More payment options
-                  </a>
-                </div>
+                {/*<div className="tf-product-btn-wishlist btn-icon-action">*/}
+                {/*  <i className="icon-heart" />*/}
+                {/*  <i className="icon-delete" />*/}
+                {/*</div>*/}
+                {/*<a*/}
+                {/*  href="#compare"*/}
+                {/*  data-bs-toggle="offcanvas"*/}
+                {/*  aria-controls="offcanvasLeft"*/}
+                {/*  onClick={() => addToCompareItem(item?.id)}*/}
+                {/*  className="tf-product-btn-wishlist box-icon bg_white compare btn-icon-action"*/}
+                {/*>*/}
+                {/*  <span className="icon icon-compare" />*/}
+                {/*  <span className="icon icon-check" />*/}
+                {/*</a>*/}
+                {/*<div className="w-100">*/}
+                {/*  <a href="#" className="btns-full">*/}
+                {/*    Buy with*/}
+                {/*    <img*/}
+                {/*      alt="image"*/}
+                {/*      src="/images/payments/paypal.png"*/}
+                {/*      width={64}*/}
+                {/*      height={18}*/}
+                {/*    />*/}
+                {/*  </a>*/}
+                {/*  <a href="#" className="payment-more-option">*/}
+                {/*    More payment options*/}
+                {/*  </a>*/}
+                {/*</div>*/}
               </form>
             </div>
           </div>

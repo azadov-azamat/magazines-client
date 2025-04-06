@@ -122,7 +122,7 @@ export default function QuickView() {
                   </div>
                 </div> */}
                 <div className="tf-product-info-price">
-                  <div className="price">{quickViewItem?.productCurrency === 'dollar' && '$'}{quickViewItem?.productMainPrice}</div>
+                  <div className="price">{quickViewItem?.productCurrency === 'dollar' && '$'}{quickViewItem?.productPrice}</div>
                 </div>
                 <div className="tf-product-description mb-0">
                   <p>
@@ -217,7 +217,7 @@ export default function QuickView() {
                           : "Add to cart - "}
                       </span>
                       <span className="tf-qty-price">
-                        {quickViewItem?.productCurrency === 'dollar' && '$'}{quantity * Number(quickViewItem?.productMainPrice)}
+                        {quickViewItem?.productCurrency === 'dollar' && '$'}{quantity * Number(quickViewItem?.productPrice)}
                       </span>
                     </a>
 

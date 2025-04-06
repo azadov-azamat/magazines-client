@@ -125,7 +125,7 @@ export const ProductCard = ({ product }) => {
         <Link to={`/product-detail/${product.id}`} className="title link">
           {product.productName}
         </Link>
-        <span className="price">${product.productMainPrice}</span>
+        <span className="price">${product.productPrice}</span>
         {/* {product.colors && (
           <ul className="list-color-product">
             {product.colors.map((color, i) => (

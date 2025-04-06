@@ -20,7 +20,7 @@ export default function Context({ children }) {
 
   useEffect(() => {
     const subtotal = cartProducts.reduce((accumulator, product) => {
-      return accumulator + product.quantity * product.price;
+      return accumulator + product.quantity * Number(product.productPrice);
     }, 0);
     setTotalPrice(subtotal);
   }, [cartProducts]);
