@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { tfLoopItems } from "@/data/products";
+import { useCategories, useProducts } from "@/data/hook";
+import { useDebounce } from "@/utlis/hooks";
 export default function SearchModal() {
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const {data: categories} = useCategories();
+
+  const [searchText, setSearchText] = useState("");
+  const debouncedSearch = useDebounce(searchText, 500); // 500ms delay
+
+  const {data: products} = useProducts();
+
+  const handleCategoryClick = (categoryId) => {
+    const currentParams = Object.fromEntries(searchParams.entries());
+    setSearchParams({
+      ...currentParams,
+      categoryId: categoryId,
+    });
+  };
+
+  useEffect(()=> {
+    const currentParams = Object.fromEntries(searchParams.entries());
+    setSearchParams({
+      ...currentParams,
+      search: debouncedSearch,
+    });
+  }, [debouncedSearch])
+
   return (
     <div className="offcanvas offcanvas-end canvas-search" id="canvasSearch">
       <div className="canvas-wrapper">
@@ -18,7 +45,7 @@ export default function SearchModal() {
             </div>
           </div>
           <div className="tf-search-sticky">
-            <form
+          <form
               onSubmit={(e) => e.preventDefault()}
               className="tf-mini-search-frm"
             >
@@ -26,15 +53,14 @@ export default function SearchModal() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className=""
                   name="text"
-                  tabIndex={0}
-                  defaultValue=""
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
                   aria-required="true"
                   required
                 />
               </fieldset>
-              <button className="" type="submit">
+              <button type="submit">
                 <i className="icon-search" />
               </button>
             </form>
@@ -46,26 +72,19 @@ export default function SearchModal() {
               <div className="tf-col-quicklink">
                 <div className="tf-search-content-title fw-5">Quick link</div>
                 <ul className="tf-quicklink-list">
-                  <li className="tf-quicklink-item">
-                    <Link to={`/shop-default`} className="">
-                      Fashion
-                    </Link>
+                {categories?.data.map((category) => (
+                  <li key={category.id} className={`tf-quicklink-item`}>
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleCategoryClick(category.id);
+                          }}
+                        >
+                        <span>{category.categoryName}</span>
+                      </a>
                   </li>
-                  <li className="tf-quicklink-item">
-                    <Link to={`/shop-default`} className="">
-                      Men
-                    </Link>
-                  </li>
-                  <li className="tf-quicklink-item">
-                    <Link to={`/shop-default`} className="">
-                      Women
-                    </Link>
-                  </li>
-                  <li className="tf-quicklink-item">
-                    <Link to={`/shop-default`} className="">
-                      Accessories
-                    </Link>
-                  </li>
+                ))}
                 </ul>
               </div>
               <div className="tf-col-content">
@@ -73,35 +92,35 @@ export default function SearchModal() {
                   Need some inspiration?
                 </div>
                 <div className="tf-search-hidden-inner">
-                  {tfLoopItems.map((product, index) => (
+                  {products?.data.slice(0, 3).map((product, index) => (
                     <div className="tf-loop-item" key={index}>
                       <div className="image">
                         <Link to={`/product-detail/${product.id}`}>
                           <img
-                            alt={product.imgAlt}
-                            src={product.imgSrc}
-                            width={product.imgWidth}
-                            height={product.imgHeight}
+                            alt={product.productName}
+                            src={product.productImgUrl}
+                            width={20}
+                            height={20}
                           />
                         </Link>
                       </div>
                       <div className="content">
                         <Link to={`/product-detail/${product.id}`}>
-                          {product.title}
+                          {product.productName}
                         </Link>
                         <div className="tf-product-info-price">
-                          {product.isOnSale ? (
+                          {Number(product.productDiscPrice) ? (
                             <>
                               <div className="compare-at-price">
-                                ${product.compareAtPrice.toFixed(2)}
+                              {product?.productCurrency === 'dollar' && '$'}{product.productPrice}
                               </div>
                               <div className="price-on-sale fw-6">
-                                ${product.salePrice.toFixed(2)}
+                              {product?.productCurrency === 'dollar' && '$'}{product.productDiscPrice}
                               </div>
                             </>
                           ) : (
                             <div className="price fw-6">
-                              ${product.price.toFixed(2)}
+                              {product?.productCurrency === 'dollar' && '$'}{product.productPrice}
                             </div>
                           )}
                         </div>
