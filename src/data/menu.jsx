@@ -351,6 +351,7 @@ export const navItems = [
   {
     id: "dropdown-menu-one",
     label: "Home",
+    href: "/",
     links: [
       { href: "/", label: "Home Fashion 01" },
     ],

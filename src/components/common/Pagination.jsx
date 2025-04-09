@@ -9,9 +9,13 @@ export default function Pagination({ totalCount = 1052, limit = 10 }) {
     const totalPages = Math.ceil(totalCount / limit);
 
     useEffect(() => {
-        setSearchParams({ page: activePage });
-    }, [activePage, setSearchParams]);
-
+        const currentParams = Object.fromEntries(searchParams.entries());
+        setSearchParams({
+          ...currentParams,
+          page: activePage,
+        });
+      }, [activePage, setSearchParams]);
+      
     const handlePageClick = (pageNumber) => {
         setActivePage(pageNumber);
     };

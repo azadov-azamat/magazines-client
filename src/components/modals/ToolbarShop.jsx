@@ -65,7 +65,7 @@ export default function ToolbarShop() {
   // ];
 
   const { data: categories } = useCategories();
-  console.log(categories);
+  
   return (
     <div
       className="offcanvas offcanvas-start canvas-mb toolbar-shop-mobile"
@@ -171,7 +171,7 @@ export default function ToolbarShop() {
                   </>
                 ) : (
                   <Link
-                    to={`/shop-default`}
+                    to={`/shop-default?categoryId=${category.id}`}
                     className="tf-category-link mb-menu-link"
                   >
                     <div className="image">

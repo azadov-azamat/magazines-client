@@ -44,7 +44,20 @@ export default function MobileMenu() {
           <ul className="nav-ul-mb" id="wrapper-menu-navigation">
             {navItems.map((item, i) => (
               <li key={i} className="nav-mb-item">
-                <a
+                {
+                  item.href ? (
+                    <Link
+                    to={item.href}
+                    aria-controls={item.id}
+                    className={`sub-nav-link ${
+                              isMenuActive(item) ? "activeMenu" : ""
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                  ) : (
+                 <>
+                    <a
                   href={`#${item.id}`}
                   className={`collapsed mb-menu-link current ${
                     isMenuActive(item) ? "activeMenu" : ""
@@ -117,6 +130,10 @@ export default function MobileMenu() {
                     ))}
                   </ul>
                 </div>
+                 </>   
+                  )
+                }
+                
               </li>
             ))}
             {/*<li className="nav-mb-item">*/}

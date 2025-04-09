@@ -10,17 +10,22 @@ import {useSearchParams} from "react-router-dom";
 export default function ShopDefault() {
   const [searchParams] = useSearchParams();
   const currentPage = searchParams.get("page") || "1";
+  const categoryId = searchParams.get("categoryId");
 
   const [gridItems, setGridItems] = useState(4);
   const [pr, setProducts] = useState([]);
   const [finalSorted, setFinalSorted] = useState([]);
   const [page, setPage] = useState(1);
 
-  const {data: products} = useProducts(page);
+  const {data: products} = useProducts(page, 10, 'createdAt', JSON.stringify(categoryId ? {categoryId} : {}));
 
   useEffect(() => {
     setPage(Number(currentPage))
   }, [currentPage]);
+
+  useEffect(() => {
+    
+  }, [categoryId]);
 
   return (
     <>
