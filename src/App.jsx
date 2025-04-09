@@ -32,11 +32,11 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage1 from "./pages/page";
 import WOW from "@/utlis/wow";
 import ShopDefaultPage from "./pages/shop/shop-default";
-import ShopLestSidebarPage from "./pages/shop/shop-left-sidebar";
-import ShopRightSidebarPage from "./pages/shop/shop-right-sidebar";
-import ShopFullwisthPage from "./pages/shop/shop-fullwidth";
-import ShopCollectionSubPage from "./pages/shop/shop-collection-sub";
-import ShopCollectionPage from "./pages/shop/shop-collection-list";
+// import ShopLestSidebarPage from "./pages/shop/shop-left-sidebar";
+// import ShopRightSidebarPage from "./pages/shop/shop-right-sidebar";
+// import ShopFullwisthPage from "./pages/shop/shop-fullwidth";
+// import ShopCollectionSubPage from "./pages/shop/shop-collection-sub";
+// import ShopCollectionPage from "./pages/shop/shop-collection-list";
 import ShopLinkPage from "./pages/shop/shop-link";
 import ShopLoadmorePage from "./pages/shop/shop-loadmore";
 import ShopInfiniteScrollingPage from "./pages/shop/shop-infinite-scrolling";
@@ -256,23 +256,23 @@ function App() {
             <Route path="/">
               <Route index element={<HomePage1 />} />
               <Route path="shop-default" element={<ShopDefaultPage />} />
-              <Route
+              {/* <Route
                 path="shop-left-sidebar"
                 element={<ShopLestSidebarPage />}
-              />
-              <Route
+              /> */}
+              {/* <Route
                 path="shop-right-sidebar"
                 element={<ShopRightSidebarPage />}
-              />
-              <Route path="shop-fullwidth" element={<ShopFullwisthPage />} />
-              <Route
+              /> */}
+              {/* <Route path="shop-fullwidth" element={<ShopFullwisthPage />} /> */}
+              {/* <Route
                 path="shop-collection-sub"
                 element={<ShopCollectionSubPage />}
               />
               <Route
                 path="shop-collection-list"
                 element={<ShopCollectionPage />}
-              />
+              /> */}
               <Route path="shop-link" element={<ShopLinkPage />} />
               <Route path="shop-loadmore" element={<ShopLoadmorePage />} />
               <Route
@@ -294,13 +294,13 @@ function App() {
               <Route path="product-style-05" element={<ProductStylePage5 />} />
               <Route path="product-style-06" element={<ProductStylePage6 />} />
               <Route path="product-style-07" element={<ProductStylePage7 />} />
-              <Route path="compare" element={<ComparePage />} />
+              {/* <Route path="compare" element={<ComparePage />} /> */}
               <Route
                 path="product-detail/:id"
                 element={<ProductDetailPage />}
               />
-              <Route path="product-grid-1/:id" element={<ProductGridPage1 />} />
-              <Route path="product-grid-2/:id" element={<ProductGridPage2 />} />
+              {/* <Route path="product-grid-1/:id" element={<ProductGridPage1 />} /> */}
+              {/* <Route path="product-grid-2/:id" element={<ProductGridPage2 />} /> */}
               <Route
                 path="product-stacked/:id"
                 element={<ProductStackedPage />}

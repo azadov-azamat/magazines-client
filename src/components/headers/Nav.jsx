@@ -137,7 +137,7 @@ export default function Nav({ isArrow = true, textColor = "", Linkfs = "" }) {
                   <div className="mega-menu-item">
                     <div className="menu-heading">{menu.heading}</div>
                     <ul className="menu-list">
-                      {menu.links.map((link, linkIndex) => (
+                      {/* {menu.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
                           <Link
                             to={link.href}
@@ -148,7 +148,7 @@ export default function Nav({ isArrow = true, textColor = "", Linkfs = "" }) {
                             {link.text}
                           </Link>
                         </li>
-                      ))}
+                      ))} */}
                     </ul>
                   </div>
                 </div>
