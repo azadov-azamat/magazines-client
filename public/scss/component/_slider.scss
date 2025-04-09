@@ -11,7 +11,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    // top: 50%;
+    bottom: -50px;
     transform: translateY(-50%);
     .heading,
     h1 {

@@ -6,8 +6,8 @@ import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "My Account Edit || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate React Nextjs Ecommerce Template",
+  title: "My Account Edit || Market Lochin - Ultimate Reactjs Ecommerce Template",
+  description: "Market Lochin - Ultimate React Nextjs Ecommerce Template",
 };
 export default function MyAccountEditPage() {
   return (

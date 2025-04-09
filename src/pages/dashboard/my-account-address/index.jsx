@@ -6,8 +6,8 @@ import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "My Accout Address || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate Reactjs Ecommerce Template",
+  title: "My Accout Address || Market Lochin - Ultimate Reactjs Ecommerce Template",
+  description: "Market Lochin - Ultimate Reactjs Ecommerce Template",
 };
 export default function MyAccountAddedssPage() {
   return (

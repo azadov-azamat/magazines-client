@@ -5,8 +5,8 @@ import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Brands 2 || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate Reactjs Ecommerce Template",
+  title: "Brands 2 || Market Lochin - Ultimate Reactjs Ecommerce Template",
+  description: "Market Lochin - Ultimate Reactjs Ecommerce Template",
 };
 export default function BrandsPage2() {
   return (

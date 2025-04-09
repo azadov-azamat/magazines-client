@@ -328,11 +328,11 @@ export const pages = [
         text: "My account details",
         className: "menu-link-text link text_black-2",
       },
-      {
-        href: "/my-account-wishlist",
-        text: "My wishlist",
-        className: "menu-link-text link text_black-2",
-      },
+      // {
+      //   href: "/my-account-wishlist",
+      //   text: "My wishlist",
+      //   className: "menu-link-text link text_black-2",
+      // },
     ],
   },
   {
@@ -568,7 +568,7 @@ export const navItems = [
       { href: "/timeline", label: "Timeline", demoLabel: true },
       { href: "/view-cart", label: "View cart" },
       { href: "/my-account", label: "My account" },
-      { href: "/wishlist", label: "Wishlist" },
+      // { href: "/wishlist", label: "Wishlist" },
       { href: "/terms", label: "Terms and conditions" },
       { href: "/page-not-found", label: "404 page" },
     ],

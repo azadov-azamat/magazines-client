@@ -7,8 +7,8 @@ import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Compare || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate Reactjs Ecommerce Template",
+  title: "Compare || Market Lochin - Ultimate Reactjs Ecommerce Template",
+  description: "Market Lochin - Ultimate Reactjs Ecommerce Template",
 };
 export default function ComparePage() {
   return (

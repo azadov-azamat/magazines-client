@@ -32,13 +32,14 @@ export default function Header1() {
           </div>
           <div className="col-xl-3 col-md-4 col-6">
             <Link to={`/`} className="logo-header">
-              <img
+              <h4>Market Lochin</h4>
+              {/* <img
                 alt="logo"
                 className="logo"
                 src="/images/logo/logo.svg"
                 width="136"
                 height="21"
-              />
+              /> */}
             </Link>
           </div>
           <div className="col-xl-6 tf-md-hidden">

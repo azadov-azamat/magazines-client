@@ -13,8 +13,8 @@ import Products from "@/components/homes/home-1/Products";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
-  title: "Home 1 || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate Reactjs Ecommerce Template",
+  title: "Market Lochin - Ultimate Reactjs Ecommerce Template",
+  description: "Market Lochin - Ultimate Reactjs Ecommerce Template",
 };
 export default function HomePage1() {
   return (

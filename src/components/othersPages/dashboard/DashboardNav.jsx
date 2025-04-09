@@ -5,7 +5,7 @@ const accountLinks = [
   { href: "/my-account-orders", label: "Orders" },
   { href: "/my-account-address", label: "Addresses" },
   { href: "/my-account-edit", label: "Account Details" },
-  { href: "/my-account-wishlist", label: "Wishlist" },
+  // { href: "/my-account-wishlist", label: "Wishlist" },
 ];
 
 export default function DashboardNav() {
