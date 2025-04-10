@@ -1,5 +1,5 @@
-@use "../abstracts/mixin";
-@use "../abstracts/variable";
+@use '../abstracts/mixin';
+@use '../abstracts/variable';
 
 // top bar
 .tf-top-bar {
@@ -140,7 +140,7 @@
     height: 1px;
     width: 22px;
     background-color: var(--white);
-    content: "";
+    content: '';
     position: absolute;
     z-index: 1;
     top: 0;
@@ -213,7 +213,7 @@
         font-size: 7px;
       }
       &::before {
-        content: "";
+        content: '';
         width: 0;
         height: 1px;
         top: 99%;
@@ -313,7 +313,7 @@
   z-index: 999;
 }
 .logo-header img {
-  width: 110px;
+  width: 35px;
 }
 .box-nav-ul {
   .menu-item {
@@ -331,7 +331,7 @@
     }
     > a::after {
       position: absolute;
-      content: "";
+      content: '';
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
@@ -350,7 +350,7 @@
 
     &::after {
       position: absolute;
-      content: "\e906";
+      content: '\e906';
       font-family: variable.$fontIcon;
       font-size: 11px;
       right: 0;
@@ -364,7 +364,7 @@
       &::after {
         position: absolute;
         display: block;
-        content: "";
+        content: '';
         width: 60px;
         height: 45px;
         background-color: transparent;
@@ -665,7 +665,7 @@
     justify-content: center;
     &:after,
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       z-index: 1;
       top: 0;
@@ -731,7 +731,7 @@
       padding: 11px 10px;
       transition: background-color 0.15s ease;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         width: 100%;
@@ -951,7 +951,7 @@ header {
           top: -15px;
           left: 0;
           right: 0;
-          content: "";
+          content: '';
         }
         .categories-bottom {
           min-height: 50px;
