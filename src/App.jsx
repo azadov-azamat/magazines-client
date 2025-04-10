@@ -42,52 +42,52 @@ import ShopLoadmorePage from "./pages/shop/shop-loadmore";
 import ShopInfiniteScrollingPage from "./pages/shop/shop-infinite-scrolling";
 import ShopFilterSidebarPage from "./pages/shop/shop-filter-sidebar";
 import ShopFIlterHiddenPage from "./pages/shop/shop-filter-hidden";
-import ProductStylePage1 from "./pages/shop/product-style-01";
-import ProductStylePage2 from "./pages/shop/product-style-02";
-import ProductStylePage3 from "./pages/shop/product-style-03";
-import ProductStylePage4 from "./pages/shop/product-style-04";
-import ProductStylePage5 from "./pages/shop/product-style-05";
-import ProductStylePage6 from "./pages/shop/product-style-06";
-import ProductStylePage7 from "./pages/shop/product-style-07";
+// import ProductStylePage1 from "./pages/shop/product-style-01";
+// import ProductStylePage2 from "./pages/shop/product-style-02";
+// import ProductStylePage3 from "./pages/shop/product-style-03";
+// import ProductStylePage4 from "./pages/shop/product-style-04";
+// import ProductStylePage5 from "./pages/shop/product-style-05";
+// import ProductStylePage6 from "./pages/shop/product-style-06";
+// import ProductStylePage7 from "./pages/shop/product-style-07";
 import ProductDetailPage from "./pages/shop-details/product-detail";
-import ProductGridPage1 from "./pages/shop-details/product-grid-1";
-import ProductGridPage2 from "./pages/shop-details/product-grid-2";
-import ProductStackedPage from "./pages/shop-details/product-stacked";
-import ProductRightThumbnailPage from "./pages/shop-details/product-right-thumbnails";
-import ProductBottomThumbnailPage from "./pages/shop-details/product-bottom-thumbnails";
-import ProductDrawerSidebarPage from "./pages/shop-details/product-drawer-sidebar";
-import ProductDescriptionAccordionPage from "./pages/shop-details/product-description-accordion";
-import ProductDescriptionListPage from "./pages/shop-details/product-description-list";
-import ProductDescriptionVerticalPage from "./pages/shop-details/product-description-vertical";
-import ProductInnerZoomPage from "./pages/shop-details/product-inner-zoom";
-import ProductZoomMagnifierPage from "./pages/shop-details/product-zoom-magnifier";
-import ProductNoZoomPage from "./pages/shop-details/product-no-zoom";
-import ProductPhotoswipePupupPage from "./pages/shop-details/product-photoswipe-popup";
-import ProductZoomPopupPage from "./pages/shop-details/product-zoom-popup";
-import ProductVideoPage from "./pages/shop-details/product-video";
-import Product3DPage from "./pages/shop-details/product-3d";
-import ProductOptionsCustomizerPage from "./pages/shop-details/product-options-customizer";
-import ProductAdvancedTypesPage from "./pages/shop-details/product-advanced-types";
-import ProductGiftcardPage from "./pages/shop-details/product-giftcard";
-import ProductColorSwatchPage from "./pages/shop-details/product-color-swatch";
-import ProductRectanglePage from "./pages/shop-details/product-rectangle";
-import ProductRectangleColorPage from "./pages/shop-details/product-rectangle-color";
-import ProductSwatchImagePage from "./pages/shop-details/product-swatch-image";
-import ProductSwatchImageRoundedPage from "./pages/shop-details/product-swatch-image-rounded";
-import ProductSwatchDropdownPage from "./pages/shop-details/product-swatch-dropdown";
-import ProductSwatchDropdownColorPage from "./pages/shop-details/product-swatch-dropdown-color";
-import ProductFrequentlyBoughtTogetherPage from "./pages/shop-details/product-frequently-bought-together";
-import ProductFrequentlyBoughtTogetherPage2 from "./pages/shop-details/product-frequently-bought-together-2";
-import ProductUpsellFeaturesPage from "./pages/shop-details/product-upsell-features";
-import ProductPreOrdersPage from "./pages/shop-details/product-pre-orders";
-import ProductNotificationPage from "./pages/shop-details/product-notification";
-import ProductPickupPage from "./pages/shop-details/product-pickup";
-import ProductImagesGroupedPage from "./pages/shop-details/product-images-grouped";
-import ProductComplementryPage from "./pages/shop-details/product-complimentary";
-import ProductQuickOrderListPage from "./pages/shop-details/product-quick-order-list";
-import ProductDetailVolumeDiscountPage from "./pages/shop-details/product-detail-volume-discount";
-import ProductDetailVolumeDiscountGridPage from "./pages/shop-details/product-detail-volume-discount-grid";
-import ProductStyleBuyxGetxPage from "./pages/shop-details/product-detail-buyx-gety";
+// import ProductGridPage1 from "./pages/shop-details/product-grid-1";
+// import ProductGridPage2 from "./pages/shop-details/product-grid-2";
+// import ProductStackedPage from "./pages/shop-details/product-stacked";
+// import ProductRightThumbnailPage from "./pages/shop-details/product-right-thumbnails";
+// import ProductBottomThumbnailPage from "./pages/shop-details/product-bottom-thumbnails";
+// import ProductDrawerSidebarPage from "./pages/shop-details/product-drawer-sidebar";
+// import ProductDescriptionAccordionPage from "./pages/shop-details/product-description-accordion";
+// import ProductDescriptionListPage from "./pages/shop-details/product-description-list";
+// import ProductDescriptionVerticalPage from "./pages/shop-details/product-description-vertical";
+// import ProductInnerZoomPage from "./pages/shop-details/product-inner-zoom";
+// import ProductZoomMagnifierPage from "./pages/shop-details/product-zoom-magnifier";
+// import ProductNoZoomPage from "./pages/shop-details/product-no-zoom";
+// import ProductPhotoswipePupupPage from "./pages/shop-details/product-photoswipe-popup";
+// import ProductZoomPopupPage from "./pages/shop-details/product-zoom-popup";
+// import ProductVideoPage from "./pages/shop-details/product-video";
+// import Product3DPage from "./pages/shop-details/product-3d";
+// import ProductOptionsCustomizerPage from "./pages/shop-details/product-options-customizer";
+// import ProductAdvancedTypesPage from "./pages/shop-details/product-advanced-types";
+// import ProductGiftcardPage from "./pages/shop-details/product-giftcard";
+// import ProductColorSwatchPage from "./pages/shop-details/product-color-swatch";
+// import ProductRectanglePage from "./pages/shop-details/product-rectangle";
+// import ProductRectangleColorPage from "./pages/shop-details/product-rectangle-color";
+// import ProductSwatchImagePage from "./pages/shop-details/product-swatch-image";
+// import ProductSwatchImageRoundedPage from "./pages/shop-details/product-swatch-image-rounded";
+// import ProductSwatchDropdownPage from "./pages/shop-details/product-swatch-dropdown";
+// import ProductSwatchDropdownColorPage from "./pages/shop-details/product-swatch-dropdown-color";
+// import ProductFrequentlyBoughtTogetherPage from "./pages/shop-details/product-frequently-bought-together";
+// import ProductFrequentlyBoughtTogetherPage2 from "./pages/shop-details/product-frequently-bought-together-2";
+// import ProductUpsellFeaturesPage from "./pages/shop-details/product-upsell-features";
+// import ProductPreOrdersPage from "./pages/shop-details/product-pre-orders";
+// import ProductNotificationPage from "./pages/shop-details/product-notification";
+// import ProductPickupPage from "./pages/shop-details/product-pickup";
+// import ProductImagesGroupedPage from "./pages/shop-details/product-images-grouped";
+// import ProductComplementryPage from "./pages/shop-details/product-complimentary";
+// import ProductQuickOrderListPage from "./pages/shop-details/product-quick-order-list";
+// import ProductDetailVolumeDiscountPage from "./pages/shop-details/product-detail-volume-discount";
+// import ProductDetailVolumeDiscountGridPage from "./pages/shop-details/product-detail-volume-discount-grid";
+// import ProductStyleBuyxGetxPage from "./pages/shop-details/product-detail-buyx-gety";
 import AboutUsPage from "./pages/otherPages/about-us";
 import BrandsPage from "./pages/otherPages/brands";
 import BrandsPage2 from "./pages/otherPages/brands-v2";
@@ -269,10 +269,11 @@ function App() {
                 path="shop-collection-sub"
                 element={<ShopCollectionSubPage />}
               />
-              <Route
+              */}
+              {/* <Route
                 path="shop-collection-list"
                 element={<ShopCollectionPage />}
-              /> */}
+              />  */}
               <Route path="shop-link" element={<ShopLinkPage />} />
               <Route path="shop-loadmore" element={<ShopLoadmorePage />} />
               <Route
@@ -287,13 +288,13 @@ function App() {
                 path="shop-filter-hidden"
                 element={<ShopFIlterHiddenPage />}
               />
-              <Route path="product-style-01" element={<ProductStylePage1 />} />
-              <Route path="product-style-02" element={<ProductStylePage2 />} />
+              {/* <Route path="product-style-01" element={<ProductStylePage1 />} /> */}
+              {/* <Route path="product-style-02" element={<ProductStylePage2 />} />
               <Route path="product-style-03" element={<ProductStylePage3 />} />
               <Route path="product-style-04" element={<ProductStylePage4 />} />
               <Route path="product-style-05" element={<ProductStylePage5 />} />
               <Route path="product-style-06" element={<ProductStylePage6 />} />
-              <Route path="product-style-07" element={<ProductStylePage7 />} />
+              <Route path="product-style-07" element={<ProductStylePage7 />} /> */}
               {/* <Route path="compare" element={<ComparePage />} /> */}
               <Route
                 path="product-detail/:id"
@@ -301,7 +302,7 @@ function App() {
               />
               {/* <Route path="product-grid-1/:id" element={<ProductGridPage1 />} /> */}
               {/* <Route path="product-grid-2/:id" element={<ProductGridPage2 />} /> */}
-              <Route
+              {/* <Route
                 path="product-stacked/:id"
                 element={<ProductStackedPage />}
               />
@@ -440,7 +441,7 @@ function App() {
               <Route
                 path="product-detail-buyx-gety/:id"
                 element={<ProductStyleBuyxGetxPage />}
-              />
+              /> */}
 
               <Route path="checkout" element={<CheckoutPage />} />
               <Route path="payment-failure" element={<PaymentFailurePage />} />

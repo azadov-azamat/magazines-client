@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CartLength from "../common/CartLength";
-import WishlistLength from "../common/WishlistLength";
+
 export default function ToolbarBottom() {
+  const {pathname} = useLocation()
+  
   return (
     <div className="tf-toolbar-bottom type-1150">
-      <div className="toolbar-item active">
+      <div className={`toolbar-item ${pathname !== '/shop-default' && 'active'}`}>
         <a
           href="#toolbarShopmb"
           data-bs-toggle="offcanvas"
@@ -29,14 +31,14 @@ export default function ToolbarBottom() {
           <div className="toolbar-label">Search</div>
         </a>
       </div>
-      {/* <div className="toolbar-item">
-        <a href="#login" data-bs-toggle="modal">
+      <div className={`toolbar-item ${pathname === '/shop-default' && 'active'}`}>
+        <Link to={'/shop-default'}>
           <div className="toolbar-icon">
-            <i className="icon-account" />
+            <i className="icon-grid" />
           </div>
-          <div className="toolbar-label">Account</div>
-        </a>
-      </div> */}
+          <div className="toolbar-label">Products</div>
+        </Link>
+      </div>
       {/* <div className="toolbar-item">
         <Link to={`/wishlist`}>
           <div className="toolbar-icon">

@@ -404,176 +404,176 @@ export const navItems = [
     //   },
     // ],
   },
-  {
-    id: "dropdown-menu-three",
-    label: "Products",
-    links: [
-      {
-        id: "sub-product-one",
-        label: "Product layouts",
-        links: [
-          { href: "/product-detail/1", label: "Product default" },
-          { href: "/product-grid-1/2", label: "Product grid 1" },
-          { href: "/product-grid-2/3", label: "Product grid 2" },
-          { href: "/product-stacked/4", label: "Product stacked" },
-          {
-            href: "/product-right-thumbnails/5",
-            label: "Product right thumbnails",
-          },
-          {
-            href: "/product-bottom-thumbnails/6",
-            label: "Product bottom thumbnails",
-          },
-          {
-            href: "/product-drawer-sidebar/7",
-            label: "Product drawer sidebar",
-          },
-          {
-            href: "/product-description-accordion/8",
-            label: "Product description accordion",
-          },
-          {
-            href: "/product-description-list/9",
-            label: "Product description list",
-          },
-          {
-            href: "/product-description-vertical/10",
-            label: "Product description vertical",
-          },
-        ],
-      },
-      {
-        id: "sub-product-two",
-        label: "Product details",
-        links: [
-          { href: "/product-inner-zoom/11", label: "Product inner zoom" },
-          {
-            href: "/product-zoom-magnifier/12",
-            label: "Product zoom magnifier",
-          },
-          { href: "/product-no-zoom", label: "Product no zoom" },
-          {
-            href: "/product-photoswipe-popup/13",
-            label: "Product photoswipe popup",
-          },
-          {
-            href: "/product-zoom-popup/15",
-            label: "Product external zoom and photoswipe popup",
-          },
-          { href: "/product-video/16", label: "Product video" },
-          { href: "/product-3d", label: "Product 3D, AR models" },
-          {
-            href: "/product-options-customizer/17",
-            label: "Product options & customizer",
-          },
-          {
-            href: "/product-advanced-types/18",
-            label: "Advanced product types",
-          },
-          {
-            href: "/product-giftcard/322",
-            label: "Recipient information form for gift card products",
-          },
-        ],
-      },
-      {
-        id: "sub-product-three",
-        label: "Product swatchs",
-        links: [
-          { href: "/product-color-swatch/20", label: "Product color swatch" },
-          { href: "/product-rectangle", label: "Product rectangle" },
-          {
-            href: "/product-rectangle-color/21",
-            label: "Product rectangle color",
-          },
-          { href: "/product-swatch-image/22", label: "Product swatch image" },
-          {
-            href: "/product-swatch-image-rounded",
-            label: "Product swatch image rounded",
-          },
-          {
-            href: "/product-swatch-dropdown/23",
-            label: "Product swatch dropdown",
-          },
-          {
-            href: "/product-swatch-dropdown-color/24",
-            label: "Product swatch dropdown color",
-          },
-        ],
-      },
-      {
-        id: "sub-product-four",
-        label: "Product features",
-        links: [
-          {
-            href: "/product-frequently-bought-together/25",
-            label: "Frequently bought together",
-          },
-          {
-            href: "/product-frequently-bought-together-2/26",
-            label: "Frequently bought together 2",
-          },
-          {
-            href: "/product-upsell-features/27",
-            label: "Product upsell features",
-          },
-          { href: "/product-pre-orders/28", label: "Product pre-orders" },
-          {
-            href: "/product-notification/28",
-            label: "Back in stock notification",
-          },
-          { href: "/product-pickup/29", label: "Product pickup" },
-          {
-            href: "/product-images-grouped/30",
-            label: "Variant images grouped",
-          },
-          {
-            href: "/product-complimentary/31",
-            label: "Complimentary products",
-          },
-          {
-            href: "/product-quick-order-list/32",
-            label: "Quick order list",
-            demoLabel: true,
-          },
-          {
-            href: "/product-detail-volume-discount/38",
-            label: "Volume Discount",
-            demoLabel: true,
-          },
-          {
-            href: "/product-detail-volume-discount-grid/38",
-            label: "Volume Discount Grid",
-            demoLabel: true,
-          },
-          {
-            href: "/product-detail-buyx-gety/38",
-            label: "Buy X Get Y",
-            demoLabel: true,
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "dropdown-menu-three",
+  //   label: "Products",
+  //   links: [
+  //     {
+  //       id: "sub-product-one",
+  //       label: "Product layouts",
+  //       links: [
+  //         { href: "/product-detail/1", label: "Product default" },
+  //         { href: "/product-grid-1/2", label: "Product grid 1" },
+  //         { href: "/product-grid-2/3", label: "Product grid 2" },
+  //         { href: "/product-stacked/4", label: "Product stacked" },
+  //         {
+  //           href: "/product-right-thumbnails/5",
+  //           label: "Product right thumbnails",
+  //         },
+  //         {
+  //           href: "/product-bottom-thumbnails/6",
+  //           label: "Product bottom thumbnails",
+  //         },
+  //         {
+  //           href: "/product-drawer-sidebar/7",
+  //           label: "Product drawer sidebar",
+  //         },
+  //         {
+  //           href: "/product-description-accordion/8",
+  //           label: "Product description accordion",
+  //         },
+  //         {
+  //           href: "/product-description-list/9",
+  //           label: "Product description list",
+  //         },
+  //         {
+  //           href: "/product-description-vertical/10",
+  //           label: "Product description vertical",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "sub-product-two",
+  //       label: "Product details",
+  //       links: [
+  //         { href: "/product-inner-zoom/11", label: "Product inner zoom" },
+  //         {
+  //           href: "/product-zoom-magnifier/12",
+  //           label: "Product zoom magnifier",
+  //         },
+  //         { href: "/product-no-zoom", label: "Product no zoom" },
+  //         {
+  //           href: "/product-photoswipe-popup/13",
+  //           label: "Product photoswipe popup",
+  //         },
+  //         {
+  //           href: "/product-zoom-popup/15",
+  //           label: "Product external zoom and photoswipe popup",
+  //         },
+  //         { href: "/product-video/16", label: "Product video" },
+  //         { href: "/product-3d", label: "Product 3D, AR models" },
+  //         {
+  //           href: "/product-options-customizer/17",
+  //           label: "Product options & customizer",
+  //         },
+  //         {
+  //           href: "/product-advanced-types/18",
+  //           label: "Advanced product types",
+  //         },
+  //         {
+  //           href: "/product-giftcard/322",
+  //           label: "Recipient information form for gift card products",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "sub-product-three",
+  //       label: "Product swatchs",
+  //       links: [
+  //         { href: "/product-color-swatch/20", label: "Product color swatch" },
+  //         { href: "/product-rectangle", label: "Product rectangle" },
+  //         {
+  //           href: "/product-rectangle-color/21",
+  //           label: "Product rectangle color",
+  //         },
+  //         { href: "/product-swatch-image/22", label: "Product swatch image" },
+  //         {
+  //           href: "/product-swatch-image-rounded",
+  //           label: "Product swatch image rounded",
+  //         },
+  //         {
+  //           href: "/product-swatch-dropdown/23",
+  //           label: "Product swatch dropdown",
+  //         },
+  //         {
+  //           href: "/product-swatch-dropdown-color/24",
+  //           label: "Product swatch dropdown color",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "sub-product-four",
+  //       label: "Product features",
+  //       links: [
+  //         {
+  //           href: "/product-frequently-bought-together/25",
+  //           label: "Frequently bought together",
+  //         },
+  //         {
+  //           href: "/product-frequently-bought-together-2/26",
+  //           label: "Frequently bought together 2",
+  //         },
+  //         {
+  //           href: "/product-upsell-features/27",
+  //           label: "Product upsell features",
+  //         },
+  //         { href: "/product-pre-orders/28", label: "Product pre-orders" },
+  //         {
+  //           href: "/product-notification/28",
+  //           label: "Back in stock notification",
+  //         },
+  //         { href: "/product-pickup/29", label: "Product pickup" },
+  //         {
+  //           href: "/product-images-grouped/30",
+  //           label: "Variant images grouped",
+  //         },
+  //         {
+  //           href: "/product-complimentary/31",
+  //           label: "Complimentary products",
+  //         },
+  //         {
+  //           href: "/product-quick-order-list/32",
+  //           label: "Quick order list",
+  //           demoLabel: true,
+  //         },
+  //         {
+  //           href: "/product-detail-volume-discount/38",
+  //           label: "Volume Discount",
+  //           demoLabel: true,
+  //         },
+  //         {
+  //           href: "/product-detail-volume-discount-grid/38",
+  //           label: "Volume Discount Grid",
+  //           demoLabel: true,
+  //         },
+  //         {
+  //           href: "/product-detail-buyx-gety/38",
+  //           label: "Buy X Get Y",
+  //           demoLabel: true,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: "dropdown-menu-four",
     label: "Pages",
     links: [
       { href: "/about-us", label: "About us" },
-      { href: "/brands", label: "Brands", demoLabel: true },
-      { href: "/brands-v2", label: "Brands V2" },
+      // { href: "/brands", label: "Brands", demoLabel: true },
+      // { href: "/brands-v2", label: "Brands V2" },
       { href: "/contact-1", label: "Contact 1" },
       // { href: "/contact-2", label: "Contact 2" },
-      { href: "/faq-1", label: "FAQ 01" },
+      // { href: "/faq-1", label: "FAQ 01" },
       { href: "/faq-2", label: "FAQ 02" },
       { href: "/our-store", label: "Our store" },
       { href: "/store-locations", label: "Store locator" },
       { href: "/timeline", label: "Timeline", demoLabel: true },
       { href: "/view-cart", label: "View cart" },
-      { href: "/my-account", label: "My account" },
+      // { href: "/my-account", label: "My account" },
       // { href: "/wishlist", label: "Wishlist" },
-      { href: "/terms", label: "Terms and conditions" },
-      { href: "/page-not-found", label: "404 page" },
+      // { href: "/terms", label: "Terms and conditions" },
+      // { href: "/page-not-found", label: "404 page" },
     ],
   }
 ];
