@@ -68,7 +68,7 @@ export default function ShopDefault() {
           <div className="wrapper-control-shop">
             <ProductGrid allproducts={products?.data || []} gridItems={gridItems} />
             {/* pagination */}
-            {finalSorted.length ? (
+            {products?.data.length ? (
               <ul className="tf-pagination-wrap tf-pagination-list tf-pagination-btn">
                 <Pagination limit={products?.limit} totalCount={products?.totalCount} />
               </ul>

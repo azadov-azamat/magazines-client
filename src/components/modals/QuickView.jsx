@@ -209,7 +209,7 @@ export default function QuickView() {
                     <a
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
-                      onClick={() => addProductToCart(quickViewItem?.id)}
+                      onClick={() => addProductToCart(quickViewItem?.id, quantity)}
                     >
                       <span>
                         {isAddedToCartProducts(quickViewItem?.id)
@@ -217,7 +217,7 @@ export default function QuickView() {
                           : "Add to cart - "}
                       </span>
                       <span className="tf-qty-price">
-                        {quickViewItem?.productCurrency === 'dollar' && '$'}{quantity * Number(quickViewItem?.productPrice)}
+                        {quickViewItem?.productCurrency === 'dollar' && '$'}{(quantity * Number(quickViewItem?.productPrice)).toFixed(2)}
                       </span>
                     </a>
 
