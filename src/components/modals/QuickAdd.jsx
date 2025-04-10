@@ -121,7 +121,7 @@ export default function QuickAdd() {
               <form onSubmit={(e) => e.preventDefault()} className="">
                 <a
                   className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
-                  onClick={() => addProductToCart(item?.id)}
+                  onClick={() => addProductToCart(item?.id, quantity)}
                 >
                   <span>
                     {isAddedToCartProducts(item?.id)
@@ -129,7 +129,7 @@ export default function QuickAdd() {
                       : "Add to cart - "}
                   </span>
                   <span className="tf-qty-price">
-                   {item?.productCurrency === 'dollar' && '$'}{quantity * Number(item?.productPrice)}
+                   {item?.productCurrency === 'dollar' && '$'}{(quantity * Number(item?.productPrice)).toFixed(2)}
                   </span>
                 </a>
                 {/*<div className="tf-product-btn-wishlist btn-icon-action">*/}
