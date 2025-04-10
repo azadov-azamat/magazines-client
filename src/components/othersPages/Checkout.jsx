@@ -318,7 +318,7 @@ export default function Checkout() {
                 </div> */}
                 <div className="d-flex justify-content-between line pb_20">
                   <h6 className="fw-5">Total</h6>
-                  <h6 className="total fw-5">${totalPrice}</h6>
+                  <h6 className="total fw-5">${totalPrice.toFixed(2)}</h6>
                 </div>
                 <div className="wd-check-payment">
                   {/* <div className="fieldset-radio mb_20">

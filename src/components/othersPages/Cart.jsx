@@ -70,7 +70,7 @@ export default function Cart() {
                         >
                           <img
                             alt="img-product"
-                            src={elm.imgSrc}
+                            src={elm.productImgUrl}
                             width={668}
                             height={932}
                           />
@@ -80,9 +80,9 @@ export default function Cart() {
                             to={`/product-detail/${elm.id}`}
                             className="cart-title link"
                           >
-                            {elm.title}
+                            {elm.productName}
                           </Link>
-                          <div className="cart-meta-variant">White / M</div>
+                          <div className="cart-meta-variant">{elm.productModel}</div>
                           <span
                             className="remove-cart link remove"
                             onClick={() => removeItem(elm.id)}
@@ -96,7 +96,7 @@ export default function Cart() {
                         cart-data-title="Price"
                       >
                         <div className="cart-price">
-                          ${elm.price.toFixed(2)}
+                        {elm?.productCurrency === 'dollar' && '$'}{elm.productPrice}
                         </div>
                       </td>
                       <td
@@ -157,7 +157,7 @@ export default function Cart() {
                           className="cart-total"
                           style={{ minWidth: "60px" }}
                         >
-                          ${(elm.price * elm.quantity).toFixed(2)}
+                          {elm?.productCurrency === 'dollar' && '$'}{(elm.productPrice * elm.quantity)}
                         </div>
                       </td>
                     </tr>
@@ -180,7 +180,7 @@ export default function Cart() {
                   </div>
                 </>
               )}
-              <div className="tf-page-cart-note">
+              {/* <div className="tf-page-cart-note">
                 <label htmlFor="cart-note">Add Order Note</label>
                 <textarea
                   name="note"
@@ -188,12 +188,12 @@ export default function Cart() {
                   placeholder="How can we help you?"
                   defaultValue={""}
                 />
-              </div>
+              </div> */}
             </form>
           </div>
           <div className="tf-page-cart-footer">
             <div className="tf-cart-footer-inner">
-              <div className="tf-free-shipping-bar">
+              {/* <div className="tf-free-shipping-bar">
                 <div className="tf-progress-bar">
                   <span style={{ width: "50%" }}>
                     <div className="progress-car">
@@ -217,9 +217,9 @@ export default function Cart() {
                   Buy <span className="price fw-6">$75.00</span> more to enjoy{" "}
                   <span className="fw-6">Free Shipping</span>
                 </div>
-              </div>
+              </div> */}
               <div className="tf-page-cart-checkout">
-                <div className="shipping-calculator">
+                {/* <div className="shipping-calculator">
                   <summary
                     className="accordion-shipping-header d-flex justify-content-between align-items-center collapsed"
                     data-bs-target="#shipping"
@@ -384,8 +384,8 @@ export default function Cart() {
                       </button>
                     </div>
                   </div>
-                </div>
-                <div className="cart-checkbox">
+                </div> */}
+                {/* <div className="cart-checkbox">
                   <input
                     type="checkbox"
                     className="tf-check"
@@ -395,7 +395,7 @@ export default function Cart() {
                     <span>Do you want a gift wrap?</span> Only
                     <span className="fw-5">$5.00</span>
                   </label>
-                </div>
+                </div> */}
                 <div className="tf-cart-totals-discounts">
                   <h3>Subtotal</h3>
                   <span className="total-value">
@@ -426,7 +426,7 @@ export default function Cart() {
                     <span>Check out</span>
                   </Link>
                 </div>
-                <div className="tf-page-cart_imgtrust">
+                {/* <div className="tf-page-cart_imgtrust">
                   <p className="text-center fw-6">Guarantee Safe Checkout</p>
                   <div className="cart-list-social">
                     <div className="payment-item">
@@ -589,7 +589,7 @@ export default function Cart() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
