@@ -37,8 +37,8 @@ export default function Header1() {
               </svg>
             </a>
           </div>
-          <div className="col-xl-3 col-md-4 col-6 p-0">
-            <Link to={`/`} className="logo-header">
+          <div className="col-xl-3 col-md-4 col-6 p-0 d-flex justify-content-center">
+            <Link to={`/`} className="logo-header rounded-pill">
               <img alt="logo" className="logo" src="/images/logo.png" />
               <h5 className="text-light fw-bold tf-lg-hidden">Lochin Market</h5>
             </Link>
