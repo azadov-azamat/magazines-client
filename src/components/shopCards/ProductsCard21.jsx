@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import React from "react";
-import { useContextElement } from "@/context/Context";
+import { useEffect, useState } from 'react';
+import React from 'react';
+import { useContextElement } from '@/context/Context';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 export default function ProductsCard21({ product }) {
   const [currentImage, setCurrentImage] = useState(product.imgSrc);
   const {
@@ -45,13 +45,13 @@ export default function ProductsCard21({ product }) {
           >
             <span
               className={`icon icon-heart ${
-                isAddedtoWishlist(product.id) ? "added" : ""
+                isAddedtoWishlist(product.id) ? 'added' : ''
               }`}
             />
             <span className="tooltip">
               {isAddedtoWishlist(product.id)
-                ? "Already Wishlisted"
-                : "Add to Wishlist"}
+                ? 'Already Wishlisted'
+                : 'Add to Wishlist'}
             </span>
             <span className="icon icon-delete" />
           </a>
@@ -64,14 +64,14 @@ export default function ProductsCard21({ product }) {
           >
             <span
               className={`icon icon-compare ${
-                isAddedtoCompareItem(product.id) ? "added" : ""
+                isAddedtoCompareItem(product.id) ? 'added' : ''
               }`}
             />
             <span className="tooltip">
-              {" "}
+              {' '}
               {isAddedtoCompareItem(product.id)
-                ? "Already Compared"
-                : "Add to Compare"}
+                ? 'Already Compared'
+                : 'Add to Compare'}
             </span>
             <span className="icon icon-check" />
           </a>
@@ -96,11 +96,11 @@ export default function ProductsCard21({ product }) {
               <React.Fragment key={i}>
                 <div
                   className={`on-sale-item ${
-                    info == "Pre-Order" ? "pre-order" : ""
+                    info == 'Pre-Order' ? 'pre-order' : ''
                   }`}
                 >
                   {info}
-                </div>{" "}
+                </div>{' '}
               </React.Fragment>
             ))}
           </div>
@@ -144,7 +144,9 @@ export default function ProductsCard21({ product }) {
           data-bs-toggle="modal"
           className="tf-btn tf-btn-loading"
         >
-          {isAddedToCartProducts(product.id) ? "ALREADY ADDED" : "ADD TO CART"}
+          {isAddedToCartProducts(product.id)
+            ? "Allaqachon qo'shilgan"
+            : 'Savatchaga qo`shish'}
         </a>
       </div>
     </div>

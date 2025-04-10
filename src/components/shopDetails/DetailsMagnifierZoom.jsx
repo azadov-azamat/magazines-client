@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Slider1 from "./sliders/Slider1";
+import React, { useState } from 'react';
+import Slider1 from './sliders/Slider1';
 
-import { openCartModal } from "@/utlis/openCartModal";
-import CountdownComponent from "../common/Countdown";
+import { openCartModal } from '@/utlis/openCartModal';
+import CountdownComponent from '../common/Countdown';
 import {
   colors,
   paymentImages,
   sizeOptions,
-} from "@/data/singleProductOptions";
-import StickyItem from "./StickyItem";
-import Quantity from "./Quantity";
+} from '@/data/singleProductOptions';
+import StickyItem from './StickyItem';
+import Quantity from './Quantity';
 
-import Slider1ZoomMagnifier from "./sliders/Slider1ZoomMagnifier";
-import { useContextElement } from "@/context/Context";
+import Slider1ZoomMagnifier from './sliders/Slider1ZoomMagnifier';
+import { useContextElement } from '@/context/Context';
 
 export default function DetailsMagnifierZoom({ product }) {
   const [currentColor, setCurrentColor] = useState(colors[0]);
@@ -37,7 +37,7 @@ export default function DetailsMagnifierZoom({ product }) {
   return (
     <section
       className="flat-spacing-4 pt_0"
-      style={{ maxWidth: "100vw", overflow: "clip" }}
+      style={{ maxWidth: '100vw', overflow: 'clip' }}
     >
       <div className="tf-main-product section-image-zoom">
         <div className="container">
@@ -59,7 +59,7 @@ export default function DetailsMagnifierZoom({ product }) {
                 <div className="tf-product-info-list other-image-zoom">
                   <div className="tf-product-info-title">
                     <h5>
-                      {product.title ? product.title : "Cotton jersey top"}
+                      {product.title ? product.title : 'Cotton jersey top'}
                     </h5>
                   </div>
                   <div className="tf-product-info-badges">
@@ -67,7 +67,7 @@ export default function DetailsMagnifierZoom({ product }) {
                     <div className="product-status-content">
                       <i className="icon-lightning" />
                       <p className="fw-6">
-                        Selling fast! 56 people have this in their carts.
+                        Tez sotilmoqda! Allaqachon 56 ta odam sotib oldi.
                       </p>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ export default function DetailsMagnifierZoom({ product }) {
                   </div>
                   <div className="tf-product-info-liveview">
                     <div className="liveview-count">20</div>
-                    <p className="fw-6">People are viewing this right now</p>
+                    <p className="fw-6">ta odam hozir mahsulotni kuzatmoqda</p>
                   </div>
                   <div className="tf-product-info-countdown">
                     <div className="countdown-wrap">
@@ -186,9 +186,9 @@ export default function DetailsMagnifierZoom({ product }) {
                       >
                         <span>
                           {isAddedToCartProducts(product.id)
-                            ? "Already Added"
-                            : "Add to cart"}{" "}
-                          -{" "}
+                            ? "Allaqachon qo'shilgan"
+                            : 'Savatchaga qo`shish'}{' '}
+                          -{' '}
                         </span>
                         <span className="tf-qty-price">
                           ${(product.price * quantity).toFixed(2)}
@@ -200,15 +200,15 @@ export default function DetailsMagnifierZoom({ product }) {
                       >
                         <span
                           className={`icon icon-heart ${
-                            isAddedtoWishlist(product.id) ? "added" : ""
+                            isAddedtoWishlist(product.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
-                          {" "}
+                          {' '}
                           {isAddedtoWishlist(product.id)
-                            ? "Already Wishlisted"
-                            : "Add to Wishlist"}
-                        </span>{" "}
+                            ? 'Already Wishlisted'
+                            : 'Add to Wishlist'}
+                        </span>{' '}
                         <span className="icon icon-delete" />
                       </a>
                       <a
@@ -220,13 +220,13 @@ export default function DetailsMagnifierZoom({ product }) {
                       >
                         <span
                           className={`icon icon-compare ${
-                            isAddedtoCompareItem(product.id) ? "added" : ""
+                            isAddedtoCompareItem(product.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
                           {isAddedtoCompareItem(product.id)
-                            ? "Already Compared"
-                            : "Add to Compare"}
+                            ? 'Already Compared'
+                            : 'Add to Compare'}
                         </span>
                         <span className="icon icon-check" />
                       </a>
@@ -324,7 +324,7 @@ export default function DetailsMagnifierZoom({ product }) {
                             <i className="icon-return-order" />
                           </div>
                           <p>
-                            Return within <span className="fw-7">30 days</span>{" "}
+                            Return within <span className="fw-7">30 days</span>{' '}
                             of purchase. Duties &amp; taxes are non-refundable.
                           </p>
                         </div>
@@ -356,7 +356,7 @@ export default function DetailsMagnifierZoom({ product }) {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       <StickyItem />
     </section>
   );

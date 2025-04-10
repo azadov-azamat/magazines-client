@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import CountdownComponent from "../common/Countdown";
-import { openCartModal } from "@/utlis/openCartModal";
+import CountdownComponent from '../common/Countdown';
+import { openCartModal } from '@/utlis/openCartModal';
 import {
   colors,
   paymentImages,
   sizeOptions,
-} from "@/data/singleProductOptions";
-import StickyItem from "./StickyItem";
-import Quantity from "./Quantity";
+} from '@/data/singleProductOptions';
+import StickyItem from './StickyItem';
+import Quantity from './Quantity';
 
-import Slider1 from "./sliders/Slider1";
-import { useContextElement } from "@/context/Context";
+import Slider1 from './sliders/Slider1';
+import { useContextElement } from '@/context/Context';
 
 export default function DefaultShopDetailsNoZoom({ product }) {
   const [currentColor, setCurrentColor] = useState(colors[0]);
@@ -36,7 +36,7 @@ export default function DefaultShopDetailsNoZoom({ product }) {
   return (
     <section
       className="flat-spacing-4 pt_0"
-      style={{ maxWidth: "100vw", overflow: "clip" }}
+      style={{ maxWidth: '100vw', overflow: 'clip' }}
     >
       <div className="tf-main-product section-image-zoom">
         <div className="container">
@@ -58,7 +58,7 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                 <div className="tf-product-info-list other-image-zoom">
                   <div className="tf-product-info-title">
                     <h5>
-                      {product.title ? product.title : "Cotton jersey top"}
+                      {product.title ? product.title : 'Cotton jersey top'}
                     </h5>
                   </div>
                   <div className="tf-product-info-badges">
@@ -66,7 +66,7 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                     <div className="product-status-content">
                       <i className="icon-lightning" />
                       <p className="fw-6">
-                        Selling fast! 56 people have this in their carts.
+                        Tez sotilmoqda! Allaqachon 56 ta odam sotib oldi.
                       </p>
                     </div>
                   </div>
@@ -83,92 +83,10 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                   </div>
                   <div className="tf-product-info-liveview">
                     <div className="liveview-count">20</div>
-                    <p className="fw-6">People are viewing this right now</p>
-                  </div>
-                  <div className="tf-product-info-countdown">
-                    <div className="countdown-wrap">
-                      <div className="countdown-title">
-                        <i className="icon-time tf-ani-tada" />
-                        <p>HURRY UP! SALE ENDS IN:</p>
-                      </div>
-                      <div className="tf-countdown style-1">
-                        <div className="js-countdown">
-                          <CountdownComponent labels="Days :,Hours :,Mins :,Secs" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tf-product-info-variant-picker">
-                    <div className="variant-picker-item">
-                      <div className="variant-picker-label">
-                        Color:
-                        <span className="fw-6 variant-picker-label-value">
-                          {currentColor.value}
-                        </span>
-                      </div>
-                      <form className="variant-picker-values">
-                        {colors.map((color) => (
-                          <React.Fragment key={color.id}>
-                            <input
-                              id={color.id}
-                              type="radio"
-                              name="color1"
-                              readOnly
-                              checked={currentColor == color}
-                            />
-                            <label
-                              onClick={() => setCurrentColor(color)}
-                              className="hover-tooltip radius-60"
-                              htmlFor={color.id}
-                              data-value={color.value}
-                            >
-                              <span
-                                className={`btn-checkbox ${color.className}`}
-                              />
-                              <span className="tooltip">{color.value}</span>
-                            </label>
-                          </React.Fragment>
-                        ))}
-                      </form>
-                    </div>
-                    <div className="variant-picker-item">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="variant-picker-label">
-                          Size:
-                          <span className="fw-6 variant-picker-label-value">
-                            {currentSize.value}
-                          </span>
-                        </div>
-                        <a
-                          href="#find_size"
-                          data-bs-toggle="modal"
-                          className="find-size fw-6"
-                        >
-                          Find your size
-                        </a>
-                      </div>
-                      <form className="variant-picker-values">
-                        {sizeOptions.map((size) => (
-                          <React.Fragment key={size.id}>
-                            <input
-                              type="radio"
-                              name="size1"
-                              id={size.id}
-                              readOnly
-                              checked={currentSize == size}
-                            />
-                            <label
-                              onClick={() => setCurrentSize(size)}
-                              className="style-text"
-                              htmlFor={size.id}
-                              data-value={size.value}
-                            >
-                              <p>{size.value}</p>
-                            </label>
-                          </React.Fragment>
-                        ))}
-                      </form>
-                    </div>
+                    <p className="fw-6">
+                      {' '}
+                      ta hozir odam mahsulotni kuzatmoqda.
+                    </p>
                   </div>
                   <div className="tf-product-info-quantity">
                     <div className="quantity-title fw-6">Quantity</div>
@@ -184,11 +102,11 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                         className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                       >
                         <span>
-                          {" "}
+                          {' '}
                           {isAddedToCartProducts(product.id)
-                            ? "Already Added"
-                            : "Add to cart"}{" "}
-                          -{" "}
+                            ? "Allaqachon qo'shilgan"
+                            : 'Savatchaga qo`shish'}{' '}
+                          -{' '}
                         </span>
                         <span className="tf-qty-price">
                           ${(product.price * quantity).toFixed(2)}
@@ -200,14 +118,14 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                       >
                         <span
                           className={`icon icon-heart ${
-                            isAddedtoWishlist(product.id) ? "added" : ""
+                            isAddedtoWishlist(product.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
-                          {" "}
+                          {' '}
                           {isAddedtoWishlist(product.id)
-                            ? "Already Wishlisted"
-                            : "Add to Wishlist"}
+                            ? 'Already Wishlisted'
+                            : 'Add to Wishlist'}
                         </span>
                         <span className="icon icon-delete" />
                       </a>
@@ -220,14 +138,14 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                       >
                         <span
                           className={`icon icon-compare ${
-                            isAddedtoCompareItem(product.id) ? "added" : ""
+                            isAddedtoCompareItem(product.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
-                          {" "}
+                          {' '}
                           {isAddedtoCompareItem(product.id)
-                            ? "Already Compared"
-                            : "Add to Compare"}
+                            ? 'Already Compared'
+                            : 'Add to Compare'}
                         </span>
                         <span className="icon icon-check" />
                       </a>
@@ -325,7 +243,7 @@ export default function DefaultShopDetailsNoZoom({ product }) {
                             <i className="icon-return-order" />
                           </div>
                           <p>
-                            Return within <span className="fw-7">30 days</span>{" "}
+                            Return within <span className="fw-7">30 days</span>{' '}
                             of purchase. Duties &amp; taxes are non-refundable.
                           </p>
                         </div>
@@ -357,7 +275,7 @@ export default function DefaultShopDetailsNoZoom({ product }) {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       <StickyItem />
     </section>
   );

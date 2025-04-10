@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function ColorCompare() {
   return (
@@ -55,7 +55,7 @@ export default function ColorCompare() {
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                     >
-                      <span>Add to cart</span>
+                      <span>Savatchaga qo`shish</span>
                     </a>
                   </form>
                 </div>
@@ -98,7 +98,7 @@ export default function ColorCompare() {
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                     >
-                      <span>Add to cart</span>
+                      <span>Savatchaga qo`shish</span>
                     </a>
                   </form>
                 </div>
@@ -142,7 +142,7 @@ export default function ColorCompare() {
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                     >
-                      <span>Add to cart</span>
+                      <span>Savatchaga qo`shish</span>
                     </a>
                   </form>
                 </div>
@@ -185,7 +185,7 @@ export default function ColorCompare() {
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                     >
-                      <span>Add to cart</span>
+                      <span>Savatchaga qo`shish</span>
                     </a>
                   </form>
                 </div>

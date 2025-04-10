@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { Link } from "react-router-dom";
-import Quantity from "../shopDetails/Quantity";
-import { useContextElement } from "@/context/Context";
+import { Link } from 'react-router-dom';
+import Quantity from '../shopDetails/Quantity';
+import { useContextElement } from '@/context/Context';
 
-import { allProducts } from "@/data/products";
-import { colors, sizeOptions } from "@/data/singleProductOptions";
-import {useProductById} from "@/data/hook/index.js";
+import { allProducts } from '@/data/products';
+import { colors, sizeOptions } from '@/data/singleProductOptions';
+import { useProductById } from '@/data/hook/index.js';
 
 export default function QuickAdd() {
   const {
@@ -16,7 +16,7 @@ export default function QuickAdd() {
     addToCompareItem,
     isAddedtoCompareItem,
   } = useContextElement();
-  const {data: currentProduct} = useProductById(quickAddItem);
+  const { data: currentProduct } = useProductById(quickAddItem);
   const [item, setItem] = useState();
   const [quantity, setQuantity] = useState(1);
 
@@ -42,7 +42,7 @@ export default function QuickAdd() {
               <div className="image">
                 <img
                   alt="image"
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: 'contain' }}
                   src={item?.productImgUrl || '/images/default.jpg'}
                   width={720}
                   height={1005}
@@ -115,7 +115,7 @@ export default function QuickAdd() {
             </div>
             <div className="tf-product-info-quantity mb_15">
               <div className="quantity-title fw-6">Quantity</div>
-              <Quantity setQuantity={setQuantity}/>
+              <Quantity setQuantity={setQuantity} />
             </div>
             <div className="tf-product-info-buy-button">
               <form onSubmit={(e) => e.preventDefault()} className="">
@@ -125,11 +125,12 @@ export default function QuickAdd() {
                 >
                   <span>
                     {isAddedToCartProducts(item?.id)
-                      ? "Already Added - "
-                      : "Add to cart - "}
+                      ? "Allaqachon qo'shilgan - "
+                      : 'Savatchaga qo`shish - '}
                   </span>
                   <span className="tf-qty-price">
-                   {item?.productCurrency === 'dollar' && '$'}{(quantity * Number(item?.productPrice)).toFixed(2)}
+                    {item?.productCurrency === 'dollar' && '$'}
+                    {(quantity * Number(item?.productPrice)).toFixed(2)}
                   </span>
                 </a>
                 {/*<div className="tf-product-btn-wishlist btn-icon-action">*/}

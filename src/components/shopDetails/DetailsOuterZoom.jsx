@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import CountdownComponent from "../common/Countdown";
+import CountdownComponent from '../common/Countdown';
 import {
   colors,
   paymentImages,
   sizeOptions,
-} from "@/data/singleProductOptions";
-import StickyItem from "./StickyItem";
-import Quantity from "./Quantity";
+} from '@/data/singleProductOptions';
+import StickyItem from './StickyItem';
+import Quantity from './Quantity';
 
-import Slider1ZoomOuter from "./sliders/Slider1ZoomOuter";
-import { allProducts } from "@/data/products";
-import { useContextElement } from "@/context/Context";
-import { openCartModal } from "@/utlis/openCartModal";
+import Slider1ZoomOuter from './sliders/Slider1ZoomOuter';
+import { allProducts } from '@/data/products';
+import { useContextElement } from '@/context/Context';
+import { openCartModal } from '@/utlis/openCartModal';
 
 export default function DetailsOuterZoom({ product }) {
   const [currentColor, setCurrentColor] = useState(colors[0]);
@@ -39,11 +39,11 @@ export default function DetailsOuterZoom({ product }) {
   return (
     <section
       className="flat-spacing-4 pt_0"
-      style={{ maxWidth: "100vw", overflow: "clip" }}
+      style={{ maxWidth: '100vw', overflow: 'clip' }}
     >
       <div
         className="tf-main-product section-image-zoom"
-        style={{ maxWidth: "100vw", overflow: "clip" }}
+        style={{ maxWidth: '100vw', overflow: 'clip' }}
       >
         <div className="container">
           <div className="row">
@@ -63,22 +63,20 @@ export default function DetailsOuterZoom({ product }) {
                 <div className="tf-zoom-main" />
                 <div className="tf-product-info-list other-image-zoom">
                   <div className="tf-product-info-title">
-                    <h5>
-                      {product?.productName || "Cotton jersey top"}
-                    </h5>
+                    <h5>{product?.productName || 'Cotton jersey top'}</h5>
                   </div>
                   <div className="tf-product-info-badges">
                     <div className="badges">Best seller</div>
                     <div className="product-status-content">
                       <i className="icon-lightning" />
                       <p className="fw-6">
-                        Selling fast! 56 people have this in their carts.
+                        Tez sotilmoqda! Allaqachon 56 ta odam sotib oldi.
                       </p>
                     </div>
                   </div>
                   <div className="tf-product-info-price">
                     <div className="price-on-sale">
-                      {product?.productCurrency === 'dollar' && '$'}{product?.productPrice}
+                      {product?.productPrice} sum
                     </div>
 
                     {/* <div className="compare-at-price">
@@ -91,24 +89,12 @@ export default function DetailsOuterZoom({ product }) {
                   </div>
                   <div className="tf-product-info-liveview">
                     <div className="liveview-count">20</div>
-                    <p className="fw-6">People are viewing this right now</p>
+                    <p className="fw-6">ta odam hozir mahsulotni kuzatmoqda</p>
                   </div>
-                  <div className="tf-product-info-countdown">
-                    <div className="countdown-wrap">
-                      <div className="countdown-title">
-                        <i className="icon-time tf-ani-tada" />
-                        <p>HURRY UP! SALE ENDS IN:</p>
-                      </div>
-                      <div className="tf-countdown style-1">
-                        <div className="js-countdown">
-                          <CountdownComponent labels="Days :,Hours :,Mins :,Secs" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
                   <div className="tf-product-info-variant-picker">
                     {/* <div className="variant-picker-item"> */}
-                      {/* <div className="variant-picker-label">
+                    {/* <div className="variant-picker-label">
                         Color:
                         <span className="fw-6 variant-picker-label-value">
                           {currentColor.value}
@@ -179,7 +165,7 @@ export default function DetailsOuterZoom({ product }) {
                     </div> */}
                   </div>
                   <div className="tf-product-info-quantity">
-                    <div className="quantity-title fw-6">Quantity</div>
+                    <div className="quantity-title fw-6">Miqdor</div>
                     <Quantity setQuantity={setQuantity} />
                   </div>
                   <div className="tf-product-info-buy-button">
@@ -193,12 +179,13 @@ export default function DetailsOuterZoom({ product }) {
                       >
                         <span>
                           {isAddedToCartProducts(product?.id)
-                            ? "Already Added"
-                            : "Add to cart"}{" "}
-                          -{" "}
+                            ? "Allaqachon qo'shilgan"
+                            : 'Savatchaga qo`shish'}{' '}
+                          -{' '}
                         </span>
                         <span className="tf-qty-price">
-                          {product?.productCurrency === 'dollar' && '$'}{quantity * Number(product?.productPrice)}
+                          {product?.productCurrency === 'dollar' && '$'}
+                          {quantity * Number(product?.productPrice)}
                         </span>
                       </a>
                       <a
@@ -207,14 +194,14 @@ export default function DetailsOuterZoom({ product }) {
                       >
                         <span
                           className={`icon icon-heart ${
-                            isAddedtoWishlist(product?.id) ? "added" : ""
+                            isAddedtoWishlist(product?.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
-                          {" "}
+                          {' '}
                           {isAddedtoWishlist(product?.id)
-                            ? "Already Wishlisted"
-                            : "Add to Wishlist"}
+                            ? 'Already Wishlisted'
+                            : 'Add to Wishlist'}
                         </span>
                         <span className="icon icon-delete" />
                       </a>
@@ -227,30 +214,16 @@ export default function DetailsOuterZoom({ product }) {
                       >
                         <span
                           className={`icon icon-compare ${
-                            isAddedtoCompareItem(product?.id) ? "added" : ""
+                            isAddedtoCompareItem(product?.id) ? 'added' : ''
                           }`}
                         />
                         <span className="tooltip">
                           {isAddedtoCompareItem(product?.id)
-                            ? "Already Compared"
-                            : "Add to Compare"}
+                            ? 'Already Compared'
+                            : 'Add to Compare'}
                         </span>
                         <span className="icon icon-check" />
                       </a>
-                      <div className="w-100">
-                        <a href="#" className="btns-full">
-                          Buy with
-                          <img
-                            alt="image"
-                            src="/images/payments/paypal.png"
-                            width={64}
-                            height={18}
-                          />
-                        </a>
-                        <a href="#" className="payment-more-option">
-                          More payment options
-                        </a>
-                      </div>
                     </form>
                   </div>
                   {/* <div className="tf-product-info-extra-link">
@@ -317,11 +290,8 @@ export default function DetailsOuterZoom({ product }) {
                             <i className="icon-delivery-time" />
                           </div>
                           <p>
-                            Estimate delivery times:
-                            <span className="fw-7">12-26 days</span>
-                            (International),
-                            <span className="fw-7">3-6 days</span> (United
-                            States).
+                            Taxminiy yetkazib berish vaqti:
+                            <span className="fw-7"> 1-2 kun </span>
                           </p>
                         </div>
                       </div>
@@ -331,8 +301,8 @@ export default function DetailsOuterZoom({ product }) {
                             <i className="icon-return-order" />
                           </div>
                           <p>
-                            Return within <span className="fw-7">30 days</span>{" "}
-                            of purchase. Duties &amp; taxes are non-refundable.
+                            <span className="fw-7">30 days</span> kun ichida
+                            almashtirish mumkin.
                           </p>
                         </div>
                       </div>
@@ -341,10 +311,7 @@ export default function DetailsOuterZoom({ product }) {
                   <div className="tf-product-info-trust-seal">
                     <div className="tf-product-trust-mess">
                       <i className="icon-safe" />
-                      <p className="fw-6">
-                        Guarantee Safe <br />
-                        Checkout
-                      </p>
+                      <p className="fw-6">Mahsulotga 100% kafolat beriladi.</p>
                     </div>
                     <div className="tf-payment">
                       {paymentImages.map((image, index) => (
@@ -363,7 +330,7 @@ export default function DetailsOuterZoom({ product }) {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       {/* <StickyItem /> */}
     </section>
   );

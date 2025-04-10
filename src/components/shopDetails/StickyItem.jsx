@@ -1,9 +1,9 @@
-import { options } from "@/data/singleProductOptions";
+import { options } from '@/data/singleProductOptions';
 
-import React from "react";
-import Quantity from "./Quantity";
-import { products4 } from "@/data/products";
-import { useContextElement } from "@/context/Context";
+import React from 'react';
+import Quantity from './Quantity';
+import { products4 } from '@/data/products';
+import { useContextElement } from '@/context/Context';
 
 export default function StickyItem({ soldOut = false }) {
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
@@ -52,8 +52,8 @@ export default function StickyItem({ soldOut = false }) {
                   >
                     <span>
                       {isAddedToCartProducts(products4[2].id)
-                        ? "Already Added"
-                        : "Add to cart"}
+                        ? "Allaqachon qo'shilgan"
+                        : 'Savatchaga qo`shish'}
                     </span>
                   </a>
                 )}

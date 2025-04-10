@@ -1,12 +1,12 @@
-import { useContextElement } from "@/context/Context";
+import { useContextElement } from '@/context/Context';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Quantity from "../shopDetails/Quantity";
-import { colors, sizeOptions } from "@/data/singleProductOptions";
-import React, { useState } from "react";
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Quantity from '../shopDetails/Quantity';
+import { colors, sizeOptions } from '@/data/singleProductOptions';
+import React, { useState } from 'react';
 
 export default function QuickView() {
   const {
@@ -23,10 +23,10 @@ export default function QuickView() {
   const [quantity, setQuantity] = useState(1);
 
   const openModalSizeChoice = () => {
-    import("bootstrap")
+    import('bootstrap')
       .then((bootstrap) => {
         var myModal = new bootstrap.Modal(
-          document.getElementById("find_size"),
+          document.getElementById('find_size'),
           {
             keyboard: false,
           }
@@ -34,19 +34,19 @@ export default function QuickView() {
 
         myModal.show();
         document
-          .getElementById("find_size")
-          .addEventListener("hidden.bs.modal", () => {
+          .getElementById('find_size')
+          .addEventListener('hidden.bs.modal', () => {
             myModal.hide();
           });
-        const backdrops = document.querySelectorAll(".modal-backdrop");
+        const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 1) {
           // Apply z-index to the last backdrop
           const lastBackdrop = backdrops[backdrops.length - 1];
-          lastBackdrop.style.zIndex = "1057";
+          lastBackdrop.style.zIndex = '1057';
         }
       })
       .catch((error) => {
-        console.error("Error loading Bootstrap:", error);
+        console.error('Error loading Bootstrap:', error);
       });
   };
 
@@ -67,17 +67,17 @@ export default function QuickView() {
                   dir="ltr"
                   modules={[Navigation]}
                   navigation={{
-                    prevEl: ".snbqvp",
-                    nextEl: ".snbqvn",
+                    prevEl: '.snbqvp',
+                    nextEl: '.snbqvn',
                   }}
                   className="swiper tf-single-slide"
                 >
                   {[
                     quickViewItem.isLookBookProduct
-                      ? "/images/default.jpg"
+                      ? '/images/default.jpg'
                       : quickViewItem.productImgUrl,
                     quickViewItem.isLookBookProduct
-                      ? "/images/default.jpg"
+                      ? '/images/default.jpg'
                       : quickViewItem.productImgUrl
                       ? quickViewItem.productImgUrl
                       : quickViewItem.productImgUrl,
@@ -85,11 +85,11 @@ export default function QuickView() {
                     <SwiperSlide className="swiper-slide" key={index}>
                       <div className="item">
                         <img
-                          alt={""}
+                          alt={''}
                           src={product}
                           width={720}
                           height={1045}
-                          style={{ objectFit: "contain" }}
+                          style={{ objectFit: 'contain' }}
                         />
                       </div>
                     </SwiperSlide>
@@ -122,12 +122,13 @@ export default function QuickView() {
                   </div>
                 </div> */}
                 <div className="tf-product-info-price">
-                  <div className="price">{quickViewItem?.productCurrency === 'dollar' && '$'}{quickViewItem?.productPrice}</div>
+                  <div className="price">
+                    {quickViewItem?.productCurrency === 'dollar' && '$'}
+                    {quickViewItem?.productPrice}
+                  </div>
                 </div>
                 <div className="tf-product-description mb-0">
-                  <p>
-                    {quickViewItem?.productModel}
-                  </p>
+                  <p>{quickViewItem?.productModel}</p>
                 </div>
                 <div className="tf-product-info-variant-picker">
                   {/* <div className="variant-picker-item">
@@ -209,15 +210,20 @@ export default function QuickView() {
                     <a
                       href="#"
                       className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
-                      onClick={() => addProductToCart(quickViewItem?.id, quantity)}
+                      onClick={() =>
+                        addProductToCart(quickViewItem?.id, quantity)
+                      }
                     >
                       <span>
                         {isAddedToCartProducts(quickViewItem?.id)
-                          ? "Already Added - "
-                          : "Add to cart - "}
+                          ? "Allaqachon qo'shilgan - "
+                          : 'Savatchaga qo`shish - '}
                       </span>
                       <span className="tf-qty-price">
-                        {quickViewItem?.productCurrency === 'dollar' && '$'}{(quantity * Number(quickViewItem?.productPrice)).toFixed(2)}
+                        {quickViewItem?.productCurrency === 'dollar' && '$'}
+                        {(
+                          quantity * Number(quickViewItem?.productPrice)
+                        ).toFixed(2)}
                       </span>
                     </a>
 
@@ -227,13 +233,13 @@ export default function QuickView() {
                     >
                       <span
                         className={`icon icon-heart ${
-                          isAddedtoWishlist(quickViewItem?.id) ? "added" : ""
+                          isAddedtoWishlist(quickViewItem?.id) ? 'added' : ''
                         }`}
                       />
                       <span className="tooltip">
                         {isAddedtoWishlist(quickViewItem?.id)
-                          ? "Already Wishlisted"
-                          : "Add to Wishlist"}
+                          ? 'Already Wishlisted'
+                          : 'Add to Wishlist'}
                       </span>
                       <span className="icon icon-delete" />
                     </a>
