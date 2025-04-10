@@ -76,7 +76,7 @@ export default function ShopCart() {
                           <Link to={`/product-detail/${elm.id}`}>
                             <img
                               alt="image"
-                              src={elm.productImgUrl}
+                              src={elm.productImgUrl || '/images/default.jpg'}
                               width={668}
                               height={932}
                               style={{ objectFit: "cover" }}
@@ -177,7 +177,7 @@ export default function ShopCart() {
                               <Link to={`/product-detail/${elm.id}`}>
                                 <img
                                   alt="image"
-                                  src={elm.productImgUrl}
+                                  src={elm.productImgUrl || '/images/default.jpg'}
                                   width={720}
                                   height={1005}
                                 />

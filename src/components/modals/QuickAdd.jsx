@@ -43,7 +43,7 @@ export default function QuickAdd() {
                 <img
                   alt="image"
                   style={{ objectFit: "contain" }}
-                  src={item?.productImgUrl}
+                  src={item?.productImgUrl || '/images/default.jpg'}
                   width={720}
                   height={1005}
                 />

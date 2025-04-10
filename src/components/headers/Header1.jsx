@@ -39,7 +39,7 @@ export default function Header1() {
           </div>
           <div className="col-xl-3 col-md-4 col-6">
             <Link to={`/`} className="logo-header">
-              <h4>Market Lochin</h4>
+              <h4>Lochin</h4>
               {/* <img
                 alt="logo"
                 className="logo"

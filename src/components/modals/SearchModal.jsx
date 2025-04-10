@@ -98,7 +98,7 @@ export default function SearchModal() {
                         <Link to={`/product-detail/${product.id}`}>
                           <img
                             alt={product.productName}
-                            src={product.productImgUrl}
+                            src={product.productImgUrl || '/images/default.jpg'}
                             width={20}
                             height={20}
                           />

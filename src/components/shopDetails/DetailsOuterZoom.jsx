@@ -53,7 +53,7 @@ export default function DetailsOuterZoom({ product }) {
                   <Slider1ZoomOuter
                     handleColor={handleColor}
                     currentColor={currentColor.value}
-                    firstImage={product?.productImgUrl}
+                    firstImage={product?.productImgUrl || '/images/default.jpg'}
                   />
                 </div>
               </div>

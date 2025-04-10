@@ -74,10 +74,10 @@ export default function QuickView() {
                 >
                   {[
                     quickViewItem.isLookBookProduct
-                      ? "/images/products/orange-1.jpg"
+                      ? "/images/default.jpg"
                       : quickViewItem.productImgUrl,
                     quickViewItem.isLookBookProduct
-                      ? "/images/products/pink-1.jpg"
+                      ? "/images/default.jpg"
                       : quickViewItem.productImgUrl
                       ? quickViewItem.productImgUrl
                       : quickViewItem.productImgUrl,
