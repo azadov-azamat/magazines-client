@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 export default function Register() {
   return (
     <section className="flat-spacing-10">
@@ -8,8 +8,9 @@ export default function Register() {
           <div className="flat-title align-items-start gap-0 mb_30 px-0">
             <h5 className="mb_18">Register</h5>
             <p className="text_black-2">
-              Sign up for early Sale access plus tailored new arrivals, trends
-              and promotions. To opt out, click unsubscribe in our emails
+              Sign up for early Sale access plus tailored Eng yangi
+              mahsulotlars, trends and promotions. To opt out, click unsubscribe
+              in our emails
             </p>
           </div>
           <div>

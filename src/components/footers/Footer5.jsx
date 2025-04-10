@@ -192,8 +192,8 @@ export default function Footer5() {
                   </div>
                   <div className="tf-collapse-content">
                     <div className="footer-menu_item">
-                      Sign up to get first dibs on new arrivals, sales,
-                      exclusive content, events and more!
+                      Sign up to get first dibs on Eng yangi mahsulotlars,
+                      sales, exclusive content, events and more!
                     </div>
                     <div
                       className={`tfSubscribeMsg ${

@@ -19,7 +19,7 @@ export default function ProductGrid({
           marginBottom: "24px",
         }}
       >
-        {allproducts.length} product(s) found
+        {allproducts.length} ta mashulot(lar) topildi.
       </div>
       {/*{gridItems == 1 ? (*/}
       {/*  <div className="grid-layout" data-grid="grid-list">*/}

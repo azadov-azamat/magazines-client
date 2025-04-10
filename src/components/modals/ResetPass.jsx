@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function ResetPass() {
   return (
@@ -19,9 +19,9 @@ export default function ResetPass() {
             <form onSubmit={(e) => e.preventDefault()} className="">
               <div>
                 <p>
-                  Sign up for early Sale access plus tailored new arrivals,
-                  trends and promotions. To opt out, click unsubscribe in our
-                  emails
+                  Sign up for early Sale access plus tailored Eng yangi
+                  mahsulotlars, trends and promotions. To opt out, click
+                  unsubscribe in our emails
                 </p>
               </div>
               <div className="tf-field style-1">

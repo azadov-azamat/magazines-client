@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 export default function Login() {
   return (
     <section className="flat-spacing-10">
@@ -104,8 +104,9 @@ export default function Login() {
           <div className="tf-login-content">
             <h5 className="mb_36">I'm new here</h5>
             <p className="mb_20">
-              Sign up for early Sale access plus tailored new arrivals, trends
-              and promotions. To opt out, click unsubscribe in our emails.
+              Sign up for early Sale access plus tailored Eng yangi
+              mahsulotlars, trends and promotions. To opt out, click unsubscribe
+              in our emails.
             </p>
             <Link to={`/register`} className="tf-btn btn-line">
               Register
