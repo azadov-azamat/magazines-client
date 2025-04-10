@@ -36,7 +36,7 @@ import ShopDefaultPage from "./pages/shop/shop-default";
 // import ShopRightSidebarPage from "./pages/shop/shop-right-sidebar";
 // import ShopFullwisthPage from "./pages/shop/shop-fullwidth";
 // import ShopCollectionSubPage from "./pages/shop/shop-collection-sub";
-// import ShopCollectionPage from "./pages/shop/shop-collection-list";
+import ShopCollectionPage from "./pages/shop/shop-collection-list";
 import ShopLinkPage from "./pages/shop/shop-link";
 import ShopLoadmorePage from "./pages/shop/shop-loadmore";
 import ShopInfiniteScrollingPage from "./pages/shop/shop-infinite-scrolling";
@@ -270,10 +270,10 @@ function App() {
                 element={<ShopCollectionSubPage />}
               />
               */}
-              {/* <Route
+              <Route
                 path="shop-collection-list"
                 element={<ShopCollectionPage />}
-              />  */}
+              /> 
               <Route path="shop-link" element={<ShopLinkPage />} />
               <Route path="shop-loadmore" element={<ShopLoadmorePage />} />
               <Route

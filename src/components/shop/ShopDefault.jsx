@@ -18,7 +18,7 @@ export default function ShopDefault() {
   const [finalSorted, setFinalSorted] = useState([]);
   const [page, setPage] = useState(1);
 
-  const {data: products} = useProducts(page, 10, 'createdAt', JSON.stringify(categoryId ? {categoryId} : {}), searchText);
+  const {data: products} = useProducts(page, 10, 'createdAt', JSON.stringify(categoryId ? {categoryId} : {}), );
 
   useEffect(() => {
     setPage(Number(currentPage))
@@ -32,7 +32,7 @@ export default function ShopDefault() {
     <>
       <section className="flat-spacing-2">
         <div className="container">
-          <div className="tf-shop-control d-flex align-items-center justify-content-between">
+          {/* <div className="tf-shop-control d-flex align-items-center justify-content-between">
             <div className="tf-control-filter">
               <a
                 href="#filterShop"
@@ -44,27 +44,27 @@ export default function ShopDefault() {
                 <span className="text">Filter</span>
               </a>
             </div>
-            {/*<ul className="tf-control-layout d-flex justify-content-center">*/}
-            {/*  {layouts.map((layout, index) => (*/}
-            {/*    <li*/}
-            {/*      key={index}*/}
-            {/*      className={`tf-view-layout-switch ${layout.className} ${*/}
-            {/*        gridItems == layout.dataValueGrid ? "active" : ""*/}
-            {/*      }`}*/}
-            {/*      onClick={() => setGridItems(layout.dataValueGrid)}*/}
-            {/*    >*/}
-            {/*      <div className="item">*/}
-            {/*        <span className={`icon ${layout.iconClass}`} />*/}
-            {/*      </div>*/}
-            {/*    </li>*/}
-            {/*  ))}*/}
-            {/*</ul>*/}
+            <ul className="tf-control-layout d-flex justify-content-center">
+              {layouts.map((layout, index) => (
+                <li
+                  key={index}
+                  className={`tf-view-layout-switch ${layout.className} ${
+                    gridItems == layout.dataValueGrid ? "active" : ""
+                  }`}
+                  onClick={() => setGridItems(layout.dataValueGrid)}
+                >
+                  <div className="item">
+                    <span className={`icon ${layout.iconClass}`} />
+                  </div>
+                </li>
+              ))}
+            </ul>
             <div className="tf-control-sorting d-flex justify-content-end">
               <div className="tf-dropdown-sort" data-bs-toggle="dropdown">
                 <Sorting setFinalSorted={setFinalSorted} products={products?.data || []} />
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="wrapper-control-shop">
             <ProductGrid allproducts={products?.data || []} gridItems={gridItems} />
             {/* pagination */}

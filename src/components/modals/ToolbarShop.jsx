@@ -190,7 +190,7 @@ export default function ToolbarShop() {
           </ul>
         </div>
         <div className="mb-bottom">
-          <Link to={`/shop-default`} className="tf-btn fw-5 btn-line">
+          <Link to={`/shop-collection-list`} className="tf-btn fw-5 btn-line">
             View all collection
             <i className="icon icon-arrow1-top-left" />
           </Link>
