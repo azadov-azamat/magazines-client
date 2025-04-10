@@ -91,6 +91,16 @@
     bottom: unset;
   }
 }
+
+.slide-title-container {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1); /* Yarim shaffof oq */
+  backdrop-filter: blur(10px); /* Blur effekti */
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: fit-content;
+}
+
 .slider-effect-fade {
   .swiper-slide {
     .fade-item {

@@ -3,6 +3,7 @@ import { Pagination } from "swiper/modules";
 import React from "react";
 import { useSlider } from "@/data/hook";
 import defaultImage from "../../../../public/images/default.jpg";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
 
@@ -26,8 +27,8 @@ export default function Hero() {
                 width="2000"
                 height="1125"
               />
-              <div className="box-content">
-                <div className="container">
+              {/* <div className="box-content">
+                <div className="container slide-title-container">
                   <h1 className="fade-item fade-item-1">
                     {slide.slideName.split("\n").map((line, i) => (
                       <React.Fragment key={i}>
@@ -36,16 +37,16 @@ export default function Hero() {
                       </React.Fragment>
                     ))}
                   </h1>
-                  {/* <p className="fade-item fade-item-2">{slide.text}</p> */}
-                  {/* <Link
+                  <p className="fade-item fade-item-2">{slide?.text}asdfasdfasd asd</p>
+                  <Link
                     to={`/shop-default`}
                     className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                   >
-                    <span>{slide.btnText}</span>
+                    <span>{slide?.btnText || "Get sale"}</span>
                     <i className="icon icon-arrow-right" />
-                  </Link> */}
+                  </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         ))}
