@@ -41,7 +41,7 @@ export default function Hero() {
                   <Link
                     to={`/shop-default`}
                     className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
-                  >
+                  > 
                     <span>{slide?.btnText || "Get sale"}</span>
                     <i className="icon icon-arrow-right" />
                   </Link>
