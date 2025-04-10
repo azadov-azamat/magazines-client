@@ -1,11 +1,11 @@
 import { useContextElement } from "@/context/Context";
-import { products1 } from "@/data/products";
 
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+// import { useRef } from "react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {useProducts} from "@/data/hook/index.js";
+import { useProducts} from "@/data/hook/index.js";
+
 export default function ShopCart() {
   const { cartProducts, totalPrice, setCartProducts, setQuickViewItem } =
     useContextElement();
@@ -24,11 +24,10 @@ export default function ShopCart() {
   const removeItem = (id) => {
     setCartProducts((pre) => [...pre.filter((elm) => elm.id != id)]);
   };
-console.log("cartProducts", cartProducts);
 
-  const addNoteRef = useRef();
-  const addGiftRef = useRef();
-  const addShipingRef = useRef();
+  // const addNoteRef = useRef();
+  // const addGiftRef = useRef();
+  // const addShipingRef = useRef();
 
   return (
     <div className="modal fullRight fade modal-shopping-cart" id="shoppingCart">
@@ -213,7 +212,7 @@ console.log("cartProducts", cartProducts);
                 </div>
               </div>
               <div className="tf-mini-cart-bottom">
-                <div className="tf-mini-cart-tool">
+                {/* <div className="tf-mini-cart-tool">
                   <div
                     className="tf-mini-cart-tool-btn btn-add-note"
                     onClick={() => addNoteRef.current.classList.add("open")}
@@ -265,7 +264,7 @@ console.log("cartProducts", cartProducts);
                       />
                     </svg>
                   </div>
-                </div>
+                </div> */}
                 <div className="tf-mini-cart-bottom-wrap">
                   <div className="tf-cart-totals-discounts">
                     <div className="tf-cart-total">Subtotal</div>
@@ -312,7 +311,7 @@ console.log("cartProducts", cartProducts);
                   </div>
                 </div>
               </div>
-              <div
+              {/* <div
                 className="tf-mini-cart-tool-openable add-note"
                 ref={addNoteRef}
               >
@@ -598,7 +597,7 @@ console.log("cartProducts", cartProducts);
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

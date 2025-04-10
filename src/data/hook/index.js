@@ -1,7 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { getSlider } from '../services/slider';
 import { getCategories } from '../services/categories';
 import { getProducts, getProductById } from '../services/products';
+import { createOrder } from '../services/orders';
 
 export const useSlider = () => {
   return useQuery({
@@ -33,3 +34,9 @@ export const useProductById = (id) => {
         queryFn: () => getProductById(id),
     });
 };  
+
+export const useCreateOrder = () => {
+    return useMutation({
+      mutationFn: createOrder,
+    });
+};

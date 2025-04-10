@@ -1,8 +1,64 @@
 import { useContextElement } from "@/context/Context";
+import { useCreateOrder } from "@/data/hook";
+import { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 export default function Checkout() {
+  const navigate = useNavigate();
+
   const { cartProducts, setCartProducts, totalPrice } = useContextElement();
+  const nameRef = useRef();
+  const phoneRef = useRef();
+  const noteRef = useRef();
+  const termsRef = useRef();
+
+  const { mutate: createOrder, isLoading } = useCreateOrder();
+  const [isValid, setIsValid] = useState(false);
+
+  const handleSubmit = () => {
+    const clientName = nameRef.current.value;
+    const clientPhone = phoneRef.current.value;
+    const comment = noteRef.current.value;
+  
+    if (!clientName || !clientPhone || cartProducts.length === 0) {
+      alert("Iltimos, barcha maydonlarni to‘ldiring va mahsulot tanlang.");
+      return;
+    }
+  
+    const orderPayload = {
+      clientName,
+      clientPhone,
+      comment,
+      orders: cartProducts.map((item) => ({
+        productId: item.id,
+        quantity: item.quantity,
+      })),
+    };
+  
+    createOrder(orderPayload, {
+      onSuccess: () => {
+        navigate("/");  
+        setCartProducts([]); // savatchani tozalash
+        alert("Buyurtma muvaffaqiyatli yuborildi!");
+      },
+      onError: () => {
+        alert("Xatolik yuz berdi, iltimos qayta urinib ko‘ring.");
+      },
+    });
+  };
+  
+  const validateForm = () => {
+    const name = nameRef.current?.value?.trim();
+    const phone = phoneRef.current?.value?.trim();
+    const termsAccepted = termsRef.current?.checked;
+  
+    if (name && phone && termsAccepted && cartProducts.length > 0) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  };
+
   return (
     <section className="flat-spacing-11">
       <div className="container">
@@ -15,20 +71,22 @@ export default function Checkout() {
             >
               <div className="box grid-2">
                 <fieldset className="fieldset">
-                  <label htmlFor="first-name">First Name</label>
+                  <label htmlFor="clientName">Full Name</label>
                   <input
                     required
                     type="text"
-                    id="first-name"
+                    id="clientName"
                     placeholder="Themesflat"
+                    ref={nameRef}
+                    onChange={validateForm}
                   />
                 </fieldset>
-                <fieldset className="fieldset">
+                {/* <fieldset className="fieldset">
                   <label htmlFor="last-name">Last Name</label>
                   <input required type="text" id="last-name" />
-                </fieldset>
+                </fieldset> */}
               </div>
-              <fieldset className="box fieldset">
+              {/* <fieldset className="box fieldset">
                 <label htmlFor="country">Country/Region</label>
                 <div className="select-custom">
                   <select
@@ -180,12 +238,12 @@ export default function Checkout() {
               <fieldset className="box fieldset">
                 <label htmlFor="address">Address</label>
                 <input required type="text" id="address" />
-              </fieldset>
+              </fieldset> */}
               <fieldset className="box fieldset">
                 <label htmlFor="phone">Phone Number</label>
-                <input required type="number" id="phone" />
+                <input  ref={phoneRef} required type="number" id="phone" onChange={validateForm} />
               </fieldset>
-              <fieldset className="box fieldset">
+              {/* <fieldset className="box fieldset">
                 <label htmlFor="email">Email</label>
                 <input
                   required
@@ -193,10 +251,10 @@ export default function Checkout() {
                   autoComplete="abc@xyz.com"
                   id="email"
                 />
-              </fieldset>
+              </fieldset> */}
               <fieldset className="box fieldset">
                 <label htmlFor="note">Order notes (optional)</label>
-                <textarea name="note" id="note" defaultValue={""} />
+                <textarea ref={noteRef} name="note" id="note" defaultValue={""} onChange={validateForm} />
               </fieldset>
             </form>
           </div>
@@ -213,7 +271,7 @@ export default function Checkout() {
                       <figure className="img-product">
                         <img
                           alt="product"
-                          src={elm.imgSrc}
+                          src={elm.productImgUrl}
                           width={720}
                           height={1005}
                         />
@@ -221,11 +279,11 @@ export default function Checkout() {
                       </figure>
                       <div className="content">
                         <div className="info">
-                          <p className="name">{elm.title}</p>
-                          <span className="variant">Brown / M</span>
+                          <p className="name">{elm.productName}</p>
+                          <span className="variant">{elm.productModel}</span>
                         </div>
                         <span className="price">
-                          ${(elm.price * elm.quantity).toFixed(2)}
+                        {elm?.productCurrency === 'dollar' && '$'}{(Number(elm.productPrice) * elm.quantity)}
                         </span>
                       </div>
                     </li>
@@ -249,7 +307,7 @@ export default function Checkout() {
                     </div>
                   </div>
                 )}
-                <div className="coupon-box">
+                {/* <div className="coupon-box">
                   <input required type="text" placeholder="Discount code" />
                   <a
                     href="#"
@@ -257,13 +315,13 @@ export default function Checkout() {
                   >
                     Apply
                   </a>
-                </div>
+                </div> */}
                 <div className="d-flex justify-content-between line pb_20">
                   <h6 className="fw-5">Total</h6>
-                  <h6 className="total fw-5">$122.00</h6>
+                  <h6 className="total fw-5">${totalPrice}</h6>
                 </div>
                 <div className="wd-check-payment">
-                  <div className="fieldset-radio mb_20">
+                  {/* <div className="fieldset-radio mb_20">
                     <input
                       required
                       type="radio"
@@ -273,8 +331,8 @@ export default function Checkout() {
                       defaultChecked
                     />
                     <label htmlFor="bank">Direct bank transfer</label>
-                  </div>
-                  <div className="fieldset-radio mb_20">
+                  </div> */}
+                  {/* <div className="fieldset-radio mb_20">
                     <input
                       required
                       type="radio"
@@ -283,7 +341,7 @@ export default function Checkout() {
                       className="tf-check"
                     />
                     <label htmlFor="delivery">Cash on delivery</label>
-                  </div>
+                  </div> */}
                   <p className="text_black-2 mb_20">
                     Your personal data will be used to process your order,
                     support your experience throughout this website, and for
@@ -302,6 +360,8 @@ export default function Checkout() {
                       type="checkbox"
                       id="check-agree"
                       className="tf-check"
+                      ref={termsRef}
+                      onChange={validateForm}
                     />
                     <label htmlFor="check-agree" className="text_black-2">
                       I have read and agree to the website
@@ -315,8 +375,8 @@ export default function Checkout() {
                     </label>
                   </div>
                 </div>
-                <button className="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">
-                  Place order
+                <button  disabled={!isValid || isLoading}  onClick={handleSubmit} className="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">
+                  {isLoading ? "Sending..." : "Place order"}
                 </button>
               </form>
             </div>
