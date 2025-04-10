@@ -15,7 +15,7 @@ export default function ShopCollections() {
             <div className="collection-item hover-img" key={index}>
               <div className="collection-inner">
                 <Link
-                  to={`/shop-default`}
+                  to={`/shop-default?categoryId${item.id}`}
                   className="collection-image img-style"
                 >
                   <img
@@ -29,7 +29,7 @@ export default function ShopCollections() {
                 </Link>
                 <div className="collection-content">
                   <Link
-                    to={`/shop-default`}
+                    to={`/shop-default?categoryId${item.id}`}
                     className="tf-btn collection-title hover-icon"
                   >
                     <span>{item.categoryName}</span>
