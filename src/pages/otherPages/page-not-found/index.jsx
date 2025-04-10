@@ -1,12 +1,12 @@
-import Footer1 from "@/components/footers/Footer1";
-import Header1 from "@/components/headers/Header1";
+import Footer1 from '@/components/footers/Footer1';
+import Header1 from '@/components/headers/Header1';
 
-import { Link } from "react-router-dom";
-import React from "react";
-import MetaComponent from "@/components/common/MetaComponent";
+import { Link } from 'react-router-dom';
+import React from 'react';
+import MetaComponent from '@/components/common/MetaComponent';
 const metadata = {
-  title: "Page Not Found || Ecomus - Ultimate Reactjs Ecommerce Template",
-  description: "Ecomus - Ultimate Reactjs Ecommerce Template",
+  title: 'Page Not Found || Ecomus - Ultimate Reactjs Ecommerce Template',
+  description: 'Ecomus - Ultimate Reactjs Ecommerce Template',
 };
 export default function PageNotFoundPage() {
   return (
@@ -27,8 +27,8 @@ export default function PageNotFoundPage() {
               </div>
               <div className="title">Oops...That link is broken.</div>
               <p>
-                Sorry for the inconvenience. Go to our homepage to check out our
-                latest collections.
+                Sorry for the inconvenience. Go to our homepage to Buyurtma
+                qilish our latest collections.
               </p>
               <Link
                 href="/"

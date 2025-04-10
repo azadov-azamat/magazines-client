@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useCategories } from "@/data/hook";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCategories } from '@/data/hook';
 
 export default function ToolbarShop() {
   // const categories = [
@@ -65,7 +65,7 @@ export default function ToolbarShop() {
   // ];
 
   const { data: categories } = useCategories();
-  
+
   return (
     <div
       className="offcanvas offcanvas-start canvas-mb toolbar-shop-mobile"
@@ -101,7 +101,10 @@ export default function ToolbarShop() {
                       <span>{category.name}</span>
                       <span className="btn-open-sub" />
                     </a>
-                    <div id={`cate-menu-${index}`} className="collapse list-cate">
+                    <div
+                      id={`cate-menu-${index}`}
+                      className="collapse list-cate"
+                    >
                       <ul className="sub-nav-menu">
                         {category.children.map((child, childIndex) => (
                           <li key={childIndex}>
@@ -125,26 +128,31 @@ export default function ToolbarShop() {
                                   <span>{child.name}</span>
                                   <span className="btn-open-sub" />
                                 </a>
-                                <div id={`cate-shop-${index}-${childIndex}`} className="collapse">
+                                <div
+                                  id={`cate-shop-${index}-${childIndex}`}
+                                  className="collapse"
+                                >
                                   <ul className="sub-nav-menu sub-menu-level-2">
-                                    {child.children.map((subChild, subChildIndex) => (
-                                      <li key={subChildIndex}>
-                                        <Link
-                                          to={`/shop-default`}
-                                          className="tf-category-link sub-nav-link"
-                                        >
-                                          <div className="image">
-                                            <img
-                                              alt="image"
-                                              src={subChild.img}
-                                              width={40}
-                                              height={48}
-                                            />
-                                          </div>
-                                          <span>{subChild.name}</span>
-                                        </Link>
-                                      </li>
-                                    ))}
+                                    {child.children.map(
+                                      (subChild, subChildIndex) => (
+                                        <li key={subChildIndex}>
+                                          <Link
+                                            to={`/shop-default`}
+                                            className="tf-category-link sub-nav-link"
+                                          >
+                                            <div className="image">
+                                              <img
+                                                alt="image"
+                                                src={subChild.img}
+                                                width={40}
+                                                height={48}
+                                              />
+                                            </div>
+                                            <span>{subChild.name}</span>
+                                          </Link>
+                                        </li>
+                                      )
+                                    )}
                                   </ul>
                                 </div>
                               </>
@@ -191,7 +199,7 @@ export default function ToolbarShop() {
         </div>
         <div className="mb-bottom">
           <Link to={`/shop-collection-list`} className="tf-btn fw-5 btn-line">
-            View all collection
+            Barcha bo'limlarni ko'rish
             <i className="icon icon-arrow1-top-left" />
           </Link>
         </div>

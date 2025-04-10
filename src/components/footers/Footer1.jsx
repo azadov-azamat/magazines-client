@@ -1,29 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-import { Link } from "react-router-dom";
-import axios from "axios";
-import LanguageSelect from "../common/LanguageSelect";
-import CurrencySelect from "../common/CurrencySelect";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import LanguageSelect from '../common/LanguageSelect';
+import CurrencySelect from '../common/CurrencySelect';
 
-import { aboutLinks, footerLinks, paymentImages } from "@/data/footerLinks";
-export default function Footer1({ bgColor = "" }) {
+import { aboutLinks, footerLinks, paymentImages } from '@/data/footerLinks';
+export default function Footer1({ bgColor = '' }) {
   useEffect(() => {
-    const headings = document.querySelectorAll(".footer-heading-moblie");
+    const headings = document.querySelectorAll('.footer-heading-moblie');
 
     const toggleOpen = (event) => {
-      const parent = event.target.closest(".footer-col-block");
+      const parent = event.target.closest('.footer-col-block');
 
-      parent.classList.toggle("open");
+      parent.classList.toggle('open');
     };
 
     headings.forEach((heading) => {
-      heading.addEventListener("click", toggleOpen);
+      heading.addEventListener('click', toggleOpen);
     });
 
     // Clean up event listeners when the component unmounts
     return () => {
       headings.forEach((heading) => {
-        heading.removeEventListener("click", toggleOpen);
+        heading.removeEventListener('click', toggleOpen);
       });
     };
   }, []); // Empty dependency array means this will run only once on mount
@@ -45,7 +45,7 @@ export default function Footer1({ bgColor = "" }) {
 
     try {
       const response = await axios.post(
-        "https://express-brevomail.vercel.app/api/contacts",
+        'https://express-brevomail.vercel.app/api/contacts',
         {
           email,
         }
@@ -60,7 +60,7 @@ export default function Footer1({ bgColor = "" }) {
         handleShowMessage();
       }
     } catch (error) {
-      console.error("Error:", error.response?.data || "An error occurred");
+      console.error('Error:', error.response?.data || 'An error occurred');
       setSuccess(false); // Set error state
       handleShowMessage();
       e.target.reset(); // Reset the form
@@ -77,51 +77,49 @@ export default function Footer1({ bgColor = "" }) {
                 <div className="footer-infor">
                   <div className="footer-logo">
                     <Link to={`/`}>
-                      <img
+                      {/* <img
                         alt="image"
                         src="/images/logo/logo.svg"
                         width="136"
                         height="21"
-                      />
+                      /> */}
+                      <h5 className="fs-2 fw-bold">Lochin Market</h5>
                     </Link>
                   </div>
                   <ul>
                     <li>
                       <p>
-                        Address: 1234 Fashion Street, Suite 567, <br />
-                        New York, NY 10001
+                        Manzil: Ellikqal'a tumani, Qirqqiz OFY
+                        <br />
+                        A.Alimov ko'chasi, 4-uy
                       </p>
                     </li>
                     <li>
                       <p>
-                        Email: <a href="#">info@fashionshop.com</a>
+                        Email: <a href="#">info@marketlochin.uz</a>
                       </p>
                     </li>
                     <li>
                       <p>
-                        Phone: <a href="#">(212) 555-1234</a>
+                        Telefon: <a href="#">(998)-93-680-49-65</a>
                       </p>
                     </li>
                   </ul>
-                  <Link to={`/contact-1`} className="tf-btn btn-line">
-                    Get direction
-                    <i className="icon icon-arrow1-top-left" />
-                  </Link>
                   <ul className="tf-social-icon d-flex gap-10">
                     <li>
                       <a
                         href="#"
                         className="box-icon w_34 round social-facebook social-line"
                       >
-                        <i className="icon fs-14 icon-fb" />
+                        <i className="fab fa-facebook fs-14" />
                       </a>
                     </li>
                     <li>
                       <a
                         href="#"
-                        className="box-icon w_34 round social-twiter social-line"
+                        className="box-icon w_34 round social-telegram social-line"
                       >
-                        <i className="icon fs-12 icon-Icon-x" />
+                        <i className="fab fa-telegram-plane fs-14" />
                       </a>
                     </li>
                     <li>
@@ -129,7 +127,7 @@ export default function Footer1({ bgColor = "" }) {
                         href="#"
                         className="box-icon w_34 round social-instagram social-line"
                       >
-                        <i className="icon fs-14 icon-instagram" />
+                        <i className="fab fa-instagram fs-14" />
                       </a>
                     </li>
                     <li>
@@ -137,15 +135,15 @@ export default function Footer1({ bgColor = "" }) {
                         href="#"
                         className="box-icon w_34 round social-tiktok social-line"
                       >
-                        <i className="icon fs-14 icon-tiktok" />
+                        <i className="fab fa-tiktok fs-14" />
                       </a>
                     </li>
                     <li>
                       <a
                         href="#"
-                        className="box-icon w_34 round social-pinterest social-line"
+                        className="box-icon w_34 round social-linkedin social-line"
                       >
-                        <i className="icon fs-14 icon-pinterest-1" />
+                        <i className="fab fa-linkedin fs-14" />
                       </a>
                     </li>
                   </ul>
@@ -153,10 +151,10 @@ export default function Footer1({ bgColor = "" }) {
               </div>
               <div className="col-xl-3 col-md-6 col-12 footer-col-block">
                 <div className="footer-heading footer-heading-desktop">
-                  <h6>Help</h6>
+                  <h6>Yordam</h6>
                 </div>
                 <div className="footer-heading footer-heading-moblie">
-                  <h6>Help</h6>
+                  <h6>Yordam</h6>
                 </div>
                 <ul className="footer-menu-list tf-collapse-content">
                   {footerLinks.map((link, index) => (
@@ -170,10 +168,10 @@ export default function Footer1({ bgColor = "" }) {
               </div>
               <div className="col-xl-3 col-md-6 col-12 footer-col-block">
                 <div className="footer-heading footer-heading-desktop">
-                  <h6>About us</h6>
+                  <h6>Biz haqimizda</h6>
                 </div>
                 <div className="footer-heading footer-heading-moblie">
-                  <h6>About us</h6>
+                  <h6>Biz haqimizda</h6>
                 </div>
                 <ul className="footer-menu-list tf-collapse-content">
                   {aboutLinks.slice(0, 4).map((link, index) => (
@@ -188,27 +186,27 @@ export default function Footer1({ bgColor = "" }) {
               <div className="col-xl-3 col-md-6 col-12">
                 <div className="footer-newsletter footer-col-block">
                   <div className="footer-heading footer-heading-desktop">
-                    <h6>Sign Up for Email</h6>
+                    <h6>Email orqai ro'yxatdan o'ting</h6>
                   </div>
                   <div className="footer-heading footer-heading-moblie">
-                    <h6>Sign Up for Email</h6>
+                    <h6>Email orqali ro'yxatdan o'ting</h6>
                   </div>
                   <div className="tf-collapse-content">
                     <div className="footer-menu_item">
-                      Sign up to get first dibs on new arrivals, sales,
-                      exclusive content, events and more!
+                      Birinchilardan bo'lib ro'yxatdan o'ting, va chegirmalarga
+                      ega bo'ling
                     </div>
                     <div
                       className={`tfSubscribeMsg ${
-                        showMessage ? "active" : ""
+                        showMessage ? 'active' : ''
                       }`}
                     >
                       {success ? (
-                        <p style={{ color: "rgb(52, 168, 83)" }}>
-                          You have successfully subscribed.
+                        <p style={{ color: 'rgb(52, 168, 83)' }}>
+                          Muvaffaqiyatli ro'yxatdan o'tdingiz.
                         </p>
                       ) : (
-                        <p style={{ color: "red" }}>Something went wrong</p>
+                        <p style={{ color: 'red' }}>Xatolik yuz berdi.</p>
                       )}
                     </div>
                     <form
@@ -227,7 +225,7 @@ export default function Footer1({ bgColor = "" }) {
                             type="email"
                             name="email"
                             className="subscribe-email"
-                            placeholder="Enter your email...."
+                            placeholder="Emailingizni kiriting...."
                             tabIndex={0}
                             aria-required="true"
                             autoComplete="abc@xyz.com"
@@ -238,21 +236,13 @@ export default function Footer1({ bgColor = "" }) {
                             className="subscribe-button tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn"
                             type="submit"
                           >
-                            Subscribe
+                            Ro'yxatdan o'tish
                             <i className="icon icon-arrow1-top-left" />
                           </button>
                         </div>
                       </div>
                       <div className="subscribe-msg" />
                     </form>
-                    <div className="tf-cur">
-                      <div className="tf-currencies">
-                        <CurrencySelect />
-                      </div>
-                      <div className="tf-languages">
-                        <LanguageSelect />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -265,19 +255,17 @@ export default function Footer1({ bgColor = "" }) {
               <div className="col-12">
                 <div className="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
                   <div className="footer-menu_item">
-                    © {new Date().getFullYear()} Market Lochin. All Rights
-                    Reserved
+                    © {new Date().getFullYear()} Lochin Market. Barcha huquqlar
+                    himoyalangan
                   </div>
                   <div className="tf-payment">
-                    {paymentImages.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image.src}
-                        width={image.width}
-                        height={image.height}
-                        alt={image.alt}
-                      />
-                    ))}
+                    <a
+                      href="https://www.instagram.com/jamshidkalandarov/"
+                      className="text-primary"
+                    >
+                      Jamshid Kalandarov
+                    </a>{' '}
+                    tomonidan yaratilgan
                   </div>
                 </div>
               </div>

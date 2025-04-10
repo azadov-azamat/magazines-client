@@ -1,13 +1,16 @@
-import { iconBoxData } from "@/data/features";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { iconBoxData } from '@/data/features';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Features({
-  parentClass = "flat-spacing-7 flat-iconbox wow fadeInUp",
+  parentClass = 'flat-spacing-7 flat-iconbox wow fadeInUp',
 }) {
   return (
     <section className={parentClass} data-wow-delay="0s">
       <div className="container">
+        <div>
+          <h4 className="text-center p-3">Xizmatlarimiz</h4>
+        </div>
         <div className="wrap-carousel wrap-mobile">
           <Swiper
             dir="ltr"
@@ -31,7 +34,7 @@ export default function Features({
             data-preview={1}
             data-space={15}
             modules={[Pagination]}
-            pagination={{ clickable: true, el: ".spd103" }}
+            pagination={{ clickable: true, el: '.spd103' }}
           >
             {iconBoxData.map((elm, i) => (
               <SwiperSlide key={i} className="swiper-slide">

@@ -1,28 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-import { Link } from "react-router-dom";
-import LanguageSelect from "../common/LanguageSelect";
-import CurrencySelect from "../common/CurrencySelect";
-import axios from "axios";
-import { aboutLinks, footerLinks, paymentImages } from "@/data/footerLinks";
-export default function Footer7({ bgColor = "" }) {
+import { Link } from 'react-router-dom';
+import LanguageSelect from '../common/LanguageSelect';
+import CurrencySelect from '../common/CurrencySelect';
+import axios from 'axios';
+import { aboutLinks, footerLinks, paymentImages } from '@/data/footerLinks';
+export default function Footer7({ bgColor = '' }) {
   useEffect(() => {
-    const headings = document.querySelectorAll(".footer-heading-moblie");
+    const headings = document.querySelectorAll('.footer-heading-moblie');
 
     const toggleOpen = (event) => {
-      const parent = event.target.closest(".footer-col-block");
+      const parent = event.target.closest('.footer-col-block');
 
-      parent.classList.toggle("open");
+      parent.classList.toggle('open');
     };
 
     headings.forEach((heading) => {
-      heading.addEventListener("click", toggleOpen);
+      heading.addEventListener('click', toggleOpen);
     });
 
     // Clean up event listeners when the component unmounts
     return () => {
       headings.forEach((heading) => {
-        heading.removeEventListener("click", toggleOpen);
+        heading.removeEventListener('click', toggleOpen);
       });
     };
   }, []); // Empty dependency array means this will run only once on mount
@@ -44,7 +44,7 @@ export default function Footer7({ bgColor = "" }) {
 
     try {
       const response = await axios.post(
-        "https://express-brevomail.vercel.app/api/contacts",
+        'https://express-brevomail.vercel.app/api/contacts',
         {
           email,
         }
@@ -59,7 +59,7 @@ export default function Footer7({ bgColor = "" }) {
         handleShowMessage();
       }
     } catch (error) {
-      console.error("Error:", error.response?.data || "An error occurred");
+      console.error('Error:', error.response?.data || 'An error occurred');
       setSuccess(false); // Set error state
       handleShowMessage();
       e.target.reset(); // Reset the form
@@ -199,15 +199,15 @@ export default function Footer7({ bgColor = "" }) {
                     </div>
                     <div
                       className={`tfSubscribeMsg ${
-                        showMessage ? "active" : ""
+                        showMessage ? 'active' : ''
                       }`}
                     >
                       {success ? (
-                        <p style={{ color: "rgb(52, 168, 83)" }}>
+                        <p style={{ color: 'rgb(52, 168, 83)' }}>
                           You have successfully subscribed.
                         </p>
                       ) : (
-                        <p style={{ color: "red" }}>Something went wrong</p>
+                        <p style={{ color: 'red' }}>Something went wrong</p>
                       )}
                     </div>
                     <form
@@ -226,7 +226,7 @@ export default function Footer7({ bgColor = "" }) {
                             type="email"
                             name="email"
                             className=" radius-60 "
-                            placeholder="Enter your email...."
+                            placeholder="Emailingizni kiriting...."
                             tabIndex={0}
                             aria-required="true"
                             autoComplete="abc@xyz.com"

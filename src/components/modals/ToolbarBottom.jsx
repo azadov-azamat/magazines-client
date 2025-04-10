@@ -1,13 +1,15 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import CartLength from "../common/CartLength";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import CartLength from '../common/CartLength';
 
 export default function ToolbarBottom() {
-  const {pathname} = useLocation()
-  
+  const { pathname } = useLocation();
+
   return (
     <div className="tf-toolbar-bottom type-1150">
-      <div className={`toolbar-item ${pathname !== '/shop-default' && 'active'}`}>
+      <div
+        className={`toolbar-item ${pathname !== '/shop-default' && 'active'}`}
+      >
         <a
           href="#toolbarShopmb"
           data-bs-toggle="offcanvas"
@@ -16,7 +18,7 @@ export default function ToolbarBottom() {
           <div className="toolbar-icon">
             <i className="icon-shop" />
           </div>
-          <div className="toolbar-label">Shop</div>
+          <div className="toolbar-label">Bo'limlar</div>
         </a>
       </div>
       <div className="toolbar-item">
@@ -28,15 +30,17 @@ export default function ToolbarBottom() {
           <div className="toolbar-icon">
             <i className="icon-search" />
           </div>
-          <div className="toolbar-label">Search</div>
+          <div className="toolbar-label">Izlash</div>
         </a>
       </div>
-      <div className={`toolbar-item ${pathname === '/shop-default' && 'active'}`}>
+      <div
+        className={`toolbar-item ${pathname === '/shop-default' && 'active'}`}
+      >
         <Link to={'/shop-default'}>
           <div className="toolbar-icon">
             <i className="icon-grid" />
           </div>
-          <div className="toolbar-label">Products</div>
+          <div className="toolbar-label">Mahsulotlar</div>
         </Link>
       </div>
       {/* <div className="toolbar-item">
@@ -58,7 +62,7 @@ export default function ToolbarBottom() {
               <CartLength />
             </div>
           </div>
-          <div className="toolbar-label">Cart</div>
+          <div className="toolbar-label">Savatcha</div>
         </a>
       </div>
     </div>

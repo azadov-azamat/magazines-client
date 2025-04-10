@@ -1,8 +1,8 @@
-import { allProducts } from "@/data/products";
-import { useContextElement } from "@/context/Context";
-import { useEffect, useState } from "react";
-import { ProductCardWishlist } from "../shopCards/ProductCardWishlist";
-import { Link } from "react-router-dom";
+import { allProducts } from '@/data/products';
+import { useContextElement } from '@/context/Context';
+import { useEffect, useState } from 'react';
+import { ProductCardWishlist } from '../shopCards/ProductCardWishlist';
+import { Link } from 'react-router-dom';
 
 export default function Wishlist() {
   const { wishList } = useContextElement();
@@ -28,7 +28,7 @@ export default function Wishlist() {
           <>
             <div
               className="row align-items-center w-100"
-              style={{ rowGap: "20px" }}
+              style={{ rowGap: '20px' }}
             >
               <div className="col-lg-3 col-md-6 fs-18">
                 Your wishlist is empty
@@ -38,7 +38,7 @@ export default function Wishlist() {
                   to={`/shop-default`}
                   className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
                 >
-                  Explore Products!
+                  Mahsulotlarni tanlash!
                 </Link>
               </div>
             </div>

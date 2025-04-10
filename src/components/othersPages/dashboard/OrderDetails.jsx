@@ -1,39 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 export default function OrderDetails() {
   useEffect(() => {
     const tabs = () => {
-      document.querySelectorAll(".widget-tabs").forEach((widgetTab) => {
+      document.querySelectorAll('.widget-tabs').forEach((widgetTab) => {
         const titles = widgetTab.querySelectorAll(
-          ".widget-menu-tab .item-title"
+          '.widget-menu-tab .item-title'
         );
 
         titles.forEach((title, index) => {
-          title.addEventListener("click", () => {
+          title.addEventListener('click', () => {
             // Remove active class from all menu items
-            titles.forEach((item) => item.classList.remove("active"));
+            titles.forEach((item) => item.classList.remove('active'));
             // Add active class to the clicked item
-            title.classList.add("active");
+            title.classList.add('active');
 
             // Remove active class from all content items
             const contentItems = widgetTab.querySelectorAll(
-              ".widget-content-tab > *"
+              '.widget-content-tab > *'
             );
             contentItems.forEach((content) =>
-              content.classList.remove("active")
+              content.classList.remove('active')
             );
 
             // Add active class and fade-in effect to the matching content item
             const contentActive = contentItems[index];
-            contentActive.classList.add("active");
-            contentActive.style.display = "block";
+            contentActive.classList.add('active');
+            contentActive.style.display = 'block';
             contentActive.style.opacity = 0;
             setTimeout(() => (contentActive.style.opacity = 1), 0);
 
             // Hide all siblings' content
             contentItems.forEach((content, idx) => {
               if (idx !== index) {
-                content.style.display = "none";
+                content.style.display = 'none';
               }
             });
           });
@@ -47,9 +47,9 @@ export default function OrderDetails() {
     // Clean up event listeners when the component unmounts
     return () => {
       document
-        .querySelectorAll(".widget-menu-tab .item-title")
+        .querySelectorAll('.widget-menu-tab .item-title')
         .forEach((title) => {
-          title.removeEventListener("click", () => {});
+          title.removeEventListener('click', () => {});
         });
     };
   }, []);
@@ -210,7 +210,7 @@ export default function OrderDetails() {
           </div>
           <div className="widget-content-inner">
             <p className="text-2 text_success">
-              Thank you Your order has been received
+              Thank you Sizning buyurtmangiz has been received
             </p>
             <ul className="mt_20">
               <li>

@@ -1,7 +1,7 @@
-import { useContextElement } from "@/context/Context";
-import { useCreateOrder } from "@/data/hook";
-import { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContextElement } from '@/context/Context';
+import { useCreateOrder } from '@/data/hook';
+import { useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -19,12 +19,12 @@ export default function Checkout() {
     const clientName = nameRef.current.value;
     const clientPhone = phoneRef.current.value;
     const comment = noteRef.current.value;
-  
+
     if (!clientName || !clientPhone || cartProducts.length === 0) {
-      alert("Iltimos, barcha maydonlarni to‘ldiring va mahsulot tanlang.");
+      alert('Iltimos, barcha maydonlarni to‘ldiring va mahsulot tanlang.');
       return;
     }
-  
+
     const orderPayload = {
       clientName,
       clientPhone,
@@ -34,24 +34,24 @@ export default function Checkout() {
         quantity: item.quantity,
       })),
     };
-  
+
     createOrder(orderPayload, {
       onSuccess: () => {
-        navigate("/");  
+        navigate('/');
         setCartProducts([]); // savatchani tozalash
-        alert("Buyurtma muvaffaqiyatli yuborildi!");
+        alert('Buyurtma muvaffaqiyatli yuborildi!');
       },
       onError: () => {
-        alert("Xatolik yuz berdi, iltimos qayta urinib ko‘ring.");
+        alert('Xatolik yuz berdi, iltimos qayta urinib ko‘ring.');
       },
     });
   };
-  
+
   const validateForm = () => {
     const name = nameRef.current?.value?.trim();
     const phone = phoneRef.current?.value?.trim();
     const termsAccepted = termsRef.current?.checked;
-  
+
     if (name && phone && termsAccepted && cartProducts.length > 0) {
       setIsValid(true);
     } else {
@@ -64,19 +64,19 @@ export default function Checkout() {
       <div className="container">
         <div className="tf-page-cart-wrap layout-2">
           <div className="tf-page-cart-item">
-            <h5 className="fw-5 mb_20">Billing details</h5>
+            <h5 className="fw-5 mb_20">Buyurtma ma'lumotlari</h5>
             <form
               onSubmit={(e) => e.preventDefault()}
               className="form-checkout"
             >
               <div className="box grid-2">
                 <fieldset className="fieldset">
-                  <label htmlFor="clientName">Full Name</label>
+                  <label htmlFor="clientName">Ismi-sharifingiz</label>
                   <input
                     required
                     type="text"
                     id="clientName"
-                    placeholder="Themesflat"
+                    placeholder="Ismingiz..."
                     ref={nameRef}
                     onChange={validateForm}
                   />
@@ -240,8 +240,14 @@ export default function Checkout() {
                 <input required type="text" id="address" />
               </fieldset> */}
               <fieldset className="box fieldset">
-                <label htmlFor="phone">Phone Number</label>
-                <input  ref={phoneRef} required type="number" id="phone" onChange={validateForm} />
+                <label htmlFor="phone">Telefon raqam</label>
+                <input
+                  ref={phoneRef}
+                  required
+                  type="number"
+                  id="phone"
+                  onChange={validateForm}
+                />
               </fieldset>
               {/* <fieldset className="box fieldset">
                 <label htmlFor="email">Email</label>
@@ -253,14 +259,20 @@ export default function Checkout() {
                 />
               </fieldset> */}
               <fieldset className="box fieldset">
-                <label htmlFor="note">Order notes (optional)</label>
-                <textarea ref={noteRef} name="note" id="note" defaultValue={""} onChange={validateForm} />
+                <label htmlFor="note">Izoh (ixtiyoriy)</label>
+                <textarea
+                  ref={noteRef}
+                  name="note"
+                  id="note"
+                  defaultValue={''}
+                  // onChange={validateForm}
+                />
               </fieldset>
             </form>
           </div>
           <div className="tf-page-cart-footer">
             <div className="tf-cart-footer-inner">
-              <h5 className="fw-5 mb_20">Your order</h5>
+              <h5 className="fw-5 mb_20">Sizning buyurtmangiz</h5>
               <form
                 onSubmit={(e) => e.preventDefault()}
                 className="tf-page-cart-checkout widget-wrap-checkout"
@@ -283,7 +295,8 @@ export default function Checkout() {
                           <span className="variant">{elm.productModel}</span>
                         </div>
                         <span className="price">
-                        {elm?.productCurrency === 'dollar' && '$'}{(Number(elm.productPrice) * elm.quantity)}
+                          {elm?.productCurrency === 'dollar' && '$'}
+                          {Number(elm.productPrice) * elm.quantity}
                         </span>
                       </div>
                     </li>
@@ -293,15 +306,15 @@ export default function Checkout() {
                   <div className="container">
                     <div className="row align-items-center mt-5 mb-5">
                       <div className="col-12 fs-18">
-                        Your shop cart is empty
+                        Sizning savatchangiz bo'sh
                       </div>
                       <div className="col-12 mt-3">
                         <Link
                           to={`/shop-default`}
                           className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
-                          style={{ width: "fit-content" }}
+                          style={{ width: 'fit-content' }}
                         >
-                          Explore Products!
+                          Mahsulotlarni tanlash!
                         </Link>
                       </div>
                     </div>
@@ -317,8 +330,8 @@ export default function Checkout() {
                   </a>
                 </div> */}
                 <div className="d-flex justify-content-between line pb_20">
-                  <h6 className="fw-5">Total</h6>
-                  <h6 className="total fw-5">${totalPrice.toFixed(2)}</h6>
+                  <h6 className="fw-5">Umumiy</h6>
+                  <h6 className="total fw-5">{totalPrice.toFixed(2)} sum</h6>
                 </div>
                 <div className="wd-check-payment">
                   {/* <div className="fieldset-radio mb_20">
@@ -343,16 +356,8 @@ export default function Checkout() {
                     <label htmlFor="delivery">Cash on delivery</label>
                   </div> */}
                   <p className="text_black-2 mb_20">
-                    Your personal data will be used to process your order,
-                    support your experience throughout this website, and for
-                    other purposes described in our
-                    <Link
-                      to={`/privacy-policy`}
-                      className="text-decoration-underline"
-                    >
-                      privacy policy
-                    </Link>
-                    .
+                    Sizning shaxsiy ma'lumotlaringiz sir saqlanishiga kafolat
+                    beramiz.
                   </p>
                   <div className="box-checkbox fieldset-radio mb_20">
                     <input
@@ -364,19 +369,16 @@ export default function Checkout() {
                       onChange={validateForm}
                     />
                     <label htmlFor="check-agree" className="text_black-2">
-                      I have read and agree to the website
-                      <Link
-                        to={`/terms-conditions`}
-                        className="text-decoration-underline"
-                      >
-                        terms and conditions
-                      </Link>
-                      .
+                      Men ommaviy ofertaga roziman.
                     </label>
                   </div>
                 </div>
-                <button  disabled={!isValid || isLoading}  onClick={handleSubmit} className="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">
-                  {isLoading ? "Sending..." : "Place order"}
+                <button
+                  disabled={!isValid || isLoading}
+                  onClick={handleSubmit}
+                  className="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center"
+                >
+                  {isLoading ? 'Buyurtma berilmodqa...' : 'Buyurtma berish'}
                 </button>
               </form>
             </div>

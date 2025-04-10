@@ -1,14 +1,14 @@
-import { products1 } from "@/data/products";
-import React, { useState } from "react";
-import { ProductCard } from "../../shopCards/ProductCard";
-import { useProducts } from "@/data/hook";
+import { products1 } from '@/data/products';
+import React, { useState } from 'react';
+import { ProductCard } from '../../shopCards/ProductCard';
+import { useProducts } from '@/data/hook';
 
 export default function Products() {
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [page, setPage] = useState(1);
   const { data: products } = useProducts(page);
-  
+
   const handleLoad = () => {
     setLoading(true);
 
@@ -24,11 +24,11 @@ export default function Products() {
       <div className="container">
         <div className="flat-title">
           <span className="title wow fadeInUp" data-wow-delay="0s">
-            Best Sellersafd
+            Yangi mahsulotlar
           </span>
           <p className="sub-title wow fadeInUp" data-wow-delay="0s">
-            Shop the Latest Styles: Stay ahead of the curve with our newest
-            arrivals
+            Yangi texnikalarni xarid qiling: Eng so‘nggi mahsulotlar bilan
+            yangiliklardan ortda qolmang.
           </p>
         </div>
         <div
@@ -44,11 +44,11 @@ export default function Products() {
           <div className="tf-pagination-wrap view-more-button text-center">
             <button
               className={`tf-btn-loading tf-loading-default style-2 btn-loadmore ${
-                loading ? "loading" : ""
+                loading ? 'loading' : ''
               } `}
               onClick={() => handleLoad()}
             >
-              <span className="text">Load more</span>
+              <span className="text">Ko'proq...</span>
             </button>
           </div>
         )}

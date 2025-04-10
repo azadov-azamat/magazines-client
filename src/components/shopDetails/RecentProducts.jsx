@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ProductCard } from "../shopCards/ProductCard";
-import { Navigation, Pagination } from "swiper/modules";
-import { useProducts } from "@/data/hook";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { ProductCard } from '../shopCards/ProductCard';
+import { Navigation, Pagination } from 'swiper/modules';
+import { useProducts } from '@/data/hook';
 
 export default function RecentProducts() {
   const { data: products } = useProducts();
@@ -9,7 +9,7 @@ export default function RecentProducts() {
     <section className="flat-spacing-4 pt_0">
       <div className="container">
         <div className="flat-title">
-          <span className="title">Recently Viewed</span>
+          <span className="title">Yaqinda ko'rilganlar</span>
         </div>
         <div className="hover-sw-nav hover-sw-2">
           <Swiper
@@ -31,10 +31,10 @@ export default function RecentProducts() {
             }}
             modules={[Navigation, Pagination]}
             navigation={{
-              prevEl: ".snbp308",
-              nextEl: ".snbn308",
+              prevEl: '.snbp308',
+              nextEl: '.snbn308',
             }}
-            pagination={{ clickable: true, el: ".spd308" }}
+            pagination={{ clickable: true, el: '.spd308' }}
           >
             {products?.data?.slice(4, 12).map((product, i) => (
               <SwiperSlide key={i} className="swiper-slide">

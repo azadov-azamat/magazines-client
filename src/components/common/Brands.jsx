@@ -1,15 +1,15 @@
-import { brandData } from "@/data/brands";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { brandData } from '@/data/brands';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Pagination } from "swiper/modules";
-export default function Brands({ parentClass = "flat-spacing-1" }) {
+import { Pagination } from 'swiper/modules';
+export default function Brands({ parentClass = 'flat-spacing-1' }) {
   return (
     <section className={parentClass}>
       <div className="container">
         <Swiper
           dir="ltr"
-          className="swiper tf-sw-brand"
+          className="swiper tf-sw-brand d-flex align-content-center"
           loop={false} // Equivalent to data-loop="false"
           autoplay={false} // Equivalent to data-play="false"
           spaceBetween={0} // Equivalent to data-space-lg
@@ -29,13 +29,13 @@ export default function Brands({ parentClass = "flat-spacing-1" }) {
             },
           }}
           modules={[Pagination]}
-          pagination={{ clickable: true, el: ".sp106" }}
+          pagination={{ clickable: true, el: '.sp106' }}
         >
           {brandData.map((brand, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`brand-item ${
-                  index == brandData.length - 1 ? "border-done" : ""
+                className={`brand-itemd-flex mx align-items-center ${
+                  index == brandData.length - 1 ? 'border-done' : ''
                 }`}
               >
                 <img

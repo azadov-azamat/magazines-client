@@ -1,6 +1,6 @@
-import { useContextElement } from "@/context/Context";
+import { useContextElement } from '@/context/Context';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 export default function Cart() {
   const { cartProducts, setCartProducts, totalPrice } = useContextElement();
   const setQuantity = (id, quantity) => {
@@ -21,7 +21,7 @@ export default function Cart() {
       <div className="container">
         {/* <div className="tf-page-cart text-center mt_140 mb_200">
               <h5 className="mb_24">Your cart is empty</h5>
-              <p className="mb_24">You may check out all the available products and buy some in the shop</p>
+              <p className="mb_24">You may Buyurtma qilish all the available products and buy some in the shop</p>
               <Link to={`/shop-default`} className="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">Return to shop<i className="icon icon-arrow1-top-left"></i></Link>
           </div> */}
         <div className="tf-cart-countdown">
@@ -40,7 +40,7 @@ export default function Cart() {
                 d="M10.0899 24C11.3119 22.1928 11.4245 20.2409 10.4277 18.1443C10.1505 19.2691 9.64344 19.9518 8.90645 20.1924C9.59084 18.2379 9.01896 16.1263 7.19079 13.8576C7.15133 16.2007 6.58824 17.9076 5.50148 18.9782C4.00436 20.4517 4.02197 22.1146 5.55428 23.9669C-0.806588 20.5819 -1.70399 16.0418 2.86196 10.347C3.14516 11.7228 3.83141 12.5674 4.92082 12.8809C3.73335 7.84186 4.98274 3.54821 8.66895 0C8.6916 7.87426 11.1062 8.57414 14.1592 12.089C17.4554 16.3071 15.5184 21.1748 10.0899 24Z"
               />
             </svg>
-            <p>These products are limited, checkout within</p>
+            <p>Bu mahsulotlar soni cheklangan, buyurtma qilishga ulguring</p>
           </div>
           <div
             className="js-countdown timer-count"
@@ -54,10 +54,10 @@ export default function Cart() {
               <table className="tf-table-page-cart">
                 <thead>
                   <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
+                    <th>Mahsulot</th>
+                    <th>Narx</th>
+                    <th>Miqdor</th>
+                    <th>Umumiy</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -82,26 +82,23 @@ export default function Cart() {
                           >
                             {elm.productName}
                           </Link>
-                          <div className="cart-meta-variant">{elm.productModel}</div>
+                          <div className="cart-meta-variant">
+                            {elm.productModel}
+                          </div>
                           <span
                             className="remove-cart link remove"
                             onClick={() => removeItem(elm.id)}
                           >
-                            Remove
+                            O'chirish
                           </span>
                         </div>
                       </td>
-                      <td
-                        className="tf-cart-item_price"
-                        cart-data-title="Price"
-                      >
-                        <div className="cart-price">
-                        {elm?.productCurrency === 'dollar' && '$'}{elm.productPrice}
-                        </div>
+                      <td className="tf-cart-item_price" cart-data-title="Narx">
+                        <div className="cart-price">{elm.productPrice} sum</div>
                       </td>
                       <td
                         className="tf-cart-item_quantity"
-                        cart-data-title="Quantity"
+                        cart-data-title="Miqdor"
                       >
                         <div className="cart-quantity">
                           <div className="wg-quantity">
@@ -151,13 +148,13 @@ export default function Cart() {
                       </td>
                       <td
                         className="tf-cart-item_total"
-                        cart-data-title="Total"
+                        cart-data-title="Umumiy"
                       >
                         <div
                           className="cart-total"
-                          style={{ minWidth: "60px" }}
+                          style={{ minWidth: '60px' }}
                         >
-                          {elm?.productCurrency === 'dollar' && '$'}{(elm.productPrice * elm.quantity)}
+                          {elm.productPrice * elm.quantity} sum
                         </div>
                       </td>
                     </tr>
@@ -167,14 +164,16 @@ export default function Cart() {
               {!cartProducts.length && (
                 <>
                   <div className="row align-items-center mb-5">
-                    <div className="col-6 fs-18">Your shop cart is empty</div>
+                    <div className="col-6 fs-18">
+                      Sizning savatchangiz bo'sh!
+                    </div>
                     <div className="col-6">
                       <Link
                         to={`/shop-default`}
                         className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
-                        style={{ width: "fit-content" }}
+                        style={{ width: 'fit-content' }}
                       >
-                        Explore Products!
+                        Mahsulotlarni tanlash
                       </Link>
                     </div>
                   </div>
@@ -397,33 +396,17 @@ export default function Cart() {
                   </label>
                 </div> */}
                 <div className="tf-cart-totals-discounts">
-                  <h3>Subtotal</h3>
+                  <h3>Umumiy narx</h3>
                   <span className="total-value">
-                    ${totalPrice.toFixed(2)} USD
+                    {totalPrice.toFixed(2)} USD
                   </span>
-                </div>
-                <p className="tf-cart-tax">
-                  Taxes and
-                  <Link to={`/shipping-delivery`}>shipping</Link> calculated at
-                  checkout
-                </p>
-                <div className="cart-checkbox">
-                  <input
-                    type="checkbox"
-                    className="tf-check"
-                    id="check-agree"
-                  />
-                  <label htmlFor="check-agree" className="fw-4">
-                    I agree with the
-                    <Link to={`/terms-conditions`}>terms and conditions</Link>
-                  </label>
                 </div>
                 <div className="cart-checkout-btn">
                   <Link
                     to={`/checkout`}
                     className="tf-btn w-100 btn-fill animate-hover-btn radius-3 justify-content-center"
                   >
-                    <span>Check out</span>
+                    <span>Buyurtma qilish</span>
                   </Link>
                 </div>
                 {/* <div className="tf-page-cart_imgtrust">

@@ -1,15 +1,15 @@
-import { useContextElement } from "@/context/Context";
+import { useContextElement } from '@/context/Context';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 // import { useRef } from "react";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useProducts} from "@/data/hook/index.js";
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useProducts } from '@/data/hook/index.js';
 
 export default function ShopCart() {
   const { cartProducts, totalPrice, setCartProducts, setQuickViewItem } =
     useContextElement();
-  const {data: products} = useProducts();
+  const { data: products } = useProducts();
 
   const setQuantity = (id, quantity) => {
     if (quantity >= 1) {
@@ -34,7 +34,7 @@ export default function ShopCart() {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="header">
-            <div className="title fw-5">Shopping cart</div>
+            <div className="title fw-5">Sotuv savatchasi</div>
             <span
               className="icon-close icon-close-popup"
               data-bs-dismiss="modal"
@@ -43,7 +43,7 @@ export default function ShopCart() {
           <div className="wrap">
             <div className="tf-mini-cart-threshold">
               <div className="tf-progress-bar">
-                <span style={{ width: "50%" }}>
+                <span style={{ width: '50%' }}>
                   <div className="progress-car">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +62,10 @@ export default function ShopCart() {
                 </span>
               </div>
               <div className="tf-progress-msg">
-                Buy <span className="price fw-6">$75.00</span> more to enjoy
-                <span className="fw-6">Free Shipping</span>
+                <span className="price fw-6">100 ming so'mdan ortiq </span>
+                xarid qiling
+                <span className="fw-6"> bepul yetkazish </span>
+                xizmatidan foydalaning
               </div>
             </div>
             <div className="tf-mini-cart-wrap">
@@ -79,7 +81,7 @@ export default function ShopCart() {
                               src={elm.productImgUrl || '/images/default.jpg'}
                               width={668}
                               height={932}
-                              style={{ objectFit: "cover" }}
+                              style={{ objectFit: 'cover' }}
                             />
                           </Link>
                         </div>
@@ -91,9 +93,7 @@ export default function ShopCart() {
                             {elm.productName}
                           </Link>
                           <div className="meta-variant">{elm.productModel}</div>
-                          <div className="price fw-6">
-                            ${elm.productPrice}
-                          </div>
+                          <div className="price fw-6">${elm.productPrice}</div>
                           <div className="tf-mini-cart-btns">
                             <div className="wg-quantity small">
                               <span
@@ -124,7 +124,7 @@ export default function ShopCart() {
                             </div>
                             <div
                               className="tf-mini-cart-remove"
-                              style={{ cursor: "pointer" }}
+                              style={{ cursor: 'pointer' }}
                               onClick={() => removeItem(elm.id)}
                             >
                               Remove
@@ -138,15 +138,15 @@ export default function ShopCart() {
                       <div className="container">
                         <div className="row align-items-center mt-5 mb-5">
                           <div className="col-12 fs-18">
-                            Your shop cart is empty
+                            Sizning savatchangiz bo'sh
                           </div>
                           <div className="col-12 mt-3">
                             <Link
                               to={`/shop-default`}
                               className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
-                              style={{ width: "fit-content" }}
+                              style={{ width: 'fit-content' }}
                             >
-                              Explore Products!
+                              Mahsulotlarni tanlash!
                             </Link>
                           </div>
                         </div>
@@ -166,7 +166,7 @@ export default function ShopCart() {
                       pagination={{
                         clickable: true,
                         clickable: true,
-                        el: ".spdsc1",
+                        el: '.spdsc1',
                       }}
                       className="swiper tf-cart-slide"
                     >
@@ -177,7 +177,9 @@ export default function ShopCart() {
                               <Link to={`/product-detail/${elm.id}`}>
                                 <img
                                   alt="image"
-                                  src={elm.productImgUrl || '/images/default.jpg'}
+                                  src={
+                                    elm.productImgUrl || '/images/default.jpg'
+                                  }
                                   width={720}
                                   height={1005}
                                 />
@@ -190,9 +192,7 @@ export default function ShopCart() {
                               >
                                 {elm.productName}
                               </Link>
-                              <div className="price">
-                                ${elm.productPrice}
-                              </div>
+                              <div className="price">${elm.productPrice}</div>
                             </div>
                             <div className="tf-minicart-recommendations-item-quickview">
                               <a
@@ -267,46 +267,26 @@ export default function ShopCart() {
                 </div> */}
                 <div className="tf-mini-cart-bottom-wrap">
                   <div className="tf-cart-totals-discounts">
-                    <div className="tf-cart-total">Subtotal</div>
+                    <div className="tf-cart-total">Umumiy narx</div>
                     <div className="tf-totals-total-value fw-6">
-                      ${totalPrice.toFixed(2)} USD
+                      ${totalPrice.toFixed(2)} Sum
                     </div>
                   </div>
-                  <div className="tf-cart-tax">
-                    Taxes and <a href="#">shipping</a> calculated at checkout
-                  </div>
+
                   <div className="tf-mini-cart-line" />
-                  <div className="tf-cart-checkbox">
-                    <div className="tf-checkbox-wrapp">
-                      <input
-                        className=""
-                        type="checkbox"
-                        id="CartDrawer-Form_agree"
-                        name="agree_checkbox"
-                      />
-                      <div>
-                        <i className="icon-check" />
-                      </div>
-                    </div>
-                    <label htmlFor="CartDrawer-Form_agree">
-                      I agree with the
-                      <a href="#" title="Terms of Service">
-                        terms and conditions
-                      </a>
-                    </label>
-                  </div>
+
                   <div className="tf-mini-cart-view-checkout">
                     <Link
                       to={`/view-cart`}
                       className="tf-btn btn-outline radius-3 link w-100 justify-content-center"
                     >
-                      View cart
+                      Savatchani ko'rish
                     </Link>
                     <Link
                       to={`/checkout`}
                       className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"
                     >
-                      <span>Check out</span>
+                      <span>Buyurtma qilish</span>
                     </Link>
                   </div>
                 </div>

@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import { collections } from "@/data/categories";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import { useCategories } from "@/data/hook";
-import defaultImage from "../../../../public/images/default.jpg";
+import { Link } from 'react-router-dom';
+import { collections } from '@/data/categories';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { useCategories } from '@/data/hook';
+import defaultImage from '../../../../public/images/default.jpg';
 
 export default function Categories() {
   const { data: categories } = useCategories();
-  
+
   return (
     <section className="flat-spacing-4 flat-categorie">
       <div className="container-full">
@@ -25,7 +25,7 @@ export default function Categories() {
             className="text-3 fw-7 text-uppercase title wow fadeInUp"
             data-wow-delay="0s"
           >
-            SHOP BY CATEGORIES
+            Bo'limlar orqali tanlash
           </span>
         </div>
         <div className="row">
@@ -36,8 +36,8 @@ export default function Categories() {
               spaceBetween={15}
               modules={[Navigation]}
               navigation={{
-                prevEl: ".snbp107",
-                nextEl: ".snbn107",
+                prevEl: '.snbp107',
+                nextEl: '.snbn107',
               }}
               breakpoints={{
                 1024: {
@@ -87,7 +87,7 @@ export default function Categories() {
           </div>
           <div className="col-xl-3 col-lg-4 col-md-4">
             <div className="discovery-new-item">
-              <h5>Discovery all new items</h5>
+              <h5>Barcha bo'limlarni ko'rish</h5>
               <Link to={`/shop-collection-list`}>
                 <i className="icon-arrow1-top-left" />
               </Link>
