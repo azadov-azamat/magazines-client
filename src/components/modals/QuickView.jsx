@@ -284,7 +284,7 @@ export default function QuickView() {
                     to={`/product-detail/${quickViewItem?.id}`}
                     className="tf-btn fw-6 btn-line"
                   >
-                    View full details
+                    Mahsulot haqida batafsil
                     <i className="icon icon-arrow1-top-left" />
                   </Link>
                 </div>
