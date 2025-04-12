@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { Link } from "react-router-dom";
-import { useContextElement } from "@/context/Context";
-import defaultImage from "../../../public/images/default.jpg";
+import { Link } from 'react-router-dom';
+import { useContextElement } from '@/context/Context';
+import defaultImage from '../../../public/images/default.jpg';
 
 export const ProductCard = ({ product }) => {
   const [currentImage, setCurrentImage] = useState(product.productImgUrl);
@@ -25,7 +25,9 @@ export const ProductCard = ({ product }) => {
         <Link to={`/product-detail/${product.id}`} className="product-img">
           <img
             className="lazyload img-product"
-            data-src={product.productImgUrl ? product.productImgUrl : defaultImage}
+            data-src={
+              product.productImgUrl ? product.productImgUrl : defaultImage
+            }
             src={currentImage || defaultImage}
             alt="image-product"
             width={720}
@@ -34,7 +36,9 @@ export const ProductCard = ({ product }) => {
           <img
             className="lazyload img-hover"
             data-src={
-              product.productImgUrl ? product.productImgUrl : product.productImgUrl
+              product.productImgUrl
+                ? product.productImgUrl
+                : product.productImgUrl
             }
             src={product.productImgUrl || defaultImage}
             alt="image-product"
@@ -44,7 +48,7 @@ export const ProductCard = ({ product }) => {
         </Link>
         {Number(product?.productQuantity) === 0 ? (
           <div className="sold-out">
-            <span>Sold out</span>
+            <span>Tugagan</span>
           </div>
         ) : (
           <>
@@ -125,7 +129,14 @@ export const ProductCard = ({ product }) => {
         <Link to={`/product-detail/${product.id}`} className="title link">
           {product.productName}
         </Link>
-        <span className="price">${product.productPrice}</span>
+        <span className="price text-danger text-decoration-line-through">
+          {product.productPrice}
+        </span>
+        <span className="price text fs-4 text-success">
+          {product.productDiscPrice && product.productDiscPrice > 0
+            ? product.productDiscPrice
+            : product.productPrice}
+        </span>
         {/* {product.colors && (
           <ul className="list-color-product">
             {product.colors.map((color, i) => (

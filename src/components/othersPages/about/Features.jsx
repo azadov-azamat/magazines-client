@@ -1,6 +1,6 @@
-import { iconBoxes4 } from "@/data/features";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { iconBoxes4 } from '@/data/features';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Features() {
   return (
@@ -8,15 +8,16 @@ export default function Features() {
       <div className="container">
         <div className="bg_grey-2 radius-10 flat-wrap-iconbox">
           <div className="flat-title lg">
-            <span className="title fw-5">Quality is our priority</span>
+            <span className="title fw-5">Sifat — Bizning ustuvorligimiz</span>
             <div>
               <p className="sub-title text_black-2">
-                Our talented stylists have put together outfits that are perfect
-                for the season.
+                Bizning maishiy texnikalarimiz har doim zamonaviy va energiya
+                tejamkor bo‘lib, sizga yuqori sifatli xizmatni taqdim etadi.
               </p>
               <p className="sub-title text_black-2">
-                They've variety of ways to inspire your next fashion-forward
-                look.
+                Bizning mutaxassislarimiz har bir mahsulotni sinchiklab tanlab,
+                sizning uy texnikangizni eng yaxshi holatda saqlashni maqsad
+                qilishadi.
               </p>
             </div>
           </div>
@@ -33,7 +34,7 @@ export default function Features() {
                 }}
                 className="swiper tf-sw-mobile"
                 modules={[Pagination]}
-                pagination={{ clickable: true, el: ".spd303" }}
+                pagination={{ clickable: true, el: '.spd303' }}
               >
                 {iconBoxes4.map((box, index) => (
                   <SwiperSlide key={index}>

@@ -166,7 +166,7 @@ export default function MobileMenu() {
           <ul className="mb-info">
             <li>Manzil: Ellikqal'a tumani, Qirqqiz OFY</li>
             <li>
-              Email: <b>info@marketlochin.uz.com</b>
+              Email: <b>info@marketlochin.uz</b>
             </li>
             <li>
               Telefon:{' '}

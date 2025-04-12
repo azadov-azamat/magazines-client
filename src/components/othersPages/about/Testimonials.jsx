@@ -8,7 +8,7 @@ export default function Testimonials() {
   return (
     <section className="flat-testimonial-v2 flat-spacing-24">
       <div className="container">
-        <div className="wrapper-thumbs-testimonial-v2 flat-thumbs-testimonial">
+        {/* <div className="wrapper-thumbs-testimonial-v2 flat-thumbs-testimonial">
           <div className="box-left">
             <Swiper
               dir="ltr"
@@ -96,7 +96,7 @@ export default function Testimonials() {
               ))}
             </Swiper>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

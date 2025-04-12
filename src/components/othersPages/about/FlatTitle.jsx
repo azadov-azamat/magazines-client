@@ -1,19 +1,20 @@
-import React from "react";
+import React from 'react';
 
 export default function FlatTitle() {
   return (
     <section className="flat-spacing-9">
       <div className="container">
         <div className="flat-title my-0">
-          <span className="title">We are Market Lochin</span>
+          <span className="title">Biz — Lochin Market</span>
           <p className="sub-title text_black-2">
-            Welcome to our classic women's clothing store, where we believe
+            Maishiy texnika do‘konimizga xush kelibsiz!
             <br className="d-xl-block d-none" />
-            that timeless style never goes out of fashion. Our collection
-            features classic <br className="d-xl-block d-none" />
-            pieces that are both stylish and versatile, perfect for building a
+            Bu yerda siz zamonaviy, ishonchli va qulay texnikalarni topasiz.
             <br className="d-xl-block d-none" />
-            wardrobe that will last for years.
+            Bizning mahsulotlar hayotingizni osonlashtirish va qulaylik yaratish
+            uchun tanlangan.
+            <br className="d-xl-block d-none" />
+            Har bir uy uchun zarur bo‘lgan texnikalar bizda mavjud.
           </p>
         </div>
       </div>

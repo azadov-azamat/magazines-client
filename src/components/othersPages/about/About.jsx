@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function About() {
   return (
@@ -18,41 +18,40 @@ export default function About() {
             </div>
             <div className="tf-content-wrap px-0 d-flex justify-content-center w-100">
               <div>
-                <div className="heading">Established - 1995</div>
+                <div className="heading">Asos solingan - 2023</div>
                 <div className="text">
-                Market Lochin was founded in 1995 by Jane Smith, a fashion lover with
-                  a <br className="d-xl-block d-none" />
-                  passion for timeless style. Jane had always been drawn to
-                  classic <br className="d-xl-block d-none" />
-                  pieces that could be worn season after season, and she
-                  believed that <br className="d-xl-block d-none" />
-                  there was a gap in the market for a store that focused solely
-                  on classic <br className="d-xl-block d-none" />
-                  women's clothing. She opened the first store in a small town
-                  in New <br className="d-xl-block d-none" />
-                  England, where it quickly became a local favorite.
+                  Lochin Market 2023-yilda zamonaviy va ishonchli maishiy
+                  texnika do‘koni sifatida tashkil topgan.
+                  <br className="d-xl-block d-none" />
+                  Bizning asosiy maqsadimiz — har bir xonadon uchun hayotni
+                  yengillashtiruvchi,
+                  <br className="d-xl-block d-none" />
+                  energiya tejamkor va sifatli texnika vositalarini taqdim
+                  etishdir.
+                  <br className="d-xl-block d-none" />
+                  Dastlab kichik ko‘lamda ish boshlagan bo‘lsak-da, qisqa vaqt
+                  ichida mijozlar ishonchini qozondik.
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section className="flat-spacing-15">
         <div className="container">
           <div className="tf-grid-layout md-col-2 tf-img-with-text style-4">
             <div className="tf-content-wrap px-0 d-flex justify-content-center w-100">
               <div>
-                <div className="heading">Our mission</div>
+                <div className="heading">Bizning maqsadimiz</div>
                 <div className="text">
-                  Our mission is to empower people through sustainable fashion.
+                  Bizning maqsadimiz — har bir mijozga ishonchli, uzoq xizmat
+                  qiladigan va qulay maishiy texnikani yetkazib berish.
                   <br className="d-xl-block d-none" />
-                  We want everyone to look and feel good, while also doing our
-                  part to <br className="d-xl-block d-none" />
-                  help the environment.We believe that fashion should be
-                  stylish, <br className="d-xl-block d-none" />
-                  affordable and accessible to everyone. Body positivity and
-                  inclusivity <br className="d-xl-block d-none" />
-                  are values that are at the heart of our brand.
+                  Har bir uyda qulaylik yaratish uchun, biz doimo sifatli
+                  mahsulotlar va mijozlarga qulay xizmat ko‘rsatishga intilamiz.
+                  <br className="d-xl-block d-none" />
+                  Biz uchun mijozning ishonchi eng muhim qadriyatdir.
                 </div>
               </div>
             </div>

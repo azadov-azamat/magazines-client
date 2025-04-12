@@ -276,29 +276,30 @@ export const recentCollectionSlides = [
 export const iconBoxes4 = [
   {
     iconClass: 'icon-materials',
-    title: 'High-Quality Materials',
+    title: 'Yuqori Sifatli Materiallar',
     description:
-      'Crafted with precision and excellence, our activewear is meticulously engineered using premium materials to ensure unmatched comfort and durability.',
+      'Bizning maishiy texnikalarimiz eng yuqori sifatli materiallardan tayyorlangan, sizga maksimal qulaylik va uzoq muddatli foydalanish imkonini beradi.',
   },
   {
     iconClass: 'icon-design',
-    title: 'Laconic Design',
+    title: 'Funktsional Dizayn',
     description:
-      'Simplicity refined. Our activewear embodies the essence of minimalistic design, delivering effortless style that speaks volumes.',
+      'Bizning mahsulotlarimiz sodda va zamonaviy dizaynni o‘zida mujassam etgan, har bir detalda texnologik mukammallikni namoyish etadi.',
   },
   {
     iconClass: 'icon-sizes',
-    title: 'Various Sizes',
+    title: 'Turli o‘lchamlar',
     description:
-      'Designed for every body and anyone, our activewear embraces diversity with a wide range of sizes and shapes, celebrating the beauty of individuality.',
+      'Bizning maishiy texnikamiz har bir ehtiyojga mos keladi. O‘lchamlari va turlari keng bo‘lib, sizning uyingizga ideal variantni topishga yordam beradi.',
   },
   {
     iconClass: 'icon-design',
-    title: 'Laconic Design',
+    title: 'Innovatsion Dizayn',
     description:
-      'Simplicity refined. Our activewear embodies the essence of minimalistic design, delivering effortless style that speaks volumes.',
+      'Soddalik va zamonaviylikni uyg‘unlashtirgan dizayn, har bir mahsulotimizni nafaqat chiroyli, balki juda funksional qiladi.',
   },
 ];
+
 
 export const swiperData = [
   {

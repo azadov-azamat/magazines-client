@@ -51,16 +51,23 @@ export default function QuickAdd() {
               <div className="content">
                 <Link to={`/product-detail/${item?.id}`}>{item?.title}</Link>
                 <div className="tf-product-info-price">
-                  <div className="price">${item?.productPrice}</div>
+                  <div className="price text fs-6 text-danger text-decoration-line-through">
+                    ${item?.productPrice}
+                  </div>
+                </div>
+                <div className="tf-product-info-price">
+                  <div className="price text fs-2 text-success">
+                    ${item?.productDiscPrice}
+                  </div>
                 </div>
               </div>
             </div>
             <div className="tf-product-info-variant-picker mb_15">
               <div className="variant-picker-item">
                 <div className="variant-picker-label">
-                  Description:
+                  Tavsif:
                   <span className="fw-6 variant-picker-label-value">
-                    {item?.productModel}
+                    {item?.productOption}
                   </span>
                 </div>
                 {/*<form className="variant-picker-values">*/}
@@ -114,7 +121,7 @@ export default function QuickAdd() {
               {/*</div>*/}
             </div>
             <div className="tf-product-info-quantity mb_15">
-              <div className="quantity-title fw-6">Quantity</div>
+              <div className="quantity-title fw-6">Miqdor</div>
               <Quantity setQuantity={setQuantity} />
             </div>
             <div className="tf-product-info-buy-button">

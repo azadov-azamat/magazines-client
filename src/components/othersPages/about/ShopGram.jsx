@@ -1,12 +1,12 @@
-import { galleryImages } from "@/data/gallery";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { galleryImages } from '@/data/gallery';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Pagination } from "swiper/modules";
+import { Pagination } from 'swiper/modules';
 export default function ShopGram() {
   return (
-    <section className="flat-spacing-1">
-      <div className="container">
+    <section className="">
+      {/* <div className="container">
         <div className="flat-title">
           <span className="title">Shop Gram</span>
           <p className="sub-title">
@@ -48,7 +48,7 @@ export default function ShopGram() {
           </Swiper>
           <div className="sw-dots sw-pagination-gallery justify-content-center spd304" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
