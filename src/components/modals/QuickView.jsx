@@ -202,7 +202,7 @@ export default function QuickView() {
                   </div> */}
                 </div>
                 <div className="tf-product-info-quantity">
-                  <div className="quantity-title fw-6">Quantity</div>
+                  <div className="quantity-title fw-6">Miqdor</div>
                   <Quantity setQuantity={setQuantity} />
                 </div>
                 <div className="tf-product-info-buy-button">

@@ -129,13 +129,16 @@ export const ProductCard = ({ product }) => {
         <Link to={`/product-detail/${product.id}`} className="title link">
           {product.productName}
         </Link>
+        <Link to={`/product-detail/${product.id}`} className="title link">
+          {product.productModel}
+        </Link>
         <span className="price text-danger text-decoration-line-through">
-          {product.productPrice}
+          {product.productPrice} sum
         </span>
         <span className="price text fs-4 text-success">
           {product.productDiscPrice && product.productDiscPrice > 0
             ? product.productDiscPrice
-            : product.productPrice}
+            : product.productPrice} sum
         </span>
         {/* {product.colors && (
           <ul className="list-color-product">

@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const tabs = [
-  { title: "Description", active: true },
-  { title: "Review", active: false },
-  { title: "Shiping", active: false },
-  { title: "Return Polocies", active: false },
+  { title: 'Mahsulot tavsifi', active: true },
+  // { title: "Review", active: false },
+  // { title: "Shiping", active: false },
+  // { title: "Return Polocies", active: false },
 ];
 
-export default function ShopDetailsTab() {
+export default function ShopDetailsTab({ product }) {
   const [currentTab, setCurrentTab] = useState(1);
 
   return (
     <section
       className="flat-spacing-17 pt_0"
-      style={{ maxWidth: "100vw", overflow: "clip" }}
+      style={{ maxWidth: '100vw', overflow: 'clip' }}
     >
       <div className="container">
         <div className="row">
@@ -25,7 +25,7 @@ export default function ShopDetailsTab() {
                     key={i}
                     onClick={() => setCurrentTab(i + 1)}
                     className={`item-title ${
-                      currentTab == i + 1 ? "active" : ""
+                      currentTab == i + 1 ? 'active' : ''
                     } `}
                   >
                     <span className="inner">{elm.title}</span>
@@ -35,18 +35,12 @@ export default function ShopDetailsTab() {
               <div className="widget-content-tab">
                 <div
                   className={`widget-content-inner ${
-                    currentTab == 1 ? "active" : ""
+                    currentTab == 1 ? 'active' : ''
                   } `}
                 >
                   <div className="">
-                    <p className="mb_30">
-                      Button-up shirt sleeves and a relaxed silhouette. It’s
-                      tailored with drapey, crinkle-texture fabric that’s made
-                      from LENZING™ ECOVERO™ Viscose — responsibly sourced
-                      wood-based fibres produced through a process that reduces
-                      impact on forests, biodiversity and water supply.
-                    </p>
-                    <div className="tf-product-des-demo">
+                    <p className="mb_30">{product.productOption}</p>
+                    {/* <div className="tf-product-des-demo">
                       <div className="right">
                         <h3 className="fs-16 fw-5">Features</h3>
                         <ul>
@@ -94,12 +88,12 @@ export default function ShopDetailsTab() {
                           <span>Tumble dry, medium hear.</span>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div
                   className={`widget-content-inner ${
-                    currentTab == 2 ? "active" : ""
+                    currentTab == 2 ? 'active' : ''
                   } `}
                 >
                   <table className="tf-pr-attrs">
@@ -121,7 +115,7 @@ export default function ShopDetailsTab() {
                 </div>
                 <div
                   className={`widget-content-inner ${
-                    currentTab == 3 ? "active" : ""
+                    currentTab == 3 ? 'active' : ''
                   } `}
                 >
                   <div className="tf-page-privacy-policy">
@@ -181,7 +175,7 @@ export default function ShopDetailsTab() {
                 </div>
                 <div
                   className={`widget-content-inner ${
-                    currentTab == 4 ? "active" : ""
+                    currentTab == 4 ? 'active' : ''
                   } `}
                 >
                   <ul className="d-flex justify-content-center mb_18">

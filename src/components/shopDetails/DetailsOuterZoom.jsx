@@ -76,20 +76,25 @@ export default function DetailsOuterZoom({ product }) {
                   </div>
                   <div className="tf-product-info-price">
                     <div className="price-on-sale">
-                      {product?.productPrice} sum
+                      {product?.productDiscPrice} sum
                     </div>
 
-                    {/* <div className="compare-at-price">
-                      ${product?.productOldPrice}
-                    </div> */}
+                    <div className="compare-at-price">
+                      ${product?.productPrice}
+                    </div>
 
                     <div className="badges-on-sale">
-                      <span>20</span>% OFF
+                      <span>
+                        {((product.productPrice - product.productDiscPrice) *
+                          100) /
+                          product.productPrice}
+                      </span>
+                      % chegirmada
                     </div>
                   </div>
                   <div className="tf-product-info-liveview">
-                    <div className="liveview-count">20</div>
-                    <p className="fw-6">ta odam hozir mahsulotni kuzatmoqda</p>
+                    <div className="fs-5">Model</div>
+                    <p className="fw-6 text-decoration-underline">{product?.productModel}</p>
                   </div>
 
                   <div className="tf-product-info-variant-picker">

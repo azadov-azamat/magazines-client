@@ -52,12 +52,12 @@ export default function QuickAdd() {
                 <Link to={`/product-detail/${item?.id}`}>{item?.title}</Link>
                 <div className="tf-product-info-price">
                   <div className="price text fs-6 text-danger text-decoration-line-through">
-                    ${item?.productPrice}
+                    {item?.productPrice} sum
                   </div>
                 </div>
                 <div className="tf-product-info-price">
                   <div className="price text fs-2 text-success">
-                    ${item?.productDiscPrice}
+                    {item?.productDiscPrice} sum
                   </div>
                 </div>
               </div>
@@ -65,9 +65,9 @@ export default function QuickAdd() {
             <div className="tf-product-info-variant-picker mb_15">
               <div className="variant-picker-item">
                 <div className="variant-picker-label">
-                  Tavsif:
+                  Model:
                   <span className="fw-6 variant-picker-label-value">
-                    {item?.productOption}
+                    {item?.productModel}
                   </span>
                 </div>
                 {/*<form className="variant-picker-values">*/}
@@ -137,7 +137,7 @@ export default function QuickAdd() {
                   </span>
                   <span className="tf-qty-price">
                     {item?.productCurrency === 'dollar' && '$'}
-                    {(quantity * Number(item?.productPrice)).toFixed(2)}
+                    {(quantity * Number(item?.productPrice)).toFixed(2)} sum
                   </span>
                 </a>
                 {/*<div className="tf-product-btn-wishlist btn-icon-action">*/}

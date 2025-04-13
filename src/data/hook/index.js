@@ -13,30 +13,36 @@ export const useSlider = () => {
 };
 
 export const useCategories = () => {
-    return useQuery({
-        queryKey: ['categories'],
-        queryFn: getCategories,
-        staleTime: 1000 * 60 * 5, // 5 minut
-    });
+  return useQuery({
+    queryKey: ['categories'],
+    queryFn: getCategories,
+    staleTime: 1000 * 60 * 5, // 5 minut
+  });
 };
 
-export const useProducts = (page = 1, limit = 10, sort = 'createdAt', filter, search = '') => {
-    return useQuery({
-        queryKey: ['products', page, limit, sort, filter, search],
-        queryFn: () => getProducts(page, limit, sort, filter, search),
-        staleTime: 1000 * 60 * 5, // 5 minut
-    });
-};  
+export const useProducts = (
+  page = 1,
+  limit = 10,
+  sort = 'createdAt',
+  filter = { storeId: 5 }, // default holatda storeId 3 bo‘lishi mumkin
+  search = ''
+) => {
+  return useQuery({
+    queryKey: ['products', page, limit, sort, filter, search],
+    queryFn: () => getProducts(page, limit, sort, filter, search),
+    staleTime: 1000 * 60 * 5,
+  });
+};
 
 export const useProductById = (id) => {
-    return useQuery({
-        queryKey: ['product', id],
-        queryFn: () => getProductById(id),
-    });
-};  
+  return useQuery({
+    queryKey: ['product', id],
+    queryFn: () => getProductById(id),
+  });
+};
 
 export const useCreateOrder = () => {
-    return useMutation({
-      mutationFn: createOrder,
-    });
+  return useMutation({
+    mutationFn: createOrder,
+  });
 };

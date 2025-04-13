@@ -66,7 +66,7 @@ export default function DetailsInnerZoom({ product }) {
                     <div className="product-status-content">
                       <i className="icon-lightning" />
                       <p className="fw-6">
-                        Tez sotilmoqda! Allaqachon 56 ta odam sotib oldi.
+                        Tez sotilmoqda! Allaqachon 5 ta odam sotib oldi.
                       </p>
                     </div>
                   </div>
