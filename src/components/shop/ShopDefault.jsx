@@ -18,7 +18,7 @@ export default function ShopDefault() {
   const [finalSorted, setFinalSorted] = useState([]);
   const [page, setPage] = useState(1);
 
-  const {data: products} = useProducts(page, 10, 'createdAt', JSON.stringify(categoryId ? {categoryId} : {}), );
+  const {data: products} = useProducts(page, 10, 'createdAt', categoryId ? {categoryId} : {}, );
 
   useEffect(() => {
     setPage(Number(currentPage))

@@ -6,7 +6,7 @@ export const getProducts = async (page = 1, limit = 10, sort = 'createdAt', filt
             page,
             limit,
             sort,
-            filter,
+            filter: JSON.stringify({...filter, storeId: 5}),
             search
         }
     });
