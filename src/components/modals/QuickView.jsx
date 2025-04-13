@@ -121,15 +121,22 @@ export default function QuickView() {
                     </p>
                   </div>
                 </div> */}
-                <div className="tf-product-info-price">
-                  <div className="price">
-                    {quickViewItem?.productCurrency === 'dollar' && '$'}
-                    {quickViewItem?.productPrice}
-                  </div>
-                </div>
                 <div className="tf-product-description mb-0">
                   <p>{quickViewItem?.productModel}</p>
                 </div>
+                <div className="tf-product-info-price">
+                  <div className="text-danger text-decoration-line-through">
+                    {quickViewItem?.productCurrency === 'dollar' && '$'}
+                    {quickViewItem?.productPrice} sum
+                  </div>
+                </div>
+                <div className="tf-product-info-price">
+                  <div className="price text-success">
+                    {quickViewItem?.productCurrency === 'dollar' && '$'}
+                    {quickViewItem?.productDiscPrice} sum
+                  </div>
+                </div>
+
                 <div className="tf-product-info-variant-picker">
                   {/* <div className="variant-picker-item">
                     <div className="variant-picker-label">
@@ -222,7 +229,11 @@ export default function QuickView() {
                       <span className="tf-qty-price">
                         {quickViewItem?.productCurrency === 'dollar' && '$'}
                         {(
-                          quantity * Number(quickViewItem?.productPrice)
+                          quantity *
+                          Number(
+                            quickViewItem?.productDiscPrice ||
+                              quickViewItem?.productDiscPrice
+                          )
                         ).toFixed(2)}
                       </span>
                     </a>
