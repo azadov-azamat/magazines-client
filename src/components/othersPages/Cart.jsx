@@ -94,7 +94,9 @@ export default function Cart() {
                         </div>
                       </td>
                       <td className="tf-cart-item_price" cart-data-title="Narx">
-                        <div className="cart-price">{elm.productPrice} sum</div>
+                        <div className="cart-price">
+                          {elm?.productDiscPrice || elm?.productPrice} sum
+                        </div>
                       </td>
                       <td
                         className="tf-cart-item_quantity"
@@ -154,7 +156,9 @@ export default function Cart() {
                           className="cart-total"
                           style={{ minWidth: '60px' }}
                         >
-                          {elm.productPrice * elm.quantity} sum
+                          {(elm?.productDiscPrice || elm?.productPrice) *
+                            elm.quantity}{' '}
+                          sum
                         </div>
                       </td>
                     </tr>

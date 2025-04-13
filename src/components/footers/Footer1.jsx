@@ -186,7 +186,7 @@ export default function Footer1({ bgColor = '' }) {
               <div className="col-xl-3 col-md-6 col-12">
                 <div className="footer-newsletter footer-col-block">
                   <div className="footer-heading footer-heading-desktop">
-                    <h6>Email orqai ro'yxatdan o'ting</h6>
+                    <h6>Email orqali ro'yxatdan o'ting</h6>
                   </div>
                   <div className="footer-heading footer-heading-moblie">
                     <h6>Email orqali ro'yxatdan o'ting</h6>

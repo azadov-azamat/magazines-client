@@ -93,7 +93,9 @@ export default function ShopCart() {
                             {elm.productName}
                           </Link>
                           <div className="meta-variant">{elm.productModel}</div>
-                          <div className="price fw-6">${elm.productPrice}</div>
+                          <div className="price fw-6">
+                            ${elm?.productDiscPrice || elm?.productPrice}
+                          </div>
                           <div className="tf-mini-cart-btns">
                             <div className="wg-quantity small">
                               <span
@@ -127,7 +129,7 @@ export default function ShopCart() {
                               style={{ cursor: 'pointer' }}
                               onClick={() => removeItem(elm.id)}
                             >
-                              Remove
+                              O'chirish
                             </div>
                           </div>
                         </div>
@@ -156,7 +158,7 @@ export default function ShopCart() {
                   <div className="tf-minicart-recommendations">
                     <div className="tf-minicart-recommendations-heading">
                       <div className="tf-minicart-recommendations-title">
-                        You may also like
+                        Sizga bu mahsulotlar ham qiziq bo'lsihi mumkin.
                       </div>
                       <div className="sw-dots small style-2 cart-slide-pagination spdsc1" />
                     </div>
@@ -192,7 +194,9 @@ export default function ShopCart() {
                               >
                                 {elm.productName}
                               </Link>
-                              <div className="price">${elm.productPrice}</div>
+                              <div className="price">
+                                ${elm?.productDiscPrice || elm?.productPrice}
+                              </div>
                             </div>
                             <div className="tf-minicart-recommendations-item-quickview">
                               <a

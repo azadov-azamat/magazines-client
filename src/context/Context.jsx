@@ -1,9 +1,9 @@
-import { useProducts } from "@/data/hook";
-import { allProducts } from "@/data/products";
-import { openCartModal } from "@/utlis/openCartModal";
+import { useProducts } from '@/data/hook';
+import { allProducts } from '@/data/products';
+import { openCartModal } from '@/utlis/openCartModal';
 // import { openCart } from "@/utlis/toggleCart";
-import React, { useEffect } from "react";
-import { useContext, useState } from "react";
+import React, { useEffect } from 'react';
+import { useContext, useState } from 'react';
 const dataContext = React.createContext();
 export const useContextElement = () => {
   return useContext(dataContext);
@@ -16,18 +16,21 @@ export default function Context({ children }) {
   const [quickViewItem, setQuickViewItem] = useState();
   const [quickAddItem, setQuickAddItem] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
-  const {data: products} = useProducts();
+  const { data: products } = useProducts();
 
   useEffect(() => {
     const subtotal = cartProducts.reduce((accumulator, product) => {
-      return accumulator + product.quantity * Number(product.productPrice);
+      return (
+        accumulator +
+        product.quantity *
+          Number(product?.productDiscPrice || product.productPrice)
+      );
     }, 0);
     setTotalPrice(subtotal);
   }, [cartProducts]);
 
   const addProductToCart = (id, qty) => {
     if (!cartProducts?.filter((elm) => elm.id == id)[0]) {
-      
       const item = {
         ...products.data.filter((elm) => elm.id == id)[0],
         quantity: qty ? qty : 1,
@@ -95,24 +98,24 @@ export default function Context({ children }) {
     return false;
   };
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("cartList"));
+    const items = JSON.parse(localStorage.getItem('cartList'));
     if (items?.length) {
       setCartProducts(items);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cartList", JSON.stringify(cartProducts));
+    localStorage.setItem('cartList', JSON.stringify(cartProducts));
   }, [cartProducts]);
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("wishlist"));
+    const items = JSON.parse(localStorage.getItem('wishlist'));
     if (items?.length) {
       setWishList(items);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishList));
+    localStorage.setItem('wishlist', JSON.stringify(wishList));
   }, [wishList]);
 
   const contextElement = {
