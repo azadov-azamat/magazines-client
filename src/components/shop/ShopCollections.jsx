@@ -15,14 +15,14 @@ export default function ShopCollections() {
             <div className="collection-item hover-img" key={index}>
               <div className="collection-inner">
                 <Link
-                  to={`/shop-default?categoryId${item.id}`}
+                  to={`/shop-default?categoryId=${item.id}`}
                   className="collection-image img-style"
                 >
                   <img
                     className="lazyload"
                     data-src={item.categoryImgUrl}
                     alt={item.categoryName}
-                    src={item.categoryImgUrl || '/images/default.jsp'}
+                    src={item.categoryImgUrl || '/images/default.jpg'}
                     width={460}
                     height={460}
                   />
