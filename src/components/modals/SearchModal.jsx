@@ -27,7 +27,25 @@ export default function SearchModal() {
       ...currentParams,
       search: debouncedSearch,
     });
-  }, [debouncedSearch]);
+  }, []);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+  
+    // 🔹 Update URL with searchText
+    const currentParams = Object.fromEntries(searchParams.entries());
+    setSearchParams({
+      ...currentParams,
+      search: searchText,
+    });
+  
+    // 🔹 Close the Bootstrap offcanvas properly
+    const offcanvasEl = document.getElementById('canvasSearch');
+    if (offcanvasEl) {
+      const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+      bsOffcanvas.hide();
+    }
+  };  
 
   return (
     <div className="offcanvas offcanvas-end canvas-search" id="canvasSearch">
@@ -44,8 +62,7 @@ export default function SearchModal() {
             </div>
           </div>
           <div className="tf-search-sticky">
-            <form
-              onSubmit={(e) => e.preventDefault()}
+              <form onSubmit={handleSearchSubmit} 
               className="tf-mini-search-frm"
             >
               <fieldset className="text">
